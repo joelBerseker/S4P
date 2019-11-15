@@ -50,6 +50,7 @@
 <?php
 	include('../../includes/header.php')
 ?>
+<div class="section2">
 <div class="container p-4"></div>
     <div class="row">
         <div class="col-md-4 mx-auto">
@@ -124,8 +125,8 @@
         </form>
             </div>
         </div>
-    </div>
-
+    </div>    
+</div>
 
 <?php
 	include("../../includes/footer.php")

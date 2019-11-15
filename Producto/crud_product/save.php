@@ -3,21 +3,30 @@ include('db.php');
 if(isset($_POST['save_product'])){
     $description = $_POST['description'];
     $tipo_producto = $_POST['tipo_producto'];
-    $proveedor = $_POST['proveedor'];
+
+    $archivo_nombre=$_FILES['myFile']['name'];
+    $archivo_tipo = $_FILES['myFile']['type'];
+    $archivo_temp = $_FILES['myFile']['tmp_name'];
+    $archivo_binario = (file_get_contents($archivo_temp));
     $precio = $_POST['precio'];
     $nombre = $_POST['nombre'];
-    $marca = $_POST['marca'];
-    $minimo = $_POST['minimo'];
     $cantidad = $_POST['cantidad'];                                                                                                                                        
-    $query = "INSERT INTO tb_producto(`DSC_PRODUCTO`, `ID_TIPO_PRODUCTO`, `PROV_PRODUCTO`, `PRECIO_PRODUCTO`, `NM_PRODUCTO`, `MARCA_PRODUCTO`, `PROV_MIN_PRODUCTO`, `CTD_COLUMNA`) VALUES ('$description',$tipo_producto,$proveedor,$precio,'$nombre',$marca,$minimo,$cantidad)";
-    $result = mysqli_query($conn,$query);
-    if(!$result){
-        echo "INSERT INTO tb_producto(`DSC_PRODUCTO`, `ID_TIPO_PRODUCTO`, `PROV_PRODUCTO`, `PRECIO_PRODUCTO`, `NM_PRODUCTO`, `MARCA_PRODUCTO`, `PROV_MIN_PRODUCTO`, `CTD_COLUMNA`) VALUES ('$description',$tipo_producto,$proveedor,$precio,'$nombre',&marca,$minimo,$cantidad)";
-        die("Query Failed");
-    }   
+    $query = "INSERT INTO producto (`ProNom`, `ProDes`, `ProPre`, `ProImgNom`, `ProImgTip`, `ProImgArc`, `ProCatID`, `ProEst`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conn,$query);
+    $stmt->bind_param('ssdsssii',$nombre,$description,$precio, $archivo_nombre, $archivo_tipo, $archivo_binario,$tipo_producto,$cantidad);
+    if(!mysqli_stmt_execute($stmt)){
+        echo "Chanfle, hubo un problema y no se guardo el archivo. ". mysqli_stmt_error($stmt)."<br/>";
+      }  
+        
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+      
+    
 
-    $_SESSION['message'] = 'Product Saved Succesfully';
-    $_SESSION['message_type']= 'success';
+
+
+
+    
     header("Location: ../index.php");
 }
 else{

@@ -13,12 +13,12 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        
-        $query = "SELECT * FROM tb_tipo_producto WHERE ID_TIPO_PRODUCTO = $id";
+        $query = "SELECT * FROM categoria WHERE CatId = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);
-            $desciption = $row['DSC_TIPO_PRODUCTO'];
-            $cantidad = $row['estado']; 
+            $desciption = $row['CatNom'];
+            $cantidad = $row['CatEst']; 
            
         }
         
@@ -27,7 +27,7 @@
         $id = $_GET['id'];
         $description = $_POST['description1'];
         $cantidad = $_POST['cantidad1']; 
-        $query = "UPDATE `tb_tipo_producto` SET `DSC_TIPO_PRODUCTO`='$description' ,`estado`=$cantidad WHERE `ID_TIPO_PRODUCTO`= $id ";
+        $query = "UPDATE `categoria` SET `CatNom`='$description' ,`CatEst`=$cantidad WHERE `CatID`= $id ";
         $result = mysqli_query($conn,$query);
         header("Location: ../");
     }
@@ -35,9 +35,11 @@
 <?php
 	include('../../includes/header.php')
 ?>
-<div class="container p-4"></div>
+<div class="section2"><br><br>
+    <div class="container p-3"></div>
     <div class="row">
-        <div class="col-md-4 mx-auto">
+        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
+        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4">
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
             <div  class="form-group">
@@ -60,8 +62,9 @@
         </form>
             </div>
         </div>
-    </div>
-
+        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
+    </div>   <br><br><br>
+</div>
 
 <?php
 	include("../../includes/footer.php")

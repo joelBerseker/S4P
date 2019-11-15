@@ -5,7 +5,7 @@ $conn = mysqli_connect(
     'localhost',
     'root',
     '',
-    'wolfclass'
+    's4p'
 );
 /*
 if(isset($conn)){
