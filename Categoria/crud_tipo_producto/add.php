@@ -14,9 +14,14 @@
       <form action="crud_tipo_producto/save.php" method="POST">
     <div class="form-row form-group ">
         <div class="col-4"><label>Nombre:</label></div>
-        <div class="col"><input class="form-control form-control-sm " value=""type="text" name="description" required></div>
+        <div class="col"><input class="form-control form-control-sm " value=""type="text" name="nombre" required></div>
     </div>
-    
+    <div class="form-row form-group ">
+        <div class="col-4"><label>Descripcion:</label></div>
+        <div class="col">
+          <textarea name="Descripcion" id="10" cols="30" rows="10"></textarea>
+        </div>
+    </div>
     <div class="form-row form-group ">
         <div class="col-4"><label>Estado:</label></div>
         <div class="col"><input class="form-control form-control-sm " type="text" name="cantidad" required ></div>

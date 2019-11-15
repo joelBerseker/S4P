@@ -42,6 +42,9 @@
 					<a class="nav-link" style="color: white;border-bottom: 2px solid #FF1F7B;bottom: 15px;" href="/S4P/">INICIO</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link menu_link" style="color: white;" href="/S4P/Producto">PRODUCTOS</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link menu_link" style="color: white;" href="/S4P/Categorias">CATEGORIAS</a>
 				</li>
 				<li class="nav-item">
