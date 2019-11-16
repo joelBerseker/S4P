@@ -1,8 +1,5 @@
 
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar nuevo <span class="icon-plus"></span></button>
-<?php
-			$querytipo=mysqli_query($conn,"SELECT ID_TIPO_PRODUCTO, DSC_TIPO_PRODUCTO FROM tb_tipo_producto");
-?>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

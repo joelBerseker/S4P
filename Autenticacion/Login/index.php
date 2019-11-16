@@ -1,0 +1,71 @@
+<?php
+
+
+$men="Ingresar";
+	include("../../includes/header.php");
+
+  
+
+  if (isset($_SESSION['user_id'])) {
+    header('Location: /S4P7');
+  }
+
+
+  include ('db.php');
+    
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $records = $conn->prepare('SELECT UsuID, UsuCor, UsuCon FROM usuario WHERE UsuCor = :email');
+    $records->bindParam(':email', $_POST['email']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+    
+    $message = '';
+
+    if (count($results) > 0 && password_verify($_POST['password'], $results['UsuCon'])) {
+      $_SESSION['user_id'] = $results['UsuID'];
+      header("Location: /S4P");
+    } else {
+      $message = 'Usuario no encontrado o contraseña incorrecta';
+    }
+  }
+
+?>
+
+
+    <div style="background-color:white;">
+      <div class="col-12 offset-0 col-lg-6 offset-lg-3 col-md-8 offset-md-2" style="padding-top:60px;padding-bottom:148px">	
+      <div class="card" >
+        <article class="card-body">
+          <h4 class="card-title text-center mb-4 mt-1">INGRESAR</h4>
+          <p class="card-title text-center mb-4 mt-1"> si no tienes una cuenta puedes registrarte <a href="../../Autenticacion/Singup" >aqui</a></p>
+          <hr>
+          <?php if(!empty($message)): ?>
+           
+            <p class="text-danger"> <?= $message ?></p>
+            
+          <?php endif; ?>
+          <form action="index.php" method="POST">
+
+          <div class="form-row form-group ">
+            <div class="col-4"><label>Correo Electronico:</label></div>
+            <div class="col"><input class="form-control form-control-sm " type="text" name="email" required></div>
+          </div>
+          <div class="form-row form-group ">
+            <div class="col-4"><label>Contraseña:</label></div>
+            <div class="col"><input class="form-control form-control-sm " type="password" name="password" required></div>
+          </div>
+
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Aceptar  </button>
+          </div> <!-- form-group// -->
+          
+          </form>
+        </article>
+      </div> 
+      </div>
+    </div>
+ 
+
+    <?php
+	include("../../includes/footer.php")
+?>

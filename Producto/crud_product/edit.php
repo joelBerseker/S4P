@@ -13,38 +13,52 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        
-        $query = "SELECT * FROM tb_producto WHERE ID_PRODUCTO = $id";
+        $query = "SELECT * FROM producto WHERE ProID = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);
-            $desciption = $row['DSC_PRODUCTO'];
-            $id = $row['ID_PRODUCTO'];
-            $tipo_producto = $row['ID_TIPO_PRODUCTO'];
-            $proveedor = $row['PROV_PRODUCTO'];
-            $precio = $row['PRECIO_PRODUCTO'];
-            $nombre = $row['NM_PRODUCTO'];
-            $marca = $row['MARCA_PRODUCTO'];
-            $minimo = $row['PROV_MIN_PRODUCTO'];
-            $cantidad = $row['CTD_COLUMNA']; 
-           
+            $nombre         = $row['ProNom'];
+            $description    = $row['ProDes'];
+            $precio         = $row['ProPre'];
+            $categoria      = $row['ProCatID'];
+            $estado         = $row['ProEst'];
         }
         
     }
     if(isset($_POST['update'])){
-        $id = $_GET['id'];
-        $description = $_POST['description1'];
-        $tipo_producto = $_POST['tipo_producto1'];
-        $proveedor = $_POST['proveedor1'];
-        $precio = $_POST['precio1'];
-        $nombre = $_POST['nombre1'];
-        $marca = $_POST['marca1'];
-        $minimo = $_POST['minimo1'];
-        $cantidad = $_POST['cantidad1']; 
-        $query = "UPDATE `tb_producto` SET `DSC_PRODUCTO`='$description',`ID_TIPO_PRODUCTO`=$tipo_producto,`PROV_PRODUCTO`=$proveedor,`PRECIO_PRODUCTO`=$precio,`NM_PRODUCTO`='$nombre',`MARCA_PRODUCTO`=$marca,`PROV_MIN_PRODUCTO`=$minimo,`CTD_COLUMNA`=$cantidad WHERE `ID_PRODUCTO`= $id ";
-        $result = mysqli_query($conn,$query);
-        $_SESSION['message'] = 'Product Edited Succesfully';
-        $_SESSION['message_type']= 'info';
-        header("Location: ../index.php");
+        $id          = $_GET['id'];
+        $archivo_nombre=$_FILES['myFile']['name'];
+        $archivo_tipo = $_FILES['myFile']['type'];
+        $archivo_temp = $_FILES['myFile']['tmp_name'];
+        $archivo_binario = (file_get_contents($archivo_temp));
+        $nombre      = $_POST['nombre'];
+        $description = $_POST['descripcion'];
+        $categoria   = $_POST['categoria'];
+        $estado      = $_POST['estado'];
+        $precio      = $_POST['precio'];
+        $mysqli = new mysqli("localhost", "root", "", "s4p");
+        $stmt = $mysqli->prepare("UPDATE producto SET `ProNom`=?, `ProImgNom`=?,`ProImgTip`=?,`ProImgArc`=?,`ProCatID`=? ,`ProPre`=?,`ProDes`=?,`ProEst`=? WHERE ProID=?");
+        /* BK: always check whether the prepare() succeeded */
+        if ($stmt === false) {
+        trigger_error($this->mysqli->error, E_USER_ERROR);
+        return;
+        }
+        
+        /* Bind our params */
+        /* BK: variables must be bound in the same order as the params in your SQL.
+        * Some people prefer PDO because it supports named parameter. */
+        $stmt->bind_param('ssssidsii',$nombre,$archivo_nombre,$archivo_tipo,$archivo_binario,$categoria,$precio,$description,$estado, $id);
+
+        /* Set our params */
+        /* BK: No need to use escaping when using parameters, in fact, you must not, 
+        * because you'll get literal '\' characters in your content. */
+        /* Execute the prepared Statement */
+        $status = $stmt->execute();
+        /* BK: always check whether the execute() succeeded */
+        if ($status === false) {
+        trigger_error($stmt->error, E_USER_ERROR);
+        }
+        header("Location: ../tabla.php");
     }
 ?>
 <?php
@@ -55,69 +69,76 @@
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
-            <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
+            <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
-            <label><b>AÑADIR PRODUCTO</b></label>
+                <label><b>AÑADIR PRODUCTO</b></label>
+            </div>
+            <div class="form-row form-group ">
+                <div class="col-4"><label>Nombre:</label></div>
+                <div class="col">
+                    <input value="<?php echo $nombre;?>" class="form-control form-control-sm " vtype="text" name="nombre" required></div>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Descripcion:</label></div>
                 <div class="col">
-                    <input value="<?php echo $desciption;?>" class="form-control form-control-sm " vtype="text" name="description1" required></div>
+                    <input value="<?php echo $description;?>" class="form-control form-control-sm " vtype="text" name="descripcion" required></div>
             </div>
             <div class="form-row form-group ">
-                <div class="col-4"><label>Tipo de producto:</label></div>
+                <div class="col-4"><label>Categoria:</label></div>
                 <div class="col">
-                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1" name="tipo_producto1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>  
+                    <?php
+                        $querytipo=mysqli_query($conn,"SELECT CatID, CatNom FROM categoria");
+                    ?>
+                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1"  name="categoria">
+                        <?php
+                            while($datosa = mysqli_fetch_array($querytipo)){ 
+                            if($datosa['CatID']==$categoria){
+                        ?>
+                            <option value="<?php echo $datosa['CatID']; ?>"selected > <?php echo $datosa['CatNom']; ?> </option>
+                            <?php }else ?>
+                            <option value="<?php echo $datosa['CatID'] ?>"> <?php echo $datosa['CatNom'] ?> </option>
+                        
+
+                        <?php
+                            }
+                        ?>
+					</select>  
                 </div>  
+            </div>            
+            <div class="form-row form-group ">
+                <div class="col-4">
+                    <label>Precios:</label>
+                </div>
+                <div class="col">
+                    <input class="form-control form-control-sm " value="<?php echo $precio;?>" type="text" name="precio" required >
+                </div>
             </div>
             
+
             <div class="form-row form-group ">
-                <div class="col-4"><label>Proveedor:</label></div>
+                <div class="col-4">
+                    <label>Estado:</label>
+                </div>
                 <div class="col">
-                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1" name="proveedor1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>  
+                    <input class="form-control form-control-sm " value="<?php echo $estado;?>" type="text" name="estado" required >
                 </div>
             </div>
             <div class="form-row form-group ">
-                <div class="col-4"><label>Nombre:</label></div>
-                <div class="col"><input class="form-control form-control-sm " type="text" name="nombre1" value="<?php echo $nombre;?>" required></div>
-            </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Marca:</label></div>
+                <div class="col-5"><label>Imagen:</label></div>
                 <div class="col">
-                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1" value="<?php echo $marca;?>" name="marca1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>  
+                <!--
+                    
+                    <input type="file" name="myFile" accept="image/* "class="form-control-file">
+                -->
+                <input type="file" accept="image/* "class="form-control-file" name="myFile" id="imagen" maxlength="256" placeholder="Imagen">
+                <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
+                <img src="../mostrar.php?id=<?php echo $row['ProID']?>" width="200" id="imagenmuestra" alt="Img blob" />
+                <br>
+                <br>
                 </div>
             </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Precios:</label></div>
-                <div class="col"><input class="form-control form-control-sm " value="<?php echo $precio;?>" type="text" name="precio1" required ></div>
-            </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Stock minimo:</label></div>
-                <div class="col"><input class="form-control form-control-sm " type="text" value="<?php echo $minimo;?>" name="minimo1" required"></div>
-            </div>
-            
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Cantidad:</label></div>
-                <div class="col"><input class="form-control form-control-sm " type="text" value="<?php echo $cantidad;?>" name="cantidad1" required ></div>
-            </div>
+
+
             
             <button class="btn btn-success btn-block" name="update">
                 Update

@@ -23,7 +23,7 @@
     <div class="form-row form-group ">
           <div class="col-5"><label>Imagen:</label></div>
           <div class="col"><input type="file" name="myFile" accept="image/* "class="form-control-file"></div>
-      </div>
+    </div>
     <div class="form-row form-group ">
         <div class="col-4"><label>Estado:</label></div>
         <div class="col"><input class="form-control form-control-sm " type="text" name="estado" required ></div>
