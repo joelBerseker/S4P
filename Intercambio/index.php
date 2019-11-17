@@ -44,7 +44,7 @@ include("../includes/header.php");
 					<div class="card-body text-center">
 						<h5 class="card-title"><?php echo $row['UsuProNom'];?></h5>
 						<p class="card-text"><?php echo $row['UsuProDes'];?></p>
-						<a href="/view?id=<?php echo $row['UsuProID']?>" class="btn btn-primary">Ver más</a>
+						<a href="view?id=<?php echo $row['UsuProID']?>" class="btn btn-primary">Ver más</a>
 					</div>
 				</div>
 			</div>

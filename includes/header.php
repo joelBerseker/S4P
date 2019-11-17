@@ -66,7 +66,20 @@ session_start();
 							<?= $user['UsuCor']; ?>
 						</a>
 						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">VER PERFIL</a>
+							<?php 
+								$correo 	= 	$user['UsuCor'];
+								$conn1 = mysqli_connect('localhost', 'root', '', 's4p') or die("Error al conectar al servidor");	
+
+ 
+								$queryUser = "SELECT UsuID FROM usuario WHERE UsuCor = '$correo'";
+       							$resultUser = mysqli_query($conn1,$queryUser);
+        						if(mysqli_num_rows($resultUser)== 1 ){
+            						$row 		= mysqli_fetch_array($resultUser);
+									$idUser 	= $row['UsuID'];	
+        						}
+
+							?>
+							<a class="dropdown-item" href="/S4P/Usuario/view?id=<?php echo $idUser?>">VER PERFIL</a>
 							<a class="dropdown-item" href="/S4P/Autenticacion/logout.php">SALIR</a>
 						</div>
 					</li>

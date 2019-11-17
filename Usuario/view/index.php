@@ -8,7 +8,7 @@ $login            =    true;
 $men = "Ver Usuario";
 ?>
 <?php
-include("db.php");
+include("../crud_usuario/db.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -61,7 +61,7 @@ if (isset($_POST['update'])) {
 ?>
 <?php
 include('../../includes/header.php');
-include("db.php");
+include("../crud_usuario/db.php");
 ?>
 <div class="section2">
     <div class="container p-4"></div>
@@ -71,7 +71,7 @@ include("db.php");
                 <div class="form-row form-group ">
                    
                     <div class="col" align="center">
-                        <img src="../mostrar.php?id=<?php echo $row['UsuID'] ?>" width="150" id="imagenmuestra" alt="Img blob" />
+                        <img src="../mostrar.php?id=<?php echo $row['UsuID'] ?>" width="250px" id="imagenmuestra" alt="Img blob" />
 
                     </div>
                 </div>

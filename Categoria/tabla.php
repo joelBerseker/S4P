@@ -1,7 +1,12 @@
-
-
 <?php
-	include("../includes/header.php")
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	true;
+	$contactanos	=	false;
+	$nosotros		=	false;
+	$login			=	false;
+	$men			= "Categoria";
+	include("../includes/header.php");
 ?>
 <?php
 	include("crud_tipo_producto/db.php")
@@ -26,11 +31,11 @@
 					<th>Eliminar</th>
 				</thead>
 				<tbody>
-				<?php
-				$query = "SELECT * FROM categoria";
-				$resultProduct= mysqli_query($conn, $query);
-				while($row= mysqli_fetch_array($resultProduct)){
-				?>
+					<?php
+					$query = "SELECT * FROM categoria";
+					$resultProduct= mysqli_query($conn, $query);
+					while($row= mysqli_fetch_array($resultProduct)){
+					?>
 					<tr>
 						<td><?php echo $row['CatNom']?></td>
 						<td><?php echo $row['CatEst']?></td>

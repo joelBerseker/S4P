@@ -1,3 +1,13 @@
+<?php
+$inicio 		=	false;
+$producto		=	true;
+$categoria		=	false;
+$contactanos	=	false;
+$nosotros		=	false;
+$login			=	false;
+$men="Producto";
+	include('../../includes/header.php')
+?>
 <?php 
     include("../crud_usuarioproducto/db.php");
     if(isset($_GET['id'])){
@@ -31,8 +41,16 @@
         WHERE d.UsuProID = $id";
         $respuesta_de_tabla_Usuario = mysqli_query($conn,$query_hacia_tabla_Usuario);
         $datos_de_Usuario = mysqli_fetch_array($respuesta_de_tabla_Usuario);
-        $usuario	        =   4;
-        $correo 		    =   $datos_de_Usuario['UsuCor'];
+        $correa 	= 	$user['UsuCor'];
+		$queryUser = "SELECT UsuID FROM usuario WHERE UsuCor = '$correa'";
+        echo "SELECT UsuID FROM usuario WHERE UsuCor = '$correa' ";
+		$resultUser = mysqli_query($conn,$queryUser);
+		if(mysqli_num_rows($resultUser)== 1 ){
+        	$rowUser 		= mysqli_fetch_array($resultUser);
+		    $idUser 	    = $rowUser['UsuID'];	
+        }
+
+        $usuario	        =   $idUser ;
         $id          	    =   $_GET['id'];
         $comentario         =   $_POST['comentario'];
         $producto           =   $_POST['producto'];
@@ -49,16 +67,6 @@
     	header("Location: ../view?id=$id");
     	}
 
-?>
-<?php
-$inicio 		=	false;
-$producto		=	true;
-$categoria		=	false;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
-$men="Producto";
-	include('../../includes/header.php')
 ?>
 <div class="section2">
 <div class="container p-4">
@@ -109,7 +117,7 @@ $men="Producto";
                     <form action="index.php?id=<?php echo $id?>" method="post">
                     <fieldset>
 							<legend><b>Agregar Comentario</b></legend>
-							<textarea class="offset-0 col-12 form-control"
+							<textarea class="col-12 form-control"
 								placeholder="Agregar comentario" name="comentario" required></textarea>
                              <button class="btn btn-success btn-block" name="update_comentar">
                                 Update
@@ -121,40 +129,33 @@ $men="Producto";
 						<legend><b>Comentarios</b></legend>
 						<?php
 						include("../crud_usuarioproducto/db.php");
-			                $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id";
+			                $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id ORDER by`created_at` DESC";
 			                $resultmensaje= mysqli_query($conn, $querymensaje);
 			                while($row= mysqli_fetch_array($resultmensaje)){
                         ?>
                         
 						<!-- Esto desde aqui se va repetir -->
-						<?php<
-						
-                        $usu=$row['UsuMenUsuID'];
-                        $queryusuario=mysqli_query($conn,"SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
-                        $datosb = mysqli_fetch_array($queryusuario);
+                        <?php 
+                            $usu=$row['UsuMenUsuID'];
+                            $queryusuario=mysqli_query($conn,"SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
+                            $datosb = mysqli_fetch_array($queryusuario);
                         ?>
 						<div >
 							<div >
 								<div >
-                                <img  src="mostrar.php?id=<?php echo $datosb['UsuID'];?>" alt="Imagen del autor del comentario" class="rounded-circle img-thumbnail"/>
+                                <img  src="mostrar.php?id=<?php echo $datosb['UsuID'];?>" alt="Imagen del autor del comentario" width="200px" class="offset-3 img-thumbnail"/>
 								
 									</div>
 								<div >
 									<label ><b>
-									<?php 
-									
-                                   $usu=$row['UsuMenUsuID'];
-                                   $queryusuario=mysqli_query($conn,"SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
-                                   $datosb = mysqli_fetch_array($queryusuario);
-                                    echo $datosb['UsuNom'] ?>
-                                    
+                                    <?php echo $datosb['UsuNom']?>
                                     </b></label><br>
-									<textarea width='100%'><?php echo $row['UsuMenDes'];?></textarea>
+									<textarea width='100%' class="col-9"><?php echo $row['UsuMenDes'];?></textarea>
 								</div> 
 							</div>
 						</div>
-                    <?php }?>
-						<!--  hasta aqui para los comentarios-->
+                    <?php }?>    
+                    <!--  hasta aqui para los comentarios-->
 					</fieldset>
                     <br><br><br><br><br><br>
         
