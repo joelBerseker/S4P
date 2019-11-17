@@ -31,7 +31,7 @@ include("../../includes/header.php");
 						<img src="mostrar.php?id=<?php echo $row['UsuProProID']?>" alt="<?php echo $row['UsuProID'];?>" class="card-img-top">
 						
 					</div>
-					<div class="card-img-overlay">
+					<div class="">
 						<h3>
 						<span class="card-title" style="background-color: rgba(0,0,0,0.8);
 							display: block;
@@ -46,7 +46,7 @@ include("../../includes/header.php");
 					<div class="card-body text-center">
 						<h5 class="card-title"><?php echo $row['UsuProNom'];?></h5>
 						<p class="card-text"><?php echo $row['UsuProNom'];?></p>
-						<a href="" class="btn btn-primary">Ver más</a>
+						<a href="../../intercambio/view?id=<?php echo $row['UsuProID']; ?>" class="btn btn-primary">Ver más</a>
 					</div>
 				</div>
 			</div>

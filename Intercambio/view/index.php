@@ -31,11 +31,11 @@
         WHERE d.UsuProID = $id";
         $respuesta_de_tabla_Usuario = mysqli_query($conn,$query_hacia_tabla_Usuario);
         $datos_de_Usuario = mysqli_fetch_array($respuesta_de_tabla_Usuario);
-        $usuario	=4;
-        $correo 		= $datos_de_Usuario['UsuCor'];
-        $id          	= $_GET['id'];
-        $comentario      = $_POST['comentario'];
-        $producto      = $_POST['producto'];
+        $usuario	        =   4;
+        $correo 		    =   $datos_de_Usuario['UsuCor'];
+        $id          	    =   $_GET['id'];
+        $comentario         =   $_POST['comentario'];
+        $producto           =   $_POST['producto'];
         $query = "INSERT INTO usuario_mensaje (`UsuMenUsuProID`,`UsuMenUsuID`, `UsuMenDes`) VALUES (?,?, ?)";
     	$stmt = mysqli_prepare($conn,$query);
     	$stmt->bind_param('iis',$id,$usuario,$comentario);
@@ -61,9 +61,9 @@ $men="Producto";
 	include('../../includes/header.php')
 ?>
 <div class="section2">
-<div class="container p-4"></div>
+<div class="container p-4">
     <div class="row">
-        <div class="col-md-4 mx-auto">
+        <div class="col-md-10 mx-auto">
             <div class="card card-body">
             <div  class="form-group">
 				<label><b>Ver USUARIO_PRODUCTO</b></label>
@@ -81,7 +81,7 @@ $men="Producto";
                     <input value="<?php echo $description?>" class="form-control form-control-sm " type="text" name="descripcion" required></div>
             </div>
             <div class="form-row form-group ">
-                <div class="col-4"><label>Producto:</label></div>
+                <div class="col-4"><label>Juego:</label></div>
                 <div class="col">
                     <input value="<?php echo $nombreProducto?>" class="form-control form-control-sm " type="text" name="producto" required></div>
             </div>            
@@ -149,15 +149,7 @@ $men="Producto";
                                     echo $datosb['UsuNom'] ?>
                                     
                                     </b></label><br>
-									<textarea >
-
-                                    <?php
-                                       echo $row['UsuMenDes'];     
-                                    ?>
-                                    
-                                    
-                                    
-                                    </textarea>
+									<textarea width='100%'><?php echo $row['UsuMenDes'];?></textarea>
 								</div> 
 							</div>
 						</div>

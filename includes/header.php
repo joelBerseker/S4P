@@ -15,8 +15,9 @@ session_start();
   	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/icons.css">
 	  <link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/style.css">
   	<link rel="icon" href="/S4P/frontend/img/iconpage.png">
-	<script src="/S4P/frontend/library/jquery-3.4.1.min.js"></script>	
+	<!--<script src="/S4P/frontend/library/jquery-3.4.1.min.js"></script>	
 	<script src="/S4P/frontend/library/bootstrap/js/bootstrap.js"></script>
+	-->
 </head>
 <body style="background-color: #000;">
 	
@@ -60,11 +61,26 @@ session_start();
 					<a class="nav-link  <?php if(!$contactanos){?> menu_link<?php }?>" style="color: white;<?php if($contactanos){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?>" href="/S4P/Contactanos">CONTACTOS</a>
 				</li>
 				<?php if(!empty($user)): ?>
-					<li class="nav-item <?php if($login){?>menu_link<?php }?>">
-						<a class="nav-link<?php if(!$login){?> menu_link<?php }?>" style="color: white; white;<?php if($login){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?> text-transform: uppercase;" href="#" ><?= $user['UsuCor']; ?></a>
+					<li class="nav-item dropdown ">
+						<a style="color: white; white; text-transform: uppercase;" class="nav-link menu_link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<?= $user['UsuCor']; ?>
+						</a>
+						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">VER PERFIL</a>
+							<a class="dropdown-item" href="/S4P/Autenticacion/logout.php">SALIR</a>
+						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link menu_link" style="color: white;" href="/S4P/Autenticacion/logout.php">SALIR</a>
+
+
+					<li class="nav-item dropdown ">
+						<a style="color: white;" class="nav-link menu_link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class=" icon-cog"></span>
+						</a>
+						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">CATEGORIAS</a>
+							<a class="dropdown-item" href="#">PRODUCTOS</a>
+							<a class="dropdown-item" href="#">USUARIOS</a>
+						</div>
 					</li>
 					
 				<?php else: ?>
