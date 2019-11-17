@@ -21,6 +21,13 @@
 
 
     <?php 
+    $inicio 		=	false;
+    $producto		=	false;
+    $categoria		=	false;
+    $contactanos	=	false;
+    $nosotros		=	false;
+    $login			=	true;
+    
     $men="Registrarse";
     include("../../includes/header.php");
     ?>
@@ -29,7 +36,7 @@
 
 
     <div style="background-color:white ">
-      <div class="col-12 offset-0 col-lg-6 offset-lg-3 col-md-8 offset-md-2" style="padding-top:60px;padding-bottom:100px">	
+      <div class="col-md-5 mx-auto" style="padding-top:60px;padding-bottom:100px">	
       <div class="card" >
         <article class="card-body">
           <h4 class="card-title text-center mb-4 mt-1">REGISTRARSE</h4>

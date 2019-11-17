@@ -1,5 +1,12 @@
 <?php
-	include("../includes/header.php")
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	true;
+	$nosotros		=	false;
+	$login			=	false;
+	$men			= "Contactanos";
+	include("../includes/header.php");
 ?>
 
 <div class="section2">

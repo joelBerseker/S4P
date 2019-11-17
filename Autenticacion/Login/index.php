@@ -1,19 +1,27 @@
 <?php
 
-
+$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	false;
+	$nosotros		=	false;
+	$login			=	true;
+	
 $men="Ingresar";
 	include("../../includes/header.php");
 
   
 
   if (isset($_SESSION['user_id'])) {
-    header('Location: /S4P7');
+    header('Location: /S4P');
   }
 
 
   include ('db.php');
     
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
+
+    
     $records = $conn->prepare('SELECT UsuID, UsuCor, UsuCon FROM usuario WHERE UsuCor = :email');
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
@@ -33,7 +41,7 @@ $men="Ingresar";
 
 
     <div style="background-color:white;">
-      <div class="col-12 offset-0 col-lg-6 offset-lg-3 col-md-8 offset-md-2" style="padding-top:60px;padding-bottom:148px">	
+      <div class="col-md-5 mx-auto" style="padding-top:60px;padding-bottom:148px">	
       <div class="card" >
         <article class="card-body">
           <h4 class="card-title text-center mb-4 mt-1">INGRESAR</h4>

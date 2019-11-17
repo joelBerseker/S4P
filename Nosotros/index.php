@@ -1,5 +1,12 @@
 <?php
-	include("../includes/header.php")
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	false;
+	$nosotros		=	true;
+	$login			=	false;
+	$men			= "Nosotros";
+	include("../includes/header.php");
 ?>
 	<div class="guia container-fluid">
 		<nav>

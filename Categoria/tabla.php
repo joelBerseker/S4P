@@ -1,9 +1,10 @@
 
-<?php
-	include("crud_tipo_producto/db.php")
-?>
+
 <?php
 	include("../includes/header.php")
+?>
+<?php
+	include("crud_tipo_producto/db.php")
 ?>
 <div class="section2"><br><br>
 	<div class="container p-3">

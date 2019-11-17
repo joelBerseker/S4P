@@ -8,6 +8,23 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: white;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 150px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+
+
+}
   body{
   		background-color: black;
   	}

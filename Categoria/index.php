@@ -1,8 +1,16 @@
+
 <?php
-	include("crud_tipo_producto/db.php")
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	true;
+	$contactanos	=	false;
+	$nosotros		=	false;
+	$login			=	false;
+	$men			= "Categoria";
+	include("../includes/header.php");
 ?>
 <?php
-	include("../includes/header.php")
+	include("crud_tipo_producto/db.php")
 ?>
 <div class="section2">
 	<div class="container">
@@ -23,7 +31,7 @@
 					<div class="card-body text-center">
 						<h5 class="card-title"><?php echo $row['CatNom']?></h5>
 						<p class="card-text"><?php echo $row['CatDes']?></p>
-						<a href="#" class="btn btn-primary">Ver más</a>
+						<a href="VerProductos?id=<?php echo $row['CatID']?>" class="btn btn-primary">Ver más</a>
 					</div>
 				</div>
 			</div>

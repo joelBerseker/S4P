@@ -1,5 +1,4 @@
 
-
 <?php
 	$inicio 		=	false;
 	$producto		=	true;
@@ -7,12 +6,14 @@
 	$contactanos	=	false;
 	$nosotros		=	false;
 	$login			=	false;
-	$men			= "Categoria";
+	
+	$men="Producto";
 	include("../includes/header.php");
 ?>
-<?php
-	include("crud_product/db.php")
-?>
+
+	<?php
+		include("crud_usuarioproducto/db.php")
+	?>
 <div class="section2"><br><br>
 	<div class="container p-3">
 		<div class="card mb-4 p-3">
@@ -20,7 +21,7 @@
 			<caption>
 				<!--<br> <br><br><br>-->     
 	            <?php
-	                include("crud_product/add.php")
+	                include("crud_usuarioproducto/add.php")
 	            ?>
 			</caption>		
 		</div>
@@ -29,10 +30,9 @@
 		<div class="table-responsive">
 			<table class='table table-hover' >
 				<thead>
-					<th>Nombre</th>
 					<th>Precio</th>
+					<th>Descripcion</th>
 					<th>Imagen</th>
-					<th>Categoria</th>
 					<th>Estado</th>
 					<th>Acciones</th>
 					<th>Editar</th>
@@ -40,24 +40,23 @@
 				</thead>
 				<tbody id="myList">
 				<?php
-				$query = "SELECT * FROM producto ";
+				$query = "SELECT * FROM usuario_producto ";
 				$resultProduct= mysqli_query($conn, $query);
 				while($row= mysqli_fetch_array($resultProduct)){
 				?>
 					<tr>
-						<td><?php echo $row['ProNom']?></td>
-						<td><?php echo $row['ProPre']?></td>
-						<td> <img src="mostrar.php?id=<?php echo $row['ProID']?>" width="100" alt="Img blob" /> </td>
-						<td><?php echo $row['ProCatID']?></td>
-						<td><?php echo $row['ProEst']?></td>
+						<td><?php echo $row['UsuProPre']?></td>
+						<td><?php echo $row['UsuProDes']?></td>
+						<td> <img src="mostrar.php?id=<?php echo $row['UsuProProID']?>" width="100" alt="Img blob" /> </td>
+						<td><?php echo $row['usuProEst']?></td>
 						<td><?php echo $row['created_at']?></td>						
 						<td>
-							<a href="crud_product/edit.php?id=<?php echo $row['ProID']?>">
+							<a href="crud_usuarioproducto/edit.php?id=<?php echo $row['UsuProID']?>">
 								<button class="btn btn-warning icon-pencil"></button>
 							</a>
 						</td>
 						<td>
-							<a href="crud_product/delete.php?id=<?php echo $row['ProID']?>">
+							<a href="crud_usuarioproducto/delete.php?id=<?php echo $row['UsuProID']?>">
 								<button class="btn btn-danger icon-cross"></button>
 							</a>
 						</td>

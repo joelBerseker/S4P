@@ -1,5 +1,13 @@
 <?php
-	include("includes/header.php")
+	$inicio 		=	true;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	false;
+	$nosotros		=	false;
+	$login			=	false;
+	
+	$men= "INICIO";
+	include("includes/header.php");
 ?>
 
 	<div id="section1" class="wrapper" >
@@ -20,7 +28,7 @@
 				</div>
 
 				<div class="carousel-item">
-					<img src="http://hdqwalls.com/download/watch-dogs-legion-2019-yx-1280x720.jpg" alt="torres" class="d-block img-fluid w-100">
+					<img src="https://as.com/meristation/imagenes/2018/07/28/reportajes/1532731055_823812_1533125888_noticia_normal.jpg" alt="torres" class="d-block img-fluid w-100">
 				</div>
 
 			</div>

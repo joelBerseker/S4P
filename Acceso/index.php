@@ -7,11 +7,12 @@
 	$index_rec   = true;
 	$index_acc   = false;
 ?>
-<?php
-	include("crud_acceso/db.php")
-?>
+
 <?php
 	include("../includes/header.php")
+?>
+<?php
+	include("crud_acceso/db.php")
 ?>
 
 <div class="section2"><br><br>

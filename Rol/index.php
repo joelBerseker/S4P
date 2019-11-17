@@ -10,10 +10,10 @@
 	$index_tp    = false;
 ?>
 <?php
-	include("crud_rol/db.php")
+	include("../includes/header.php")
 ?>
 <?php
-	include("../includes/header.php")
+	include("crud_rol/db.php")
 ?>
 <div class="section2"><br><br>
 	<div class="container p-3">

@@ -9,11 +9,12 @@
 	$index_mar   = true;
 	$index_tp    = false;
 ?>
-<?php
-	include("crud_recurso/db.php")
-?>
+
 <?php
 	include("../includes/header.php")
+?>
+<?php
+	include("crud_recurso/db.php")
 ?>
 <div class="section2"><br><br>
 <div class="container p-3">

@@ -5,7 +5,8 @@
 	$index_rol   = true;
 	$index_tra   = true;
 	$index_rec   = true;
-	$index_acc   = true;
+    $index_acc   = true;
+    $recurso="/Acceso/edit";
 ?>
 <?php 
     include("db.php");
@@ -111,5 +112,5 @@
 
 
 <?php
-	include("../includes/footer.php")
+	include("../../includes/footer.php")
 ?>

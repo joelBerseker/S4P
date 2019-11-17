@@ -1,11 +1,10 @@
 <?php
 
-
 $conn = mysqli_connect(
     'localhost',
     'root',
     '',
-    's4p'
+    'S4P'
 );
 /*
 if(isset($conn)){
