@@ -16,8 +16,8 @@
 	include("crud_usuario/db.php")
 ?>
 <div class="section2"><br><br>
-	<div class="container">
-		<div class="row">
+<div class="container p-3">
+		<div class="card mb-4 p-3">
 		<div class="mb-1">
 			<caption>
 				<?php
@@ -26,9 +26,9 @@
 				?>		
 			</caption>		
 		</div>
-			<div class="col-sm-12 ">
+			
 			<div class="table-responsive">
-				<table class='table table-bordered'>
+			<table class='table table-hover' >
 					<thead>
 						<th>Id</th>
 						<th>Nombre</th>
@@ -69,7 +69,7 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
+		
 	</div>
 </div>
 </div>

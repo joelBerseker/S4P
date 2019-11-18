@@ -1,5 +1,3 @@
-
-
 <?php
 	$inicio 		=	false;
 	$producto		=	true;

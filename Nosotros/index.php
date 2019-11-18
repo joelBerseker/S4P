@@ -8,23 +8,16 @@
 	$men			= "Nosotros";
 	include("../includes/header.php");
 ?>
-	<div class="guia container-fluid">
-		<nav>
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i>Inicio</a></li>
-				<li style="color: black"> &gt; </li>
-				<li class="breadcrumb-item"><a href="#">Nosotros</a></li>
-			</ol>
-		</nav>
-	</div>
+	<nav aria-label="breadcrumb" style="">
+  <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
+    <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+	<li class="breadcrumb-item active" aria-current="page">Nosotros</li>
+	
+  </ol>
+</nav>
 
-	<div class="carrito">
-		<ul>
-			<li><a href="" target="_blank" class="icon-cart"></a></li>
-		</ul>
-	</div>
 
-	<div class="categorias" style="margin-top: -18.5px;padding: 0px;">
+	<div class="categorias" >
 					<img src="https://1.bp.blogspot.com/-cjsCNloxB-8/XSWkDYYqSBI/AAAAAAAAAgQ/eqee5dhdWakRDF3aTX6n0oHzJYEm02XDgCLcBGAs/s1600/02d63b75-119f-47db-b0fe-c5e2dd25dcea.jpg" class="img-categoria mx-auto d-block" style="max-height: 614px;">						
 				
 	</div>

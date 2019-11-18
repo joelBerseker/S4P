@@ -49,7 +49,7 @@ session_start();
 					<a class="nav-link <?php if(!$inicio){?> menu_link<?php }?>" style="color: white;<?php if($inicio){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?>" href="/S4P/">INICIO</a>
 				</li>
 				<li class="nav-item <?php if($producto){?>menu_link<?php }?>" >
-					<a class="nav-link <?php if(!$producto){?> menu_link<?php }?>" style="color: white;<?php if($producto){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?>" href="/S4P/Intercambio">PRODUCTO</a>
+					<a class="nav-link <?php if(!$producto){?> menu_link<?php }?>" style="color: white;<?php if($producto){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?>" href="/S4P/Intercambio">PRODUCTOS</a>
 				</li>
 				<li class="nav-item <?php if($categoria){?>menu_link<?php }?>">
 					<a class="nav-link <?php if(!$categoria){?> menu_link<?php }?>" style="color: white;<?php if($categoria){?>border-bottom: 2px solid #FF1F7B;bottom: 15px; <?php }?>" href="/S4P/Categoria">CATEGORIAS</a>

@@ -2,8 +2,8 @@
   require 'db.php';
   $message = '';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
-
-    $sql = "INSERT INTO usuario (UsuCor, UsuCon) VALUES (:email, :password)";
+    $nombre = $_POST['nombre'];
+    $sql = "INSERT INTO usuario (UsuCor, UsuCon, UsuRolID,UsuEst,UsuNom) VALUES (:email, :password,2,1,'$nombre' )";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -49,7 +49,10 @@
             
           <?php endif; ?>
           <form action="index.php" method="POST">
-
+          <div class="form-row form-group ">
+            <div class="col-4"><label>Nombre:</label></div>
+            <div class="col"><input class="form-control form-control-sm " type="text" name="nombre" required></div>
+          </div>
           <div class="form-row form-group ">
             <div class="col-4"><label>Correo Electronico:</label></div>
             <div class="col"><input class="form-control form-control-sm " type="text" name="email" required></div>

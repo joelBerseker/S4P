@@ -1,3 +1,64 @@
+
+?>
+<?php 
+    function imprimirTiempo($time){
+        date_default_timezone_set('America/Lima');
+        $start_date = new DateTime($time);
+        $since_start = $start_date->diff(new DateTime(date("Y-m-d")." ".date("H:i:s")));
+        echo "Hace ";
+        if($since_start->y==0){
+            if($since_start->m==0){
+                if($since_start->d==0){
+                   if($since_start->h==0){
+                       if($since_start->i==0){
+                          if($since_start->s==0){
+                             echo $since_start->s.' segundos';
+                          }else{
+                              if($since_start->s==1){
+                                 echo $since_start->s.' segundo'; 
+                              }else{
+                                 echo $since_start->s.' segundos'; 
+                              }
+                          }
+                       }else{
+                          if($since_start->i==1){
+                              echo $since_start->i.' minuto'; 
+                          }else{
+                            echo $since_start->i.' minutos';
+                          }
+                       }
+                   }else{
+                      if($since_start->h==1){
+                        echo $since_start->h.' hora';
+                      }else{
+                        echo $since_start->h.' horas';
+                      }
+                   }
+                }else{
+                    if($since_start->d==1){
+                        echo $since_start->d.' día';
+                    }else{
+                        echo $since_start->d.' días';
+                    }
+                }
+            }else{
+                if($since_start->m==1){
+                   echo $since_start->m.' mes';
+                }else{
+                    echo $since_start->m.' meses';
+                }
+            }
+        }else{
+            if($since_start->y==1){
+                echo $since_start->y.' año';
+            }else{
+                echo $since_start->y.' años';
+            }
+        }
+    }
+
+
+?>
 <?php
 $inicio 		=	false;
 $producto		=	true;
@@ -68,102 +129,151 @@ $men="Producto";
     	}
 
 ?>
+<nav aria-label="breadcrumb" >
+  <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
+  <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+  <li class="breadcrumb-item"><a href="#">Productos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Vista de juego</li>
+	
+  </ol>
+  
+</nav>
 <div class="section2">
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-10 mx-auto">
-            <div class="card card-body">
-            <div  class="form-group">
-				<label><b>Ver USUARIO_PRODUCTO</b></label>
-				<img  src="../mostrar.php?id=<?php echo $product;?>" alt="Imagen del autor del comentario" class="rounded-circle img-thumbnail"/>
-								
-            </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Nombre:</label></div>
-                <div class="col">
-                    <input value="<?php echo $nombre?>" class="form-control form-control-sm " type="text" name="descripcion" required></div>
-            </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Descripcion:</label></div>
-                <div class="col">
-                    <input value="<?php echo $description?>" class="form-control form-control-sm " type="text" name="descripcion" required></div>
-            </div>
-            <div class="form-row form-group ">
-                <div class="col-4"><label>Juego:</label></div>
-                <div class="col">
-                    <input value="<?php echo $nombreProducto?>" class="form-control form-control-sm " type="text" name="producto" required></div>
-            </div>            
-            <div class="form-row form-group ">
-                <div class="col-4">
-                    <label>Precio:</label>
-                </div>
-                <div class="col">
-                    <input class="form-control form-control-sm " value="<?php echo $precio;?>" type="text" name="precio" required >
-                </div>
-            </div>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-6">
             
-
-            <div class="form-row form-group ">
-                <div class="col-4">
-                    <label>Estado:</label>
-                </div>
-                <div class="col">
-                    <input class="form-control form-control-sm " value="<?php echo $estado;?>" type="text" name="estado" required >
-                </div>
-            </div>
-            
-            </div>
-            
-                    <form action="index.php?id=<?php echo $id?>" method="post">
-                    <fieldset>
-							<legend><b>Agregar Comentario</b></legend>
-							<textarea class="col-12 form-control"
-								placeholder="Agregar comentario" name="comentario" required></textarea>
-                             <button class="btn btn-success btn-block" name="update_comentar">
-                                Update
-                            </button>
-						</fieldset>
-					</form>
-                    <fieldset>
+                <div class="card">
+                <div class="img-animtion">
+                    <img class="card-img-top" src="../mostrar.php?id=<?php echo $product; ?>" alt="Imagen del autor del comentario" style="width: 100%;" />
                     
-						<legend><b>Comentarios</b></legend>
-						<?php
-						include("../crud_usuarioproducto/db.php");
-			                $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id ORDER by`created_at` DESC";
-			                $resultmensaje= mysqli_query($conn, $querymensaje);
-			                while($row= mysqli_fetch_array($resultmensaje)){
-                        ?>
-                        
-						<!-- Esto desde aqui se va repetir -->
-                        <?php 
-                            $usu=$row['UsuMenUsuID'];
-                            $queryusuario=mysqli_query($conn,"SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
-                            $datosb = mysqli_fetch_array($queryusuario);
-                        ?>
-						<div >
-							<div >
-								<div >
-                                <img  src="mostrar.php?id=<?php echo $datosb['UsuID'];?>" alt="Imagen del autor del comentario" width="200px" class="offset-3 img-thumbnail"/>
-								
-									</div>
-								<div >
-									<label ><b>
-                                    <?php echo $datosb['UsuNom']?>
-                                    </b></label><br>
-									<textarea width='100%' class="col-9"><?php echo $row['UsuMenDes'];?></textarea>
-								</div> 
-							</div>
-						</div>
-                    <?php }?>    
-                    <!--  hasta aqui para los comentarios-->
-					</fieldset>
-                    <br><br><br><br><br><br>
-        
+                </div>
+                <div class="card-body text-left">
+                <h4 class="card-title text-center mb-4 "><?php echo $nombre ?></h4>
+                    <div class="form-row form-group ">
+                        <div class="col-4"><label>Descripcion:</label></div>
+                        <div class="col">
+                            <input readonly value="<?php echo $description ?>" class="form-control form-control-sm " type="text" name="descripcion" required></div>
+                    </div>
+                    <div class="form-row form-group ">
+                        <div class="col-4"><label>Producto:</label></div>
+                        <div class="col">
+                            <input readonly value="<?php echo $nombreProducto ?>" class="form-control form-control-sm " type="text" name="producto" required></div>
+                    </div>
+                    <div class="form-row form-group ">
+                        <div class="col-4">
+                            <label>Precio:</label>
+                        </div>
+                        <div class="col">
+                            <input readonly class="form-control form-control-sm " value="<?php echo $precio; ?>" type="text" name="precio" required>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
             </div>
+
+
+            <div class="col-6">
+
+
+                <form action="index.php?id=<?php echo $id ?>" method="post">
+                    <div class="card card-body">
+                        <div class="mb-2">
+                            <textarea class="offset-0 col-12 form-control" placeholder="Envia un comentario" name="comentario" required></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary " name="update_comentar">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <div class="card card-body mt-3">
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+                    <?php
+                    include("../crud_usuarioproducto/db.php");
+                    $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id ORDER by created_at DESC";
+                    $resultmensaje = mysqli_query($conn, $querymensaje);
+                    while ($row = mysqli_fetch_array($resultmensaje)) {
+                        ?>
+
+                        <!-- Esto desde aqui se va repetir -->
+                        <?php 
+
+                                $usu = $row['UsuMenUsuID'];
+                            $queryusuario = mysqli_query($conn, "SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
+                            $datosb = mysqli_fetch_array($queryusuario);
+                            ?>
+
+               
+
+                        <div class="card mb-3 card2" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                   
+                                    <div class="imageny3" style="background-image:url('mostrar.php?id=<?php echo $datosb['UsuID']; ?>');">
+											</div>
+                                </div>
+                                <div class="col-md-8">
+                                <div align="right">  
+                                    <button class="btn p-1" style="background: white; color:#6D6D6D"><span class=" icon-cross"></span> </button>
+                                    </div>
+                                <div class="card-body PT-0">
+                                    <h5 class="card-title"><?php
+
+                                    $usu = $row['UsuMenUsuID'];
+                                    $queryusuario = mysqli_query($conn, "SELECT UsuID, UsuNom FROM usuario WHERE UsuID = $usu");
+                                    $datosb = mysqli_fetch_array($queryusuario);
+                                    echo $datosb['UsuNom'] ?></h5>
+                                    <p class="card-text">
+                                        <?php
+                                            echo $row['UsuMenDes'];
+                                        ?></p>
+                                    <p class="card-text"><small class="text-muted">
+                                    <?php 
+                                        $time = $row['created_at'];
+                                        imprimirTiempo($time);
+                                    ?>
+                                    </small></p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                            
+
+                    <?php } ?>
+
+
+
+                    <!--  hasta aqui para los comentarios-->
+                </div>
+            </div>
+
+
         </div>
-    </div>    
+    </div>
 </div>
 
 <?php
-	include("../../includes/footer.php")
+include("../../includes/footer.php")
 ?>

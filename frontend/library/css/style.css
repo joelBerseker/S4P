@@ -1,6 +1,70 @@
 /*.carousel-item>img{
     max-height: 600px;
 }*/
+.card2 {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.10)!important;
+}
+.descrip {
+  width: 100%;
+	border: 0px;
+  resize: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 13px;
+	margin-top: 0px;
+  background-color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+}
+
+
+.imageny {
+	padding-bottom: 300px;
+	text-align: center;
+	color: #fff;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.imageny2 {
+	padding-bottom: 240px;
+	text-align: center;
+	color: #fff;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.imageny3 {
+	padding-bottom: 100px;
+	text-align: center;
+	color: #fff;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+
+
+
+
 *{
   margin: 0;
   padding: 0;
