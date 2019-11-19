@@ -30,7 +30,7 @@
 				<hr class="style14" width="50%">
 			</div>
 			<blockquote class="blockquote">
-				<p class="mb-0">AAAAAAAAAAAAAAAAAAAAA Somos un sitio especializado en brindar un espacio de intercambio de juegos de consolas a diferentes usuarios de manera rápida, segura y accesible.</p>
+				<p class="mb-0">AAAAAAAAAAAAAAAAAAAAAASomos un sitio especializado en brindar un espacio de intercambio de juegos de consolas a diferentes usuarios de manera rápida, segura y accesible.</p>
 			</blockquote>
 		</div>
 
