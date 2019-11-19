@@ -7,6 +7,7 @@ $nosotros    =  false;
 $login      =  true;
 
 $men_error = "No puedes ingresar a esta parte de la aplicacion";
+$men_error = $_GET['m'];
 $men = "Error";
 include("../includes/header.php");
 ?>

@@ -1,3 +1,5 @@
+
+
 <?php 
     function imprimirTiempo($time){
         date_default_timezone_set('America/Lima');
@@ -232,7 +234,7 @@ $men="Producto";
                                 </div>
                                 <div class="col-md-8">
                                 <div align="right">  
-                                    <a class="btn p-1" href="eliminar.php?idPag=<?php echo $id;?>&idMen=<?php echo $row['UsuMenID'];?>" style="background: white; color:#6D6D6D"><span class=" icon-cross"></span> </a>
+                                <a class="btn p-1" href="eliminar.php?idPag=<?php echo $id;?>&idMen=<?php echo $row['UsuMenID'];?>" style="background: white; color:#6D6D6D"><span class=" icon-cross"></span> </a>
                                     </div>
                                 <div class="card-body PT-0">
                                     <h5 class="card-title"><?php

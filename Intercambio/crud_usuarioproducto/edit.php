@@ -1,6 +1,21 @@
+<?php
+$inicio 		=	false;
+$producto		=	true;
+$categoria		=	false;
+$contactanos	=	false;
+$nosotros		=	false;
+$login			=	false;
 
+$men="Producto";
+    include('../../includes/header.php');
+    $recurso="/Intercambio/edit";
+	include("../../includes/acl.php");
+?>
 <?php 
     include("db.php");
+
+
+
     
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -50,9 +65,10 @@
 
     }
 ?>
-<?php
-	include('../../includes/header.php')
-?>
+
+
+
+
 <div class="section2">
 <div class="container p-4"></div>
     <div class="row">

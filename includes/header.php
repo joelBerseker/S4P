@@ -2,7 +2,15 @@
 session_start();
 	include ('db.php');
 	include ('sesion.php');
+
 	
+	function estadosGenerales($valor){
+		if($valor==1){
+			return "Activo";
+		}else{
+			return "Inactivo";
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -14,7 +22,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/fonts.css">	
   	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/icons.css">
 	  <link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/style.css">
-  	<link rel="icon" href="/S4P/frontend/img/iconpage.png">
+  	<link rel="icon" href="/S4P/image/page_icon.png">
 	<!--<script src="/S4P/frontend/library/jquery-3.4.1.min.js"></script>	
 	<script src="/S4P/frontend/library/bootstrap/js/bootstrap.js"></script>
 	-->
@@ -85,16 +93,32 @@ session_start();
 					</li>
 
 
+					<?php 
+					
+					$queryUser2 = "SELECT UsuRolID FROM usuario WHERE UsuCor = '$correo'";
+					$resultUser2 = mysqli_query($conn1,$queryUser2);
+					if(mysqli_num_rows($resultUser2)== 1 ){
+						$row2 		= mysqli_fetch_array($resultUser2);
+						$idRolUser 	= $row2['UsuRolID'];	
+					}
+					if($idRolUser==1){
+					
+					?>
 					<li class="nav-item dropdown ">
 						<a style="color: white;" class="nav-link menu_link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<span class=" icon-cog"></span>
 						</a>
 						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">CATEGORIAS</a>
-							<a class="dropdown-item" href="#">PRODUCTOS</a>
-							<a class="dropdown-item" href="#">USUARIOS</a>
+							<a class="dropdown-item" href="/S4P/Categoria/tabla.php">CATEGORIAS</a>
+							<a class="dropdown-item" href="/S4P/Producto/tabla.php">PRODUCTOS</a>
+							<a class="dropdown-item" href="/S4P/Intercambio/tabla.php">INTERCAMBIO</a>
+							<a class="dropdown-item" href="/S4P/Usuario">USUARIOS</a>
+							<a class="dropdown-item" href="/S4P/Rol">ROLES</a>
+							<a class="dropdown-item" href="/S4P/Recurso">RECURSOS</a>
+							<a class="dropdown-item" href="/S4P/Acceso">ACCESOS</a>
 						</div>
 					</li>
+					<?php }?>
 					
 				<?php else: ?>
 					<li class="nav-item <?php if($login){?>menu_link<?php }?>">

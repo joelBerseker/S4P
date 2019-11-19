@@ -37,7 +37,15 @@
         header("Location: ../");
     }
 ?>
+<?php
+    include('../../includes/header.php');
+    include('db.php');
+?>
 
+<?php 
+    $recurso="/Categoria/edit";
+	include("../../includes/acl.php");
+?>
 <div class="section2"><br><br>
     <div class="container p-3"></div>
     <div class="row">

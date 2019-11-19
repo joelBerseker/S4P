@@ -1,15 +1,24 @@
 <?php
-	$index_pri   = true; 
-	$index_pro   = true;
-	$index_prov  = true;
-	$index_rol   = true;
-	$index_tra   = true;
-	$index_rec   = true;
-    $index_acc   = true;
-    $recurso="/Acceso/edit";
-?>
-<?php 
+
+$inicio 		=	false;
+$producto		=	true;
+$categoria		=	false;
+$contactanos	=	false;
+$nosotros		=	false;
+$login			=	false;
+
+$men="Acceso";
+    
+    
+    include('../../includes/header.php');
     include("db.php");
+?>
+<?php
+$recurso="/Acceso/edit";
+    include("../../includes/acl.php");
+    ?>
+<?php 
+    
     
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -41,9 +50,7 @@
         
     }
 ?>
-<?php
-	include('../../includes/header.php')
-?>
+
 <div class="section2">
 <div class="container p-4"></div>
     <div class="row">
@@ -76,7 +83,10 @@
                         Seleccione el rol <br>
                     
                     <?php
-                    $querya=mysqli_query($conn,"SELECT RolID, RolNom FROM ROL");
+                        $consulta_rol="SELECT RolID, RolNom FROM ROL WHERE RolID = '$rol'";
+                        
+
+                        $querya=mysqli_query($conn,$consulta_rol);
                     ?>
                     <select name="rolx2" class="form-control">
                         <?php
@@ -89,7 +99,9 @@
                     </select><br>
                     Seleccione el recurso <br>
                     <?php
-                    $queryb=mysqli_query($conn,"SELECT RecID, RecNom FROM RECURSO");
+                        $consulta_recurso = "SELECT RecID, RecNom FROM RECURSO WHERE RecID = '$recurso'";
+                        
+                        $queryb=mysqli_query($conn,$consulta_recurso);
                     ?>
                     <select name="recursox2" class="form-control">
                         <?php
@@ -102,7 +114,7 @@
                     </select><br>
                     </div>
 					<button class="btn btn-success btn-block" name="update">
-                        Update
+                        Actualizar
                     </button>
                 </form>
             </div>

@@ -1,5 +1,17 @@
 <?php
-session_start();    
+session_start();
+include ('../../includes/db.php');
+include ('../../includes/sesion.php');
+
+?>
+
+<?php
+$recurso="/Intercambio/save";
+
+    include("../../includes/acl.php");
+    ?>
+
+<?php
 include('db.php');
 if(!empty($user)){
     if(isset($_POST['save_product'])){

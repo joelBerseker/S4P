@@ -5,7 +5,9 @@
 	$contactanos	=	false;
 	$nosotros		=	false;
 	$login			=	false;
-	$men			= "Categoria";
+    $men			= "Categoria";
+    include('../../includes/header.php');
+    include("db.php");
 ?>
 <?php 
     include("db.php");
@@ -59,11 +61,18 @@
         trigger_error($stmt->error, E_USER_ERROR);
         }
         header("Location: ../tabla.php");
+        
     }
 ?>
 <?php
-	include('../../includes/header.php')
+
+	$recurso="/Producto/edit";
+	include("../../includes/acl.php");
 ?>
+
+
+
+
 <div class="section2">
 <div class="container p-4"></div>
     <div class="row">

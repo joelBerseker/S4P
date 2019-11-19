@@ -9,11 +9,14 @@
 ?>
 
 <?php
+
 	$men="Usuario";
 	include("../includes/header.php");
 ?>
 <?php
-	include("crud_usuario/db.php")
+	include("crud_usuario/db.php");
+	$recurso="/Usuario";
+	include("../includes/acl.php");
 ?>
 <div class="section2"><br><br>
 <div class="container p-3">

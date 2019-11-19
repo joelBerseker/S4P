@@ -11,8 +11,12 @@
 	include("../includes/header.php")
 ?>
 <?php
-	include("crud_rol/db.php")
+	include("crud_rol/db.php");
+	$recurso="/Rol";
+	include("../includes/acl.php");
+
 ?>
+
 <div class="section2"><br><br>
 	<div class="container p-3">
 	<div class="card mb-4 p-3">

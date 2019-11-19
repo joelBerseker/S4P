@@ -1,21 +1,23 @@
 <?php
-	$index_pri   = true; 
-	$index_pro   = true;
-	$index_prov  = true;
-	$index_rol   = true;
-	$index_tra   = true;
-	$index_rec   = true;
-	$index_acc   = true;
-	$index_mar   = true;
-	$index_tp    = false;
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	false;
+	$nosotros		=	false;
+	$login			=	true;
+	
+	$men= "Recurso";
 ?>
 
 <?php
 	include("../includes/header.php")
 ?>
 <?php
-	include("crud_recurso/db.php")
+	include("crud_recurso/db.php");
+	$recurso="/Recurso";
+	include("../includes/acl.php");
 ?>
+
 <div class="section2"><br><br>
 <div class="container p-3">
 	<div class="card mb-4 p-3">

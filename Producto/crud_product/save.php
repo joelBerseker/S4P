@@ -1,5 +1,17 @@
 <?php
+session_start();
+include ('../../includes/db.php');
+include ('../../includes/sesion.php');
 include('db.php');
+?>
+<?php 
+    $recurso="/Producto/save";
+	include("../../includes/acl.php");
+?>
+
+
+<?php
+
 if(isset($_POST['save_product'])){
     $description = $_POST['description'];
     $tipo_producto = $_POST['tipo_producto'];
@@ -27,7 +39,7 @@ if(isset($_POST['save_product'])){
 
 
     
-    header("Location: ../index.php");
+    header("Location: ../tabla.php");
 }
 else{
     echo "No envio";

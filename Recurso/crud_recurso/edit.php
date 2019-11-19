@@ -1,11 +1,11 @@
 <?php
-	$index_pri   = true; 
-	$index_pro   = true;
-	$index_prov  = true;
-	$index_rol   = true;
-	$index_tra   = true;
-	$index_rec   = true;
-	$index_acc   = true;
+	$inicio 		=	false;
+	$producto		=	false;
+	$categoria		=	false;
+	$contactanos	=	false;
+	$nosotros		=	false;
+    $login			=	true;
+    $men = "Recurso";
 ?>
 <?php 
     include("db.php");
@@ -33,8 +33,16 @@
     }
 ?>
 <?php
-	include('../../includes/header.php')
+    include('../../includes/header.php');
+    include('db.php');
 ?>
+<?php
+	
+	$recurso="/Recurso/edit";
+	include("../../includes/acl.php");
+
+?>
+
 <div class="section2"><br><br>
     <div class="container p-3">
     <div class="row">
@@ -57,7 +65,7 @@
             </div>
             
             <button class="btn btn-success btn-block" name="update">
-                Update
+                Actualizar
             </button>
         </form>
             </div>

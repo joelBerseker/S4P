@@ -1,5 +1,16 @@
 <?php
+session_start();
+include ('../../includes/db.php');
+include ('../../includes/sesion.php');
 include('db.php');
+?>
+<?php 
+    $recurso="/Rol/save";
+	include("../../includes/acl.php");
+?>
+
+<?php
+
 if(isset($_POST['save_product'])){
     $description = $_POST['description'];
     $cantidad = $_POST['cantidad'];                                                                                                                              
