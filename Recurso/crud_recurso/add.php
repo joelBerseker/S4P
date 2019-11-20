@@ -1,5 +1,5 @@
 
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Añadir</button>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar nuevo <span class="icon-plus"></span></button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -18,11 +18,17 @@
     </div>
     
     <div class="form-row form-group ">
-        <div class="col-4"><label>Estado:</label></div>
-        <div class="col"><input class="form-control form-control-sm " type="text" name="cantidad" required ></div>
+        <div class="col-4"><label>Seleccione el estado:</label></div>
+        <div class="col">
+        <select name="estado" class="form-control">
+						<option value="1"> Activo </option>
+						<option value="0"> Inactivo </option>
+					</select>
+        </div>
     </div>
+   
     
-       <button class="btn btn-success btn-block" type="submit" name="save_product">Agregar</button>
+       <button class="btn btn-success btn-block" type="submit" name="save_product">Enviar</button>
 
 </form>
       </div>
