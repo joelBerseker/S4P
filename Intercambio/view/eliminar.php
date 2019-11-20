@@ -1,5 +1,7 @@
 <?php
-    include("../crud_usuarioproducto/db.php");
+include("../../includes/data_base.php");
+?>
+<?php
     if(isset($_GET['idPag'])){
         $id     = $_GET['idPag'];
         $idE    = $_GET['idMen'];   

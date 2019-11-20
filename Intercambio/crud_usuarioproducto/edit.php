@@ -1,22 +1,13 @@
 <?php
-$inicio 		=	false;
-$producto		=	true;
-$categoria		=	false;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
+include('../../includes/navbar.php');
+$titulo_html="Producto";
+include('../../includes/header.php');
+include("../../includes/data_base.php");
+$recurso="/Intercambio/edit";
+include("../../includes/acl.php");
 
-$men="Producto";
-    include('../../includes/header.php');
-    $recurso="/Intercambio/edit";
-	include("../../includes/acl.php");
 ?>
 <?php 
-    include("db.php");
-
-
-
-    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        

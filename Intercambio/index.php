@@ -1,17 +1,9 @@
 
 <?php
-$inicio 		=	false;
-$producto		=	true;
-$categoria		=	false;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
-
-$men="Producto";
+include("../includes/navbar.php");
+$titulo_html="Producto";
 include("../includes/header.php");
-?>
-<?php
-	include("crud_usuarioproducto/db.php")
+include("../includes/data_base.php");
 ?>
 <nav aria-label="breadcrumb" >
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">

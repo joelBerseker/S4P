@@ -1,4 +1,9 @@
-
+<?php
+include('../../includes/navbar.php');
+$titulo_html="Producto";
+include('../../includes/header.php');
+include("../../includes/data_base.php");
+?>
 
 <?php 
     function imprimirTiempo($time){
@@ -59,18 +64,9 @@
 
 
 ?>
-<?php
-$inicio 		=	false;
-$producto		=	true;
-$categoria		=	false;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
-$men="Producto";
-	include('../../includes/header.php')
-?>
+
 <?php 
-    include("../crud_usuarioproducto/db.php");
+    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        

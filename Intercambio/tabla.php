@@ -1,19 +1,10 @@
 
 <?php
-	$inicio 		=	false;
-	$producto		=	true;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	false;
-	
-	$men="Producto";
-	include("../includes/header.php");
+include("../includes/navbar.php");
+$titulo_html="Producto";
+include("../includes/header.php");
+include("../includes/data_base.php");
 ?>
-
-	<?php
-		include("crud_usuarioproducto/db.php")
-	?>
 <div class="section2"><br><br>
 	<div class="container p-3">
 		<div class="card mb-4 p-3">

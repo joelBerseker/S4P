@@ -1,15 +1,9 @@
 <?php
-session_start();
-include ('../../includes/db.php');
 include ('../../includes/sesion.php');
-
-?>
-
-<?php
+include ('../../includes/database.php');
 $recurso="/Intercambio/save";
-
-    include("../../includes/acl.php");
-    ?>
+include("../../includes/acl.php");
+?>
 
 <?php
 include('db.php');
