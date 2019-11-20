@@ -1,5 +1,12 @@
+<?php 
+include("../../includes/navbar.php");
+$login=true;
+    
+$titulo_html="Registrarse";
+include("../../includes/header.php");
+?>
+
 <?php
-  require 'db.php';
   $message = '';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $nombre = $_POST['nombre'];
@@ -18,23 +25,6 @@
   }
   
 ?>
-
-
-    <?php 
-    $inicio 		=	false;
-    $producto		=	false;
-    $categoria		=	false;
-    $contactanos	=	false;
-    $nosotros		=	false;
-    $login			=	true;
-    
-    $men="Registrarse";
-    include("../../includes/header.php");
-    ?>
-
-
-
-
     <div style="background-color:white ">
       <div class="col-md-5 mx-auto" style="padding-top:60px;padding-bottom:100px">	
       <div class="card" >

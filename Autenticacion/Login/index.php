@@ -1,14 +1,9 @@
 <?php
-
-$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	true;
+include("../../includes/navbar.php");
+$login=true;
 	
-$men="Ingresar";
-	include("../../includes/header.php");
+$titulo_html="Ingresar";
+include("../../includes/header.php");
 
   
 
@@ -16,8 +11,6 @@ $men="Ingresar";
     header('Location: /S4P');
   }
 
-
-  include ('db.php');
     
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
