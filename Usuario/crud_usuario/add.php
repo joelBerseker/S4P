@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añadir Tipo Usuario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Añadir Usuario</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -21,13 +21,15 @@
 					<div class="form-group">
 						<input type="password" name="contraseña" class="form-control" placeholder="contraseña del usuario" >
 					</div>
-					<div class="form-group">
-						<input type="text" name="estado" class="form-control" placeholder="Estado" >
-					</div>
+					<p>Seleccione el estado</p>
+					<select name="estado" class="form-control">
+						<option value="1"> Activo </option>
+						<option value="0"> Inactivo </option>
+					</select><br>
 					<div class="form-row form-group ">
          				 <div class="col"><input type="file" name="myFile" accept="image/* "class="form-control-file"></div>
      				 </div>
-					<p><br>Seleccione el rol</p>
+					<p>Seleccione el rol</p>
 					
 					<?php
 					$querya=mysqli_query($conn,"SELECT RolID, RolNom FROM ROL");

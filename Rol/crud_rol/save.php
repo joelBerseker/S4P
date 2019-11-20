@@ -13,11 +13,11 @@ include('db.php');
 
 if(isset($_POST['save_product'])){
     $description = $_POST['description'];
-    $cantidad = $_POST['cantidad'];                                                                                                                              
-    $query = "INSERT INTO ROL(`RolNom`, `RolEst`) VALUES ('$description',$cantidad)";
+    $estado = $_POST['estado'];                                                                                                                              
+    $query = "INSERT INTO ROL(`RolNom`, `RolEst`) VALUES ('$description',$estado)";
     $result = mysqli_query($conn,$query);
     if(!$result){
-        echo "INSERT INTO ROL(`RolNom`, `RolEst`) VALUES ('$description',$cantidad)";
+        echo "INSERT INTO ROL(`RolNom`, `RolEst`) VALUES ('$description',$estado)";
         die("Query Failed");
     }   
 
