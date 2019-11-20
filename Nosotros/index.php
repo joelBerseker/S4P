@@ -25,7 +25,7 @@
 	<div class="section2">
 		<div class="container text-center">
 			<br>
-			<p class="display-4">¿Quienes somos?</p>
+			<p class="display-4">¿Quienes somxs?</p>
 			<div class="row justify-content-center">
 				<hr class="style14" width="50%">
 			</div>
