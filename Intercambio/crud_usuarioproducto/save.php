@@ -4,7 +4,6 @@ include('../../includes/sesion.php');
 
 include('../../includes/data_base.php');
 $recurso = "/Intercambio/save";
-//include("../../includes/acl.php");
 ?>
 
 <?php
