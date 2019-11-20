@@ -65,7 +65,6 @@ $titulo_html = "Producto";
 include('../../includes/header.php');
 include("../../includes/data_base.php");
 
-
 ?>
 <?php
 

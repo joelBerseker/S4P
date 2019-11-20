@@ -4,7 +4,7 @@ $categoria = true;
 $titulo_html = "Categoria";
 include("../../includes/data_base.php");
 $recurso = "/Categoria/edit";
-//include("../../includes/acl.php");
+//
 ?>
 
 <?php
@@ -31,6 +31,9 @@ if(isset($_POST['update'])){
 }?>
 <?php
 include('../../includes/header.php');
+
+include("../../includes/data_base.php");
+include("../../includes/acl.php");
 ?>
 <div class="section2"><br><br>
     <div class="container p-3"></div>
