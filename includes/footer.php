@@ -1,24 +1,27 @@
+<php 
+    $dirEjec ="/S4P";
+?>
 <footer class="footer-area footer" style="background-color:black" id="sticky-footer" >
     <div class="container">
     <div class="row">
         <div class="col-4" style="padding-top:15px ;" align="center">
             <ul style="color:black">
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Juegos Disponibles</a></b></li>
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Categorias</a></b></li>
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Sobre Nosotros</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Intercambio" style="color:#CACACA">Juegos Disponibles</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Categoria" style="color:#CACACA">Categorias</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Nosotros" style="color:#CACACA">Sobre Nosotros</a></b></li>
             </ul>
         </div>
         <div class="col-4 "style="padding-top:3px ;padding-bottom:5px">
             <div align="center">
-                <img src="/S4P/image/S4P6.png"  alt="logo de S4P" style="height: 50%;width: 50%;" >
+                <img src="<?php echo $dirEjec?>/image/S4P6.png"  alt="logo de S4P" style="height: 50%;width: 50%;" >
             
             </div>
         </div>
         <div class="col-4" style="padding-top:15px ;" align="center">
         <ul style="color:black">
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Contactanos</a></b></li>
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Ingresar</a></b></li>
-                <li><b><a href="../../Autenticacion/Login" style="color:#CACACA">Registrarse</a></b></li>       
+                <li><b><a href="<?php echo $dirEjec?>/Contactanos" style="color:#CACACA">Contactanos</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/ingresar" style="color:#CACACA">Ingresar</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/registrarse" style="color:#CACACA">Registrarse</a></b></li>       
         </ul>
         </div>
     </div>

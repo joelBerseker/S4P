@@ -1,8 +1,9 @@
 <?php
-  $inicio 		  =	false;
-	$producto		  =	false;
+	$dirEjec		=	"/S4P";
+  	$inicio			=	false;
+	$producto		=	false;
 	$categoria		=	false;
 	$contactanos	=	false;
-	$nosotros		  =	false;
-	$login			  =	false;
+	$nosotros		=	false;
+	$login			=	false;
 ?>
