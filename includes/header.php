@@ -95,7 +95,6 @@ function estadosGenerales($valor)
 
 
 					<?php
-
 						$queryUser2 = "SELECT UsuRolID FROM usuario WHERE UsuCor = '$correo'";
 						$resultUser2 = mysqli_query($conn1, $queryUser2);
 						if (mysqli_num_rows($resultUser2) == 1) {
@@ -103,7 +102,6 @@ function estadosGenerales($valor)
 							$idRolUser 	= $row2['UsuRolID'];
 						}
 						if ($idRolUser == 1) {
-
 							?>
 						<li class="nav-item dropdown ">
 							<a style="color: white;" class="nav-link menu_link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,9 +112,9 @@ function estadosGenerales($valor)
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Intercambio/tabla.php">INTERCAMBIO</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">Acceso</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Recurso">RECURSOS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
 							</div>
 						</li>
 					<?php } ?>

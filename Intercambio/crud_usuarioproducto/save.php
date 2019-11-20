@@ -5,7 +5,6 @@ include('../../includes/sesion.php');
 include('../../includes/data_base.php');
 $recurso = "/Intercambio/save";
 ?>
-
 <?php
 if (!empty($user)) {
     if (isset($_POST['save_product'])) {

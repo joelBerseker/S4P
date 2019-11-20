@@ -2,10 +2,7 @@
     include('../../includes/navbar.php');
 	$categoria=true;
     $titulo_html="Editar Producto";
-    include('../../includes/header.php');
-    include ('../../includes/data_base.php');
-    $recurso="/Producto/edit";
-	include("../../includes/acl.php");
+    include('../../includes/data_base.php');
 ?>
 <?php 
     if(isset($_GET['id'])){
@@ -57,8 +54,16 @@
         trigger_error($stmt->error, E_USER_ERROR);
         }
         header("Location: ../tabla.php");
-        
+        exit();
     }
+?>
+<?php 
+
+include('../../includes/header.php');
+$recurso="/Producto/edit";
+include('../../includes/data_base.php');
+include("../../includes/acl.php");
+include('../../includes/data_base.php');
 ?>
 <div class="section2">
 <div class="container p-4"></div>
