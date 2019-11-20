@@ -1,15 +1,10 @@
 
 <?php
-session_start();
-include ('../../includes/db.php');
-include ('../../includes/sesion.php');
-include('db.php');
-?>
-<?php
-	
-	$recurso="/Recurso/save";
-	include("../../includes/acl.php");
 
+include ('../../includes/sesion.php');
+include ('../../includes/data_base.php');
+$recurso="/Recurso/save";
+include("../../includes/acl.php");
 ?>
 
 <?php

@@ -1,17 +1,11 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	true;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	false;
-	$men			= "Categoria";
+	include("../includes/navbar.php");
+	$producto=true;
+	$titulo_html="Producto";
 	include("../includes/header.php");
+	include("../includes/data_base.php")
 ?>
-<?php
-	include("crud_product/db.php")
-?>
-<div class="section2"><br><br>
+<div class="section2">
 	<div class="container p-3">
 		<div class="card mb-4 p-3">
 		<div class="mb-1">

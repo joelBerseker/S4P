@@ -1,15 +1,8 @@
-
 <?php
-session_start();
-include ('../../includes/db.php');
 include ('../../includes/sesion.php');
-include('db.php');
-?>
-<?php
-	
-	$recurso="/Recurso/delete";
-	include("../../includes/acl.php");
-
+include ('../../includes/data_base.php');
+$recurso="/Recurso/delete";
+include("../../includes/acl.php");
 ?>
 
 <?php
