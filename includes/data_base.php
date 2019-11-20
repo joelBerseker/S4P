@@ -4,13 +4,5 @@ $conn = mysqli_connect(
     'root',
     '',
     'S4P'
-);
-/*
-if(isset($conn)){
-    echo 'BD is connect';
-}
-else{
-    echo 'No Conecto';
-}
-*/
+)or die("Error al conectar al servidor");
 ?>

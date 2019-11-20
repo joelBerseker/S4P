@@ -1,30 +1,25 @@
 <?php
-$inicio 		=	false;
-$producto		=	false;
-$categoria		=	true;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
-
-$men="Producto";
+include("../../includes/navbar.php");
+$categoria=true;
+$titulo_html="Producto";
 include("../../includes/header.php");
+include("../includes/data_base.php");
 ?>
-<?php
-	include("../crud_tipo_producto/db.php");
-	$id = filter_input(INPUT_GET, 'id');
-	if($id==''){
-		die ("No tenemos el id");
-	}
-	$query2 = "SELECT CatNom FROM categoria  WHERE CatID = $id";
-	$resultProduct2= mysqli_query($conn, $query2);
-	$row2= mysqli_fetch_array($resultProduct2)
+
+<?php	
+$id = filter_input(INPUT_GET, 'id');
+if($id==''){
+	die ("No tenemos el id");
+}
+$query2 = "SELECT CatNom FROM categoria  WHERE CatID = $id";
+$resultProduct2= mysqli_query($conn, $query2);
+$row2= mysqli_fetch_array($resultProduct2);
 ?>
 <nav aria-label="breadcrumb" style="">
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
   <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
     <li class="breadcrumb-item"><a href="/S4P/Categoria">Categorias</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><?php echo $row2['CatNom']?></li>
-	
   </ol>
 </nav>
 <div class="section2">

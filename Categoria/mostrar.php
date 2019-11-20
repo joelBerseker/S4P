@@ -1,13 +1,13 @@
 <?php
+include("../includes/data_base.php");
 // Para obtener el id de la imagen pondremos en la barra del navegador 
 // http://localhost:8888/GuardarVerImagePdfPhpMysql/ver.php?id=1
-    $id = filter_input(INPUT_GET, 'id');
-    if($id==''){
-    die ("No tenemos el id");
-    }
+$id = filter_input(INPUT_GET, 'id');
+if($id==''){
+  die ("No tenemos el id");
+}
  
 // Conectamos a mysql
-$conn = mysqli_connect('localhost', 'root', '', 's4p') or die("Error al conectar al servidor");	
  
 $sql="select CatImgArc, CatImpTip from categoria where CatID = $id"; 
 //$sql="select `CatImgArc`, `CatImpTip` from categoria where CatID = $id";

@@ -1,13 +1,9 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	true;
-	$nosotros		=	false;
-	$login			=	false;
-	$men			= "Contactanos";
-	include("../includes/header.php");
+include("../includes/navbar.php");
+$titulo_html="Contactanos";
+include("../includes/header.php");
 ?>
+
 <nav aria-label="breadcrumb" style="">
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
     <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>

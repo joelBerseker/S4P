@@ -1,17 +1,11 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	true;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	false;
-	$men			= "Categoria";
+	include("../includes/navbar.php");
+	$categoria=true;
+	$titulo_html="Categoria";
 	include("../includes/header.php");
+	include("../includes/data_base.php")
 ?>
-<?php
-	include("crud_tipo_producto/db.php")
-?>
-<div class="section2"><br><br>
+<div class="section2">
 	<div class="container p-3">
 	<div class="card mb-4 p-3">
 		<div class="mb-1">
@@ -24,9 +18,9 @@
 		<div class="table-responsive">
 			<table class='table table-hover'>
 				<thead>
-					<th>NOMBRE</th>
-					<th>ESTADO</th>
-					<th>FECHA DE CREACION</th>
+					<th>Nombre</th>
+					<th>Estado</th>
+					<th>Fecha de Creación</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</thead>
@@ -38,7 +32,7 @@
 					?>
 					<tr>
 						<td><?php echo $row['CatNom']?></td>
-						<td><?php echo $row['CatEst']?></td>
+						<td><?php echo estadosGenerales($row['CatEst'])?></td>
 						<td><?php echo $row['created_at']?></td>
 						
 						<td>
@@ -52,8 +46,6 @@
 							</a>
 						</td>
 					</tr>
-
-
 				<?php } ?>
 				</tbody>
 			</table

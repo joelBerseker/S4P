@@ -1,25 +1,15 @@
-
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	true;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	false;
-	$men			= "Categoria";
-	include("../includes/header.php");
-?>
-<?php
-	include("crud_tipo_producto/db.php")
+include("../includes/navbar.php");
+$categoria=true;
+$titulo_html="Categoria";
+include("../includes/header.php");
+include("../includes/data_base.php");
 ?>
 <nav aria-label="breadcrumb" >
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-  <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
-  <li class="breadcrumb-item active" aria-current="page">Categorias</li>
-
-	
+  	<li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+  	<li class="breadcrumb-item active" aria-current="page">Categorias</li>
   </ol>
-  
 </nav>
 <div class="section2">
 	<div class="container">

@@ -1,15 +1,10 @@
 <?php
-$inicio     =  false;
-$producto    =  false;
-$categoria    =  false;
-$contactanos  =  false;
-$nosotros    =  false;
-$login      =  true;
-
+include("../includes/navbar.php");
+$login = true;
+$titulo_html = "Error";
+include("../includes/header.php");
 $men_error = "No puedes ingresar a esta parte de la aplicacion";
 $men_error = $_GET['m'];
-$men = "Error";
-include("../includes/header.php");
 ?>
 
 

@@ -1,16 +1,11 @@
 <?php
-session_start();
-include ('../../includes/db.php');
-include ('../../includes/sesion.php');
-include('db.php');
+include('../../includes/sesion.php');
+include('../../includes/data_base.php');
+$recurso="/Categoria/save";
+include("../../includes/acl.php");
 ?>
 
 <?php
-$recurso="/Categoria/save";
-    include("../../includes/acl.php");
-    ?>
-<?php
-
 if(isset($_POST['save_product'])){
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];
@@ -24,11 +19,9 @@ if(isset($_POST['save_product'])){
     $stmt->bind_param('sssssi',$nombre,$descripcion,$archivo_nombre, $archivo_tipo, $archivo_binario,$estado);
     if(!mysqli_stmt_execute($stmt)){
         echo "Chanfle, hubo un problema y no se guardo el archivo. ". mysqli_stmt_error($stmt)."<br/>";
-      }  
-        
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
-    
+    }      
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
     header("Location: ../");
 }
 else{
