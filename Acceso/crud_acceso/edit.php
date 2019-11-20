@@ -1,22 +1,12 @@
 <?php
+include('../../includes/navbar.php');
+$titulo_html="Acceso";
+include('../../includes/header.php');
+include("../../includes/data_base.php");
 
-$inicio 		=	false;
-$producto		=	true;
-$categoria		=	false;
-$contactanos	=	false;
-$nosotros		=	false;
-$login			=	false;
-
-$men="Acceso";
-    
-    
-    include('../../includes/header.php');
-    include("db.php");
-?>
-<?php
 $recurso="/Acceso/edit";
-    include("../../includes/acl.php");
-    ?>
+include("../../includes/acl.php");
+?>
 <?php 
     
     

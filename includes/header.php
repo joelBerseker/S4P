@@ -1,23 +1,20 @@
 <?php
-session_start();
-	include ('db.php');
-	include ('sesion.php');
-
-	
-	function estadosGenerales($valor){
-		if($valor==1){
-			return "Activo";
-		}else{
-			return "Inactivo";
-		}
+include ('data_base_autenticacion.php');
+include ('sesion.php');
+function estadosGenerales($valor){
+	if($valor==1){
+		return "Activo";
+	}else{
+		return "Inactivo";
 	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><?php echo $men;?> - S4P</title>
+	<title><?php echo $titulo_html;?> - S4P</title>
 	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/fonts.css">	
   	<link rel="stylesheet" type="text/css" href="/S4P/frontend/library/css/icons.css">
@@ -126,13 +123,6 @@ session_start();
 					</li>
 
 				<?php endif;?>
-				
-				
-				
-				
-			
-				
-			
 			</ul>
 		</div>
 	</nav>

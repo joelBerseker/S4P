@@ -1,16 +1,10 @@
 <?php
-session_start();
-include ('../../includes/db.php');
-include ('../../includes/sesion.php');
-include('db.php');
-?>
-
-<?php
+include('../../includes/sesion.php');
+include('../../includes/data_base.php');
 $recurso="/Acceso/save";
-    include("../../includes/acl.php");
-    ?>
+include("../../includes/acl.php");
+?>
 <?php
-
 if(isset($_POST['save_acceso'])){
     $nombre = $_POST['nombre'];
     $id_rol = $_POST['rol'];
@@ -29,5 +23,4 @@ if(isset($_POST['save_acceso'])){
 else{
     echo "No envio";
 }
-
 ?>
