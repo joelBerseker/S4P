@@ -1,61 +1,70 @@
 <?php
-	include("../includes/navbar.php");
-	$categoria=true;
-	$titulo_html="Categoria";
-	include("../includes/header.php");
-	include("../includes/data_base.php")
+include("../includes/navbar.php");
+$categoria = true;
+$titulo_html = "Categoria";
+include("../includes/header.php");
+include("../includes/data_base.php");
+$recurso = "/Categoria/tabla";
+
 ?>
 <div class="section2">
 	<div class="container p-3">
-	<div class="card mb-4 p-3">
-		<div class="mb-1">
-			<caption>
-				<?php
-				include("crud_tipo_producto/add.php")
-				?>		
-			</caption>		
-		</div>
-		<div class="table-responsive">
-			<table class='table table-hover'>
-				<thead>
-					<th>Nombre</th>
-					<th>Estado</th>
-					<th>Fecha de Creación</th>
-					<th>Editar</th>
-					<th>Eliminar</th>
-				</thead>
-				<tbody>
+		<div class="card mb-4 p-3">
+			<div class="mb-1">
+				<caption>
 					<?php
-					$query = "SELECT * FROM categoria";
-					$resultProduct= mysqli_query($conn, $query);
-					while($row= mysqli_fetch_array($resultProduct)){
+					include("crud_tipo_producto/add.php")
 					?>
-					<tr>
-						<td><?php echo $row['CatNom']?></td>
-						<td><?php echo estadosGenerales($row['CatEst'])?></td>
-						<td><?php echo $row['created_at']?></td>
-						
-						<td>
-							<a href="crud_tipo_producto/edit.php?id=<?php echo $row['CatID']?>">
-								<button class="btn btn-warning icon-pencil"></button>
-							</a>
-						</td>
-						<td>
-							<a href="crud_tipo_producto/delete.php?id=<?php echo $row['CatID']?>">
-								<button class="btn btn-danger icon-cross"></button>
-							</a>
-						</td>
-					</tr>
-				<?php } ?>
-				</tbody>
-			</table
-			>
+				</caption>
+			</div>
+			<div class="table-responsive">
+				<table class='table table-hover'>
+					<thead>
+						<th>Nombre</th>
+						<th>Descripcion</th>
+						<th>Estado</th>
+						<th>Fecha de Creación</th>
+						<th>Imagen</th>
+						<th>Editar Imagen</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
+					</thead>
+					<tbody>
+						<?php
+						$query = "SELECT * FROM categoria";
+						$resultProduct = mysqli_query($conn, $query);
+						while ($row = mysqli_fetch_array($resultProduct)) {
+							?>
+							<tr>
+								<td><?php echo $row['CatNom'] ?></td>
+								<td><?php echo $row['CatDes'] ?></td>
+								<td><?php echo estadosGenerales($row['CatEst']) ?></td>
+								<td><?php echo $row['created_at'] ?></td>
+								<td><img src="mostrar.php?id=<?php echo $row['CatID'] ?>" alt="Card image cap" class="card-img-top"></td>
+								<td>
+									<?php
+										include("crud_tipo_producto/editImagen.php")
+									?>
+								</td>
+								<td>
+									<a href="crud_tipo_producto/edit.php?id=<?php echo $row['CatID'] ?>">
+										<button class="btn btn-warning icon-pencil"></button>
+									</a>
+								</td>
+								<td>
+									<a href="crud_tipo_producto/delete.php?id=<?php echo $row['CatID'] ?>">
+										<button class="btn btn-danger icon-cross"></button>
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>
-</div>
 
 <?php
-	include("../includes/footer.php")
+include("../includes/footer.php")
 ?>
-	
