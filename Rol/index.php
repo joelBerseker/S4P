@@ -1,19 +1,11 @@
 <?php
-	$inicio         	=    false;
-	$producto        	=    false;
-	$categoria        	=    false;
-	$contactanos    	=    false;
-	$nosotros        	=    false;
-	$login           	=    true;
-	$men 				= "Rol";
-?>
-<?php
-	include("../includes/header.php")
-?>
-<?php
-	include("crud_rol/db.php");
-	$recurso="/Rol";
-	include("../includes/acl.php");
+include("../includes/navbar.php");
+$login=true;
+$titulo_html="Roles";
+include("../includes/header.php");
+include("../includes/data_base.php");
+$recurso="/Rol";
+include("../includes/acl.php");
 
 ?>
 
