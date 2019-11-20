@@ -8,12 +8,12 @@ $recurso = "/Acceso";
 include("../includes/acl.php");
 ?>
 <div class="section2">
-	<div class="container p-3">
-		<div class="card mb-4 p-3">
+	<div class="container pt-4">
+		<div class="card p-3">
 			<div class="row">
 
 				<div class="col-sm-12">
-					<div class="mb-1">
+					<div class="mb-2">
 						<caption>
 							<?php
 							include("crud_acceso/add.php")
@@ -43,7 +43,7 @@ include("../includes/acl.php");
 										<td><?php echo $row['AccDes'] ?></td>
 										<td><?php echo $row['AccRolID'] ?></td>
 										<td><?php echo $row['AccRecID'] ?></td>
-										<td><?php echo $row['AccEst'] ?></td>
+										<td><?php echo estadosGenerales($row['AccEst']) ?></td>
 										<td><?php echo $row['created_at'] ?></td>
 										<td>
 											<a href="crud_acceso/edit.php?id=<?php echo $row['AccID'] ?>"><button class="btn btn-warning icon-pencil"></button></a>

@@ -56,9 +56,9 @@
                     <input value="<?php echo $desciption;?>" class="form-control form-control-sm " type="text" name="description1" required></div>
             </div>
             <div class="form-row form-group ">
-        <div class="col-4"><label>Seleccione el estado:</label></div>
+        <div class="col-4"><label>Estado:</label></div>
         <div class="col">
-        <select name="estado1" class="form-control">
+        <select name="estado1" class="form-control form-control-sm">
         <?php
             if($estado==1){
         ?>

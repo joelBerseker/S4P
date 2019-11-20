@@ -57,8 +57,8 @@ if(isset($_POST['save_acceso'])){
         echo "Chanfle, hubo un problema y no se guardo el archivo. ". mysqli_stmt_error($stmt)."<br/>";
       }  
         
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
     header("Location: ../index.php");
 }
 else{

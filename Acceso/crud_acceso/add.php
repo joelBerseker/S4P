@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Añadir Tipo Producto</h5>
+                <h5 class="modal-title" id="exampleModalLabel">AÑADIR ACCESO</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,15 +12,16 @@
             <div class="modal-body">
                 <!--C:\xampp\htdocs\S4P\Categoria\crud_tipo_producto\save.php-->
                 <form action="crud_acceso/save.php" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="nombre" class="form-control" placeholder="nombre del acceso" autofocus>
+                    <div class="form-group form-row">
+                        <div class="col-4"><label>Nombre:</label></div>
+                        <div class="col"><input type="text" name="nombre" class="form-control form-control-sm" autofocus></div>
                     </div>
-                    <p>Seleccione el rol</p>
-
+                    <div class="form-group form-row">
+                        <div class="col-4"><label>Rol:</label></div>
                     <?php
                     $querya = mysqli_query($conn, "SELECT RolID, RolNom FROM ROL");
                     ?>
-                    <select name="rol" class="form-control">
+                    <div class="col"><select name="rol" class="form-control form-control-sm">
                         <?php
                         while ($datosa = mysqli_fetch_array($querya)) {
                             ?>
@@ -28,12 +29,13 @@
                         <?php
                         }
                         ?>
-                    </select>
-                    <p><br>Seleccione el recurso</p>
+                    </select></div></div>
+                    <div class="form-group form-row">
+                        <div class="col-4"><label>Recurso:</label></div>
                     <?php
                     $queryb = mysqli_query($conn, "SELECT RecID, RecNom FROM RECURSO");
                     ?>
-                    <select name="recurso" class="form-control">
+                    <div class="col"><select name="recurso" class="form-control form-control-sm">
                         <?php
                         while ($datosb = mysqli_fetch_array($queryb)) {
                             ?>
@@ -41,7 +43,7 @@
                         <?php
                         }
                         ?>
-                    </select>
+                    </select></div></div>
                     <hr>
                     <input type="submit" class="btn btn-success btn-block" name="save_acceso" value="Enviar">
                 </form>
