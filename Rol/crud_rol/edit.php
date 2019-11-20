@@ -1,16 +1,13 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-    $login			=	true;
-    $men = "Rol";
+	include('../../includes/navbar.php');
+    $login=true;
+    $titulo_html = "Editar Rol";
     include('../../includes/header.php');
-    include('db.php');
+    include('../../includes/data_base.php');
+    $recurso="/Rol/edit";
+	include("../../includes/acl.php");
 ?>
 <?php 
-    include("db.php");
     
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -40,8 +37,7 @@
 ?>
 
 <?php 
-    $recurso="/Rol/edit";
-	include("../../includes/acl.php");
+    
 ?>
 
 <div class="section2"><br><br>

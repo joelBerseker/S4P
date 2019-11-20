@@ -1,14 +1,13 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-    $login			=	true;
-    $men = "Recurso";
+	include('../../includes/navbar.php');
+    $login=true;
+    $titulo_html = "Recurso";
+    include('../../includes/header.php');
+    include('../../includes/data_base.php');
+	$recurso="/Recurso/edit";
+	include("../../includes/acl.php");
 ?>
 <?php 
-    include("db.php");
     
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -32,16 +31,7 @@
         header("Location: ../");
     }
 ?>
-<?php
-    include('../../includes/header.php');
-    include('db.php');
-?>
-<?php
-	
-	$recurso="/Recurso/edit";
-	include("../../includes/acl.php");
 
-?>
 
 <div class="section2"><br><br>
     <div class="container p-3">

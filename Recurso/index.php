@@ -1,19 +1,9 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	true;
-	
-	$men= "Recurso";
-?>
-
-<?php
-	include("../includes/header.php")
-?>
-<?php
-	include("crud_recurso/db.php");
+	include("../includes/navbar.php");
+	$login=true;
+	$titulo_html= "Recurso";
+	include("../includes/header.php");
+	include("../includes/data_base.php");
 	$recurso="/Recurso";
 	include("../includes/acl.php");
 ?>

@@ -1,12 +1,8 @@
 <?php
-session_start();
-include ('../../includes/db.php');
 include ('../../includes/sesion.php');
-include('db.php');
-?>
-<?php 
-    $recurso="/Producto/save";
-	include("../../includes/acl.php");
+include ('../../includes/db.php');
+$recurso="/Producto/save";
+include("../../includes/acl.php");
 ?>
 
 

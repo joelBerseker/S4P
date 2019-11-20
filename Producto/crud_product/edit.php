@@ -1,17 +1,13 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	true;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	false;
-    $men			= "Categoria";
+    include('../../includes/navbar.php');
+	$categoria=true;
+    $titulo_html="Editar Producto";
     include('../../includes/header.php');
-    include("db.php");
+    include ('../../includes/data_base.php');
+    $recurso="/Producto/edit";
+	include("../../includes/acl.php");
 ?>
 <?php 
-    include("db.php");
-    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        
@@ -64,15 +60,6 @@
         
     }
 ?>
-<?php
-
-	$recurso="/Producto/edit";
-	include("../../includes/acl.php");
-?>
-
-
-
-
 <div class="section2">
 <div class="container p-4"></div>
     <div class="row">
