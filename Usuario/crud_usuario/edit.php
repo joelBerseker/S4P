@@ -1,15 +1,9 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-    $login			=	true;
-    $men = "Usuario";
+	include("../../includes/navbar.php");
+    $titulo_html = "Editar Usuario";
 ?>
 <?php 
-    include("db.php");
-    
+    include("../../includes/data_base.php");
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        
@@ -33,6 +27,7 @@
         $estado = $_POST['estado'];
         $id_rol = $_POST['rol'];
         $archivo_nombre=$_FILES['myFile']['name'];
+        
         $archivo_tipo = $_FILES['myFile']['type'];
         $archivo_temp = $_FILES['myFile']['tmp_name'];
         $archivo_binario = (file_get_contents($archivo_temp));
@@ -64,10 +59,10 @@
 ?>
 <?php
     include('../../includes/header.php');
-    include("db.php");
+    include("../../includes/data_base.php");
 ?>
-<?php 
 
+<?php 
 if(!empty($user)){
     $correo=$user['UsuCor'];
     $recurso="/Usuario/edit";

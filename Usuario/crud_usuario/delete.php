@@ -1,10 +1,9 @@
 <?php
-session_start();
-include ('../../includes/db.php');
 include ('../../includes/sesion.php');
-include('db.php');
+include ('../../includes/data_base.php');
+
 ?>
-<?php 
+<?php/* 
 if(!empty($user)){
     $correo=$user['UsuCor'];
     $recurso="/Usuario/delete";
@@ -37,7 +36,7 @@ if(!empty($user)){
                                     if($AccEst==1){
 
 
-
+*/
 ?>
 <?php
   
@@ -54,7 +53,11 @@ if(!empty($user)){
         header("Location: ../index.php");
     }
 ?>
-<?php 
+
+
+
+
+<?php /*
     }else{
         header("Location: ../../Errores/index.php");
     }
@@ -83,7 +86,7 @@ if(!empty($user)){
         header("Location: ../../Errores/index.php");
     }
 
-
+*/
 
 ?>
 
