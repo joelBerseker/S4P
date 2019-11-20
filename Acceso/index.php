@@ -11,59 +11,15 @@ include("../includes/acl.php");
 	<div class="container p-3">
 		<div class="card mb-4 p-3">
 			<div class="row">
-				<div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
-					<?php
-					if (isset($_SESSION['message'])) {
-						?>
-						<div class="alert alert-<?= $_SESSION['message_type']; ?> alert-dismissible fade show" role="alert">
-							<?= $_SESSION['message'] ?>
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
 
-					<?php
-
-					}
-					?>
-					<div class="card card-body">
-						<form action="crud_acceso/save.php" method="POST">
-							<div class="form-group">
-								<input type="text" name="nombre" class="form-control" placeholder="nombre del acceso" autofocus>
-							</div>
-							<p>Seleccione el rol</p>
-
+				<div class="col-sm-12">
+					<div class="mb-1">
+						<caption>
 							<?php
-							$querya = mysqli_query($conn, "SELECT RolID, RolNom FROM ROL");
+							include("crud_acceso/add.php")
 							?>
-							<select name="rol" class="form-control">
-								<?php
-								while ($datosa = mysqli_fetch_array($querya)) {
-									?>
-									<option value="<?php echo $datosa['RolID'] ?>"> <?php echo $datosa['RolNom'] ?> </option>
-								<?php
-								}
-								?>
-							</select>
-							<p><br>Seleccione el recurso</p>
-							<?php
-							$queryb = mysqli_query($conn, "SELECT RecID, RecNom FROM RECURSO");
-							?>
-							<select name="recurso" class="form-control">
-								<?php
-								while ($datosb = mysqli_fetch_array($queryb)) {
-									?>
-									<option value="<?php echo $datosb['RecID'] ?>"> <?php echo $datosb['RecNom'] ?> </option>
-								<?php
-								}
-								?>
-							</select>
-							<hr>
-							<input type="submit" class="btn btn-success btn-block" name="save_acceso" value="Enviar">
-						</form>
+						</caption>
 					</div>
-				</div>
-				<div class="col-sm-12 col-md-7 col-lg-8 col-xl-8">
 					<div class="table-responsive">
 						<table class='table table-hover'>
 							<thead>

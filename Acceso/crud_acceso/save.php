@@ -18,7 +18,7 @@ if(isset($_POST['save_acceso'])){
 
     $_SESSION['message'] = 'Acceso Saved Succesfully';
     $_SESSION['message_type']= 'success';
-    header("Location: ../index.php");
+    header("Location: ../");
 }
 else{
     echo "No envio";
