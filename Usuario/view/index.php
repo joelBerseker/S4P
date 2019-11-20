@@ -1,15 +1,11 @@
 <?php
-$inicio         =    false;
-$producto        =    false;
-$categoria        =    false;
-$contactanos    =    false;
-$nosotros        =    false;
-$login            =    true;
-$men = "Ver Usuario";
+include('../../includes/navbar.php');
+$titulo_html = "Ver Usuario";
+include('../../includes/header.php');
+include("../../includes/data_base.php");
 ?>
-<?php
-include("../crud_usuario/db.php");
 
+<?php
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -58,10 +54,6 @@ if (isset($_POST['update'])) {
     }
     header("Location: ../");
 }
-?>
-<?php
-include('../../includes/header.php');
-include("../crud_usuario/db.php");
 ?>
 <div class="section2">
     <div class="container p-4"></div>

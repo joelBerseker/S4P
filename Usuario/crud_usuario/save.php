@@ -1,13 +1,9 @@
-
-
-
 <?php
-session_start();
-include ('../../includes/db.php');
 include ('../../includes/sesion.php');
-include('db.php');
+include ('../../includes/data_base.php');
 ?>
-<?php 
+
+<?php /*
 if(!empty($user)){
     $correo=$user['UsuCor'];
     $recurso="/Usuario/save";
@@ -40,7 +36,7 @@ if(!empty($user)){
                                     if($AccEst==1){
 
 
-
+*/
 ?>
 <?php
 if(isset($_POST['save_acceso'])){
@@ -71,7 +67,7 @@ else{
 
 
 ?>
-<?php 
+<?php /*
     }else{
         header("Location: ../../Errores/index.php");
     }
@@ -101,5 +97,5 @@ else{
     }
 
 
-
+*/
 ?>

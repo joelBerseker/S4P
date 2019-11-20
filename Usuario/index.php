@@ -1,20 +1,9 @@
 <?php
-	$inicio 		=	false;
-	$producto		=	false;
-	$categoria		=	false;
-	$contactanos	=	false;
-	$nosotros		=	false;
-	$login			=	true;
-	
-?>
-
-<?php
-
-	$men="Usuario";
+	include("../includes/navbar.php");
+	$login=true;
+	$titulo_html="Usuario";
 	include("../includes/header.php");
-?>
-<?php
-	include("crud_usuario/db.php");
+	include("../includes/data_base.php");
 	$recurso="/Usuario";
 	include("../includes/acl.php");
 ?>
