@@ -13,7 +13,7 @@
             $UsuEst=$datos_de_Usuario['UsuEst'];
             $RolID=$datos_de_Usuario['UsuRolID'];
             if($idUsuario==$id){
-                if($UsuEst==1){
+                //if($UsuEst==1){
                     $query_hacia_tabla_Rol="SELECT RolEst FROM ROL WHERE RolID = $RolID";
                     $respuesta_de_tabla_Rol = mysqli_query($conn,$query_hacia_tabla_Rol);
                     if(mysqli_num_rows($respuesta_de_tabla_Rol)== 1){
@@ -58,10 +58,10 @@
                         header("Location: /S4P/Errores/index.php?m=El rol no existe");
                         echo "el rol no existe";
                     }
-                }else{
-                    header("Location: /S4P/Errores/index.php?m=El usuario no esta activo");
-                    echo "el usuario no esta activo";
-                }
+                //}else{
+                //    header("Location: /S4P/Errores/index.php?m=El usuario no esta activo");
+                //    echo "el usuario no esta activo";
+                //}
             }else{
                 header("Location: /S4P/Errores/index.php?m=Este no es tu usuario");
                 echo "este no es tu usuario";
