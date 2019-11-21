@@ -31,14 +31,6 @@
         header("Location: ../");
     }
 ?>
-<?php
-    
-    
-?>
-
-<?php 
-    
-?>
 
 <div class="section2"><br><br>
     <div class="container p-3"></div>
