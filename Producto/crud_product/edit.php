@@ -133,7 +133,7 @@ include('../../includes/data_base.php');
                 -->
                 <input type="file" accept="image/* "class="form-control-file" name="myFile" id="imagen" maxlength="256" placeholder="Imagen">
                 <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
-                <img src="../mostrar.php?id=<?php echo $row['ProID']?>" width="200" id="imagenmuestra" alt="Img blob" />
+                <img src="../mostrar.php?id=<?php echo $id?>" width="200" id="imagenmuestra" alt="Img blob" />
                 <br>
                 <br>
                 </div>
