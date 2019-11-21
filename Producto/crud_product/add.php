@@ -28,7 +28,7 @@
               <div class="col-5"><label>Categoria:</label></div>
               <div class="col">
                 <?php
-                $querytipo = mysqli_query($conn, "SELECT CatID, CatNom FROM categoria");
+                $querytipo = mysqli_query($conn, "SELECT CatID, CatNom FROM categoria where CatEst = 1");
                 ?>
                 <select class="form-control col form-control-sm " id="exampleFormControlSelect1" name="tipo_producto">
                   <?php

@@ -41,7 +41,7 @@
 						<td><?php echo $row['ProPre']?></td>
 						<td> <img src="mostrar.php?id=<?php echo $row['ProID']?>" width="100" alt="Img blob" /> </td>
 						<td><?php echo $row['ProCatID']?></td>
-						<td><?php echo $row['ProEst']?></td>
+						<td><?php echo estadosGenerales($row['ProEst'])?></td>
 						<td><?php echo $row['created_at']?></td>						
 						<td>
 							<a href="crud_product/edit.php?id=<?php echo $row['ProID']?>">

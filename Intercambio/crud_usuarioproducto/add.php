@@ -23,7 +23,7 @@
         <div class="col-5"><label>Juego:</label></div>
         <div class="col">
         <?php
-			$querytipo=mysqli_query($conn,"SELECT ProID, ProNom FROM producto");
+			$querytipo=mysqli_query($conn,"SELECT ProID, ProNom FROM producto where ProEst = 1");
         ?>
         <select class="form-control col form-control-sm " id="exampleFormControlSelect1"  name="producto">
 						<?php
