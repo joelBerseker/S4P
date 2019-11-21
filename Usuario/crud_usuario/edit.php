@@ -14,7 +14,7 @@
             $row = mysqli_fetch_array($result);
             $idUsuario = $row['UsuID'];
             $nombre         = $row['UsuNom'];
-            $correo         = $row['UsuCor'];
+            $correo_edit         = $row['UsuCor'];
             $contraseña     = $row['UsuCon'];
             $estado         = $row['UsuEst'];
             $id_rol         = $row['UsuRolID'];
@@ -67,7 +67,7 @@
 
 
 <div class="section2">
-<div class="container p-4"></div>
+<div class="container p-3"></div>
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
@@ -83,7 +83,7 @@
             <div class="form-row form-group ">
                 <div class="col-4"><label>Correo:</label></div>
                 <div class="col">
-                    <input value="<?php echo $UsuCor;?>" class="form-control form-control-sm " type="text" name="correo" required></div>
+                    <input value="<?php echo $correo_edit;?>" class="form-control form-control-sm " type="text" name="correo" required></div>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Rol:</label></div>
