@@ -33,7 +33,7 @@ if (isset($_POST['update'])) {
     $categoria   = $_POST['categoria'];
     $estado      = $_POST['estado'];
     $precio      = $_POST['precio'];
-    $mysqli = new mysqli("localhost", "root", "", "s4p");
+    $mysqli = new mysqli($database_red,$database_nombre,$database_contraseña,$database_name);
     if ($edit) {
         $stmt = $mysqli->prepare("UPDATE producto SET `ProNom`=?, `ProImgNom`=?,`ProImgTip`=?,`ProImgArc`=?,`ProCatID`=? ,`ProPre`=?,`ProDes`=?,`ProEst`=? WHERE ProID=?");
         /* BK: always check whether the prepare() succeeded */
