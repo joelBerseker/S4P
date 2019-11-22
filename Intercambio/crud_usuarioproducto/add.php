@@ -42,12 +42,16 @@
     </div>
     <div class="form-row form-group ">
         <div class="col-5"><label>Estado:</label></div>
-        <div class="col"><input class="form-control form-control-sm " type="text" name="estado" required ></div>
-    </div>
+        <div class="col">
+        <select name="estado" class="form-control form-control-sm">
+						<option value="1"> Activo </option>
+						<option value="0"> Inactivo </option>
+					</select>
+        </div></div>
     
 
     
-       <button class="btn btn-success btn-block" type="submit" name="save_product">Agregar</button>
+       <button class="btn btn-success btn-block" type="submit" name="save_product">Enviar</button>
 
 </form>
         </div>
