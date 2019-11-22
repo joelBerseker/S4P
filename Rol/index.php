@@ -31,7 +31,7 @@ include("../includes/acl.php");
 				</thead>
 				<tbody>
 				<?php
-				$query = "SELECT * FROM ROL ";
+				$query = "SELECT * FROM ROL   WHERE RolID >2";
 				$resultProduct= mysqli_query($conn, $query);
 				while($row= mysqli_fetch_array($resultProduct)){
 				?>

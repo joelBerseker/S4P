@@ -16,6 +16,6 @@ if(isset($_GET['id'])){
     }
     $_SESSION['message'] = 'Product Removed Succesfully';
     $_SESSION['message_type']= 'danger';
-    header("Location: ../index.php");
+    header("Location: ../tabla.php");
 }
 ?>
