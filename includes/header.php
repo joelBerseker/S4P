@@ -1,6 +1,7 @@
 <?php
 include('data_base_autenticacion.php');
 include('sesion.php');
+include('data_base.php');
 $dirEjec = "/S4P";
 function estadosGenerales($valor)
 {
@@ -15,6 +16,15 @@ function estadosGenerales($valor)
 <html lang="es">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153099513-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153099513-1');
+</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><?php echo $titulo_html; ?> - S4P</title>
@@ -77,23 +87,18 @@ function estadosGenerales($valor)
 						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
 							<?php
 								$correo 	= 	$user['UsuCor'];
-								$conn1 = mysqli_connect('localhost', 'root', '', 's4p') or die("Error al conectar al servidor");
-
-
+								$conn1 = mysqli_connect($database_red,$database_nombre,$database_contraseña,$database_name) or die("Error al conectar al servidor");
 								$queryUser = "SELECT UsuID FROM usuario WHERE UsuCor = '$correo'";
 								$resultUser = mysqli_query($conn1, $queryUser);
 								if (mysqli_num_rows($resultUser) == 1) {
 									$row 		= mysqli_fetch_array($resultUser);
 									$idUser 	= $row['UsuID'];
 								}
-
 								?>
 							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario/view?id=<?php echo $idUser ?>">VER PERFIL</a>
 							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Autenticacion/logout.php">SALIR</a>
 						</div>
 					</li>
-
-
 					<?php
 						$queryUser2 = "SELECT UsuRolID FROM usuario WHERE UsuCor = '$correo'";
 						$resultUser2 = mysqli_query($conn1, $queryUser2);
@@ -112,7 +117,7 @@ function estadosGenerales($valor)
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Intercambio/tabla.php">INTERCAMBIO</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">Acceso</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Recurso">RECURSOS</a>
 							</div>

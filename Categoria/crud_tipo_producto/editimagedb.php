@@ -7,7 +7,7 @@ if(isset($_POST['save_edit_imagen'])){
     $archivo_binario    =   (file_get_contents($archivo_temp));
     
 
-    $mysqli = new mysqli("localhost", "root", "", "s4p");
+    $mysqli = new mysqli($database_red,$database_nombre,$database_contraseña,$database_name);
     $stmt = $mysqli->prepare("UPDATE `categoria`SET `CatImgNom` =?, `CatImpTip` = ?, `CatImgArc` = ? WHERE `CatID` = ?");
     /* BK: always check whether the prepare() succeeded */
     if ($stmt === false) {

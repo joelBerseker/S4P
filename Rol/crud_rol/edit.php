@@ -8,19 +8,15 @@
 	include("../../includes/acl.php");
 ?>
 <?php 
-    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-       
         $query = "SELECT * FROM ROL WHERE RolID = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);
             $desciption = $row['RolNom'];
             $estado = $row['RolEst']; 
-           
         }
-        
     }
     if(isset($_POST['update'])){
         $id = $_GET['id'];
@@ -31,13 +27,17 @@
         header("Location: ../");
     }
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 415fa629b79bd717745af1a06b5e1f2fcfdddaf9
 <div class="section2"><br><br>
     <div class="container p-3"></div>
     <div class="row">
         <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
         <div class="col-sm-8 col-md-6 col-lg-4 col-xl-4">
             <div class="card card-body">
+
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
             <div  class="form-group">
             <label><b>EDITAR ROL</b></label>
@@ -64,6 +64,7 @@
         <?php
             }
         ?>
+
 		</select>
         </div>
     </div>
@@ -76,10 +77,6 @@
         <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
     </div><br><br><br>
 </div>
-
-
-
-
 <?php
 	include("../../includes/footer.php")
 ?>

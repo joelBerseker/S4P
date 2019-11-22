@@ -1,12 +1,13 @@
 <?php
-	include("../../includes/navbar.php");
+    include("../../includes/navbar.php");
+    $login=true;
     $titulo_html = "Editar Usuario";
+    include('../../includes/data_base.php');
+    $recurso="/Usuario/edit";
 ?>
 <?php 
-    include("../../includes/data_base.php");
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-       
         $query = "SELECT * FROM usuario WHERE UsuID = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
@@ -60,46 +61,11 @@
 <?php
     include('../../includes/header.php');
     include("../../includes/data_base.php");
+    include("../../includes/acl_usuario_edit.php");
+
 ?>
 
-<?php /*
-if(!empty($user)){
-    $correo=$user['UsuCor'];
-    $recurso="/Usuario/edit";
-    $idUsuario=$user['UsuID'];
-        if($correo!=null){
-            $query_hacia_tabla_Usuario="SELECT UsuID,UsuCor, UsuEst, UsuRolID FROM USUARIO WHERE UsuCor='$correo'";
-            $respuesta_de_tabla_Usuario = mysqli_query($conn,$query_hacia_tabla_Usuario);
-            $datos_de_Usuario = mysqli_fetch_array($respuesta_de_tabla_Usuario);
-            $UsuID=$datos_de_Usuario['UsuID'];
-            $UsuCor=$datos_de_Usuario['UsuCor'];
-            $UsuEst=$datos_de_Usuario['UsuEst'];
-            $RolID=$datos_de_Usuario['UsuRolID'];
-            if($idUsuario==$id){
-                if($UsuEst==1){
-                    $query_hacia_tabla_Rol="SELECT RolEst FROM ROL WHERE RolID = $RolID";
-                    $respuesta_de_tabla_Rol = mysqli_query($conn,$query_hacia_tabla_Rol);
-                    if(mysqli_num_rows($respuesta_de_tabla_Rol)== 1){
-                        $datos_de_Rol=mysqli_fetch_array($respuesta_de_tabla_Rol);
-                        $RolEst=$datos_de_Rol['RolEst'];
-                        if($RolEst!=0){
-                            $query_de_tabla_Recurso = "SELECT RecID, RecEst FROM RECURSO WHERE RecNom = '$recurso'";
-                            $respuesta_de_tabla_Recurso =  mysqli_query($conn,$query_de_tabla_Recurso);
-                            if(mysqli_num_rows($respuesta_de_tabla_Recurso)== 1 ){
-                                $row = mysqli_fetch_array($respuesta_de_tabla_Recurso);
-                                $RecID=$row['RecID'];
-                                $RecEst=$row['RecEst'];
-                                if($RecEst==1){
-                                    $query_hacia_tabla_Acceso = "SELECT AccEst FROM ACCESO WHERE AccRolID = '$RolID' && AccRecID = '$RecID'";
-                                    
-                                    $respuesta_de_tabla_Acceso = mysqli_query($conn,$query_hacia_tabla_Acceso);
-                                    if(mysqli_num_rows($respuesta_de_tabla_Acceso)== 1 ){
-                                        $datos_de_Acceso = mysqli_fetch_array($respuesta_de_tabla_Acceso);
-                                        $AccEst=$datos_de_Acceso['AccEst'];
-                                        if($AccEst==1){
 
-*/
-?>
 <div class="section2">
 <div class="container p-3"></div>
     <div class="row">
@@ -107,7 +73,7 @@ if(!empty($user)){
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
-                <label><b>Editar Usuario</b></label>
+                <label><b>EDITAR USUARIO</b></label>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Nombre:</label></div>
@@ -149,16 +115,29 @@ if(!empty($user)){
                     <input class="form-control form-control-sm " value="<?php echo $contraseña;?>" type="password" name="contraseña" required >
                 </div>
             </div>
+            <div class="form-row form-group ">
+                <div class="col-4"><label>Estado:</label></div>
+                <div class="col">
+                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1"  name="estado">
+                        <?php
+                            if($estado==1){
+                        ?>
+                            <option value="1"selected > Activo </option>
+                            <option value="0" > Inactivo </option>
+                            <?php }else {?>
+                            <option value="1" > Activo </option>
+                            <option value="0" selected > Inactivo </option>
+
+                        <?php
+                            }
+                        ?>
+					</select>  
+                </div>  
+            </div>            
             
 
-            <div class="form-row form-group ">
-                <div class="col-4">
-                    <label>Estado:</label>
-                </div>
-                <div class="col">
-                    <input class="form-control form-control-sm " value="<?php echo $estado;?>" type="text" name="estado" required >
-                </div>
-            </div>
+
+
             <div class="form-row form-group ">
                 <div class="col-5"><label>Imagen:</label></div>
                 <div class="col">
@@ -172,54 +151,15 @@ if(!empty($user)){
                 <br>
                 <br>
                 </div>
-            </div>
-
-
-            
+            </div> 
             <button class="btn btn-success btn-block" name="update">
-                Actualizar
+                Enviar
             </button>
         </form>
             </div>
         </div>
     </div>    
 </div>
-<?php
-/*
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else {
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-}else{
-    header("Location: ../../Errores/index.php");
-}
-
-
-*/
-?>
 <?php
 	include("../../includes/footer.php");
 ?>

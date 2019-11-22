@@ -18,7 +18,7 @@ include("../../includes/acl.php");
             $producto         = $row['UsuProProID'];
             $description    = $row['UsuProDes'];
             $precio         = $row['UsuProPre'];
-            $estado         = $row['UsuProEst'];
+            $estado         = $row['usuProEst'];
         }
         
     }
@@ -67,7 +67,7 @@ include("../../includes/acl.php");
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
-                <label><b>EDITAR USUARIO_PRODUCTO</b></label>
+                <label><b>EDITAR INTERCAMBIO</b></label>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Descripcion:</label></div>
@@ -107,20 +107,33 @@ include("../../includes/acl.php");
             
 
             <div class="form-row form-group ">
-                <div class="col-4">
-                    <label>Estado:</label>
-                </div>
-                <div class="col">
-                    <input class="form-control form-control-sm " value="<?php echo $estado;?>" type="text" name="estado" required >
-                </div>
-            </div>
+        <div class="col-4"><label>Estado:</label></div>
+        <div class="col">
+        <select name="estado" class="form-control form-control-sm">
+        <?php
+            if($estado==1){
+        ?>
+            <option value="1" selected> Activo </option>   
+            <option value="0" > Inactivo </option>   
+        <?php
+            }else{
+        ?>
+            <option value="1" > Activo </option> 
+            <option value="0" selected> Inactivo </option>
+        <?php
+            }
+        ?>
+
+		</select>
+        </div>
+    </div>
             
-            </div>
+           
 
 
             
             <button class="btn btn-success btn-block" name="update">
-                Update
+                Enviar
             </button>
         </form>
             </div>

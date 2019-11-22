@@ -6,13 +6,11 @@ include("../includes/header.php");
 
 <nav aria-label="breadcrumb" style="">
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-    <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="<?php echo $dirEjec?>">Inicio</a></li>
 	<li class="breadcrumb-item active" aria-current="page">Contactanos</li>
-	
   </ol>
 </nav>
 <div class="section2">
-
 	<div class="pru pt-3"  id="principal">
 		<div class="container">
 			<div class="card mb-4 border-0 p-3">
