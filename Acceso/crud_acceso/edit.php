@@ -8,8 +8,6 @@ $recurso="/Acceso/edit";
 include("../../includes/acl.php");
 ?>
 <?php 
-    
-    
     if(isset($_GET['id'])){
         $id = $_GET['id'];
        
@@ -21,7 +19,6 @@ include("../../includes/acl.php");
             $estado = $row['AccEst'];
             $rol = $row['AccRolID'];
             $recurso = $row['AccRecID'];
-           
         }
         
     }
