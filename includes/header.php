@@ -113,13 +113,13 @@ function estadosGenerales($valor)
 								<span class=" icon-cog"></span>
 							</a>
 							<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Categoria/tabla.php">CATEGORIAS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Intercambio/tabla.php">INTERCAMBIO</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Recurso">RECURSOS</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>					
 							</div>
 						</li>
 					<?php } ?>
