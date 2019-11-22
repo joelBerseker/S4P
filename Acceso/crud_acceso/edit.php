@@ -47,6 +47,9 @@ include("../../includes/acl.php");
         <div class="col-md-4 mb-5 mx-auto">
             <div class="card card-body">
                 <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
+                <div  class="form-group">
+            <label><b>EDITAR ACCESO</b></label>
+            </div>
                     <div class="form-group">
 						<input type="text" name="nombrex2" class="form-control" value="<?php echo $nombre;?>" placeholder="Nombre" autofocus>
 					</div>

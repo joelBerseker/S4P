@@ -73,7 +73,7 @@
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
-                <label><b>Editar Usuario</b></label>
+                <label><b>EDITAR USUARIO</b></label>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Nombre:</label></div>
