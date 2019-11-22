@@ -77,23 +77,18 @@ function estadosGenerales($valor)
 						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
 							<?php
 								$correo 	= 	$user['UsuCor'];
-								$conn1 = mysqli_connect('localhost', 'root', '', 's4p') or die("Error al conectar al servidor");
-
-
+								$conn1 = mysqli_connect($database_red,$database_nombre,$database_contraseña,$database_name) or die("Error al conectar al servidor");
 								$queryUser = "SELECT UsuID FROM usuario WHERE UsuCor = '$correo'";
 								$resultUser = mysqli_query($conn1, $queryUser);
 								if (mysqli_num_rows($resultUser) == 1) {
 									$row 		= mysqli_fetch_array($resultUser);
 									$idUser 	= $row['UsuID'];
 								}
-
 								?>
 							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario/view?id=<?php echo $idUser ?>">VER PERFIL</a>
 							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Autenticacion/logout.php">SALIR</a>
 						</div>
 					</li>
-
-
 					<?php
 						$queryUser2 = "SELECT UsuRolID FROM usuario WHERE UsuCor = '$correo'";
 						$resultUser2 = mysqli_query($conn1, $queryUser2);
