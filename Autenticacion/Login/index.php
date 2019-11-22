@@ -4,7 +4,7 @@ $login=true;
 	
 $titulo_html="Ingresar";
 include("../../includes/header.php");
-
+include("../../includes/data_base_autenticacion.php");
   
 
   if (isset($_SESSION['user_id'])) {

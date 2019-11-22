@@ -4,6 +4,7 @@ $login=true;
     
 $titulo_html="Registrarse";
 include("../../includes/header.php");
+include("../../includes/data_base_autenticacion.php");
 ?>
 
 <?php
@@ -18,7 +19,7 @@ include("../../includes/header.php");
 
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
-      header("location:/S4P");
+     
     } else {
       $message = 'Lo sentimos, debe haber habido un problema al crear su cuenta';
     }
