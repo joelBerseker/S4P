@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
       <div class="ray">
-      <form action="crud_usuarioproducto/save.php" method="POST" >
+      <form action="<?php echo $dirEjec?>/Intercambio/crud_usuarioproducto/save.php" method="POST" >
         <div class="form-row form-group ">
             <div class="col-5"><label>Nombre:</label></div>
             <div class="col"><input class="form-control form-control-sm " type="text" name="nombre" required></div>

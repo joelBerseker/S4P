@@ -10,7 +10,6 @@ include("../../includes/acl.php");
 <?php 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-       
         $query = "SELECT * FROM ACCESO WHERE AccID = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
@@ -20,7 +19,6 @@ include("../../includes/acl.php");
             $rol = $row['AccRolID'];
             $recurso = $row['AccRecID'];
         }
-        
     }
     if(isset($_POST['update'])){
         $id = $_GET['id'];
@@ -72,7 +70,7 @@ include("../../includes/acl.php");
                         Seleccione el rol <br>
                     
                     <?php
-                        $consulta_rol="SELECT RolID, RolNom FROM ROL WHERE RolID = '$rol'";
+                        $consulta_rol="SELECT RolID, RolNom FROM ROL WHERE RolEst = 1";
                         
 
                         $querya=mysqli_query($conn,$consulta_rol);
@@ -80,24 +78,34 @@ include("../../includes/acl.php");
                     <select name="rolx2" class="form-control">
                         <?php
                         while($datosa = mysqli_fetch_array($querya)){ 
-                        ?>
-                        <option value="<?php echo $datosa['RolID'] ?>"> <?php echo $datosa['RolNom'] ?> </option>
+                            if( $datosa['RolID'] == $rol){
+                            ?>
+                            <option value="<?php echo $datosa['RolID']; ?>" selected> <?php echo $datosa['RolNom']; ?> </option>
+                            <?php
+                            }else{?>    
+                                <option value="<?php echo $datosa['RolID'] ?>"> <?php echo $datosa['RolNom'] ?> </option>  
                         <?php
-                        }
+                            }    
+                         }
                         ?>
                     </select><br>
                     Seleccione el recurso <br>
                     <?php
-                        $consulta_recurso = "SELECT RecID, RecNom FROM RECURSO WHERE RecID = '$recurso'";
+                        $consulta_recurso = "SELECT RecID, RecNom FROM RECURSO WHERE RecEst = 1 ";
                         
                         $queryb=mysqli_query($conn,$consulta_recurso);
                     ?>
                     <select name="recursox2" class="form-control">
                         <?php
                         while($datosb = mysqli_fetch_array($queryb)){ 
-                        ?>
-                        <option value="<?php echo $datosb['RecID'] ?>"> <?php echo $datosb['RecNom'] ?> </option>
-                        <?php
+                            if( $datosa['RecID'] == $recurso){
+                                ?>
+                                <option value="<?php echo $datosb['RecID']; ?>" selected> <?php echo $datosb['RecNom']; ?> </option>
+                                <?php
+                                }else{?>    
+                                    <option value="<?php echo $datosb['RecID'] ?>"> <?php echo $datosb['RecNom'] ?> </option>  
+                            <?php
+                                }  
                         }
                         ?>
                     </select>
