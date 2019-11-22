@@ -27,10 +27,6 @@
         header("Location: ../");
     }
 ?>
-<<<<<<< HEAD
-
-=======
->>>>>>> 415fa629b79bd717745af1a06b5e1f2fcfdddaf9
 <div class="section2"><br><br>
     <div class="container p-3"></div>
     <div class="row">
