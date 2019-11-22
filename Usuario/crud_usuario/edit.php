@@ -73,7 +73,7 @@
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
-                <label><b>Editar Usuario</b></label>
+                <label><b>EDITAR USUARIO</b></label>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Nombre:</label></div>
@@ -115,16 +115,29 @@
                     <input class="form-control form-control-sm " value="<?php echo $contraseña;?>" type="password" name="contraseña" required >
                 </div>
             </div>
+            <div class="form-row form-group ">
+                <div class="col-4"><label>Estado:</label></div>
+                <div class="col">
+                    <select class="form-control col form-control-sm " id="exampleFormControlSelect1"  name="estado">
+                        <?php
+                            if($estado==1){
+                        ?>
+                            <option value="1"selected > Activo </option>
+                            <option value="0" > Inactivo </option>
+                            <?php }else {?>
+                            <option value="1" > Activo </option>
+                            <option value="0" selected > Inactivo </option>
+
+                        <?php
+                            }
+                        ?>
+					</select>  
+                </div>  
+            </div>            
             
 
-            <div class="form-row form-group ">
-                <div class="col-4">
-                    <label>Estado:</label>
-                </div>
-                <div class="col">
-                    <input class="form-control form-control-sm " value="<?php echo $estado;?>" type="text" name="estado" required >
-                </div>
-            </div>
+
+
             <div class="form-row form-group ">
                 <div class="col-5"><label>Imagen:</label></div>
                 <div class="col">

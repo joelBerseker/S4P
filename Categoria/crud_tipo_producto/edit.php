@@ -57,12 +57,29 @@ include("../../includes/acl.php");
                     </div>
 
                     <div class="form-row form-group ">
-                        <div class="col-4"><label>Estado: </label></div>
-                        <div class="col"><input class="form-control form-control-sm " type="text" value="<?php echo $estado; ?>" name="estado" required></div>
-                    </div>
+        <div class="col-4"><label>Estado:</label></div>
+        <div class="col">
+        <select name="estado" class="form-control form-control-sm">
+        <?php
+            if($estado==1){
+        ?>
+            <option value="1" selected> Activo </option>   
+            <option value="0" > Inactivo </option>   
+        <?php
+            }else{
+        ?>
+            <option value="1" > Activo </option> 
+            <option value="0" selected> Inactivo </option>
+        <?php
+            }
+        ?>
+
+		</select>
+        </div>
+    </div>
                     
                     <button class="btn btn-success btn-block" name="update">
-                        Update
+                        Enviar
                     </button>
                 </form>
             </div>

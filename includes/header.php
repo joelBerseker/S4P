@@ -112,7 +112,7 @@ function estadosGenerales($valor)
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Intercambio/tabla.php">INTERCAMBIO</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">Acceso</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Recurso">RECURSOS</a>
 							</div>

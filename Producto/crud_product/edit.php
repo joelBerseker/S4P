@@ -87,7 +87,7 @@ include('../../includes/data_base.php');
             <div class="card card-body">
                 <form action="edit.php?id=<?php echo $_GET['id'] ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label><b>AÑADIR PRODUCTO</b></label>
+                        <label><b>EDITAR PRODUCTO</b></label>
                     </div>
                     <div class="form-row form-group ">
                         <div class="col-4"><label>Nombre:</label></div>
@@ -132,13 +132,27 @@ include('../../includes/data_base.php');
 
 
                     <div class="form-row form-group ">
-                        <div class="col-4">
-                            <label>Estado:</label>
-                        </div>
-                        <div class="col">
-                            <input class="form-control form-control-sm " value="<?php echo $estado; ?>" type="text" name="estado" required>
-                        </div>
-                    </div>
+        <div class="col-4"><label>Estado:</label></div>
+        <div class="col">
+        <select name="estado1" class="form-control form-control-sm">
+        <?php
+            if($estado==1){
+        ?>
+            <option value="1" selected> Activo </option>   
+            <option value="0" > Inactivo </option>   
+        <?php
+            }else{
+        ?>
+            <option value="1" > Activo </option> 
+            <option value="0" selected> Inactivo </option>
+        <?php
+            }
+        ?>
+
+		</select>
+        </div>
+    </div>
+
                     <div class="form-row form-group ">
                         <div class="col-5"><label>Imagen:</label></div>
                         <div class="col">
@@ -157,7 +171,7 @@ include('../../includes/data_base.php');
 
 
                     <button class="btn btn-success btn-block" name="update">
-                        Update
+                        Enviar
                     </button>
                 </form>
             </div>

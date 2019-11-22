@@ -47,29 +47,31 @@ include("../../includes/acl.php");
         <div class="col-md-4 mb-5 mx-auto">
             <div class="card card-body">
                 <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
+                <div  class="form-group">
+            <label><b>EDITAR ACCESO</b></label>
+            </div>
                     <div class="form-group">
 						<input type="text" name="nombrex2" class="form-control" value="<?php echo $nombre;?>" placeholder="Nombre" autofocus>
 					</div>
 					<div class="form-group">
-                        <?php
-                        if($estado==1){
-                        ?>
-                        <p>Activo</p>
-                        <input type="radio" name="estadox2" value="1" class="form-control" checked> <br>    
-                        <p>Inactivo</p>
-                        <input type="radio" name="estadox2" value="0" class="form-control"> <br>    
-                        <?php
-                        }else{
-                        ?>
-
-                        <p>Activo</p>
-                        <input type="radio" name="estadox2" value="1" class="form-control" > <br>
-                        <p>Inactivo</p>
-                        <input type="radio" name="estadox2" value="0" class="form-control" checked
-                        > <br>
-                        <?php
-                        }
-                        ?>
+                    Estado:
+        
+        <select name="estadox2" class="form-control">
+        <?php
+            if($estado==1){
+        ?>
+            <option value="1" selected> Activo </option>   
+            <option value="0" > Inactivo </option>   
+        <?php
+            }else{
+        ?>
+            <option value="1" > Activo </option> 
+            <option value="0" selected> Inactivo </option>
+        <?php
+            }
+        ?>   
+        </select><br>
+        
                         Seleccione el rol <br>
                     
                     <?php
@@ -101,10 +103,10 @@ include("../../includes/acl.php");
                         <?php
                         }
                         ?>
-                    </select><br>
+                    </select>
                     </div>
 					<button class="btn btn-success btn-block" name="update">
-                        Actualizar
+                        Enviar
                     </button>
                 </form>
             </div>
