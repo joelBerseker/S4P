@@ -72,7 +72,7 @@
     </div>
             
             <button class="btn btn-success btn-block" name="update">
-                Actualizar
+                Enviar
             </button>
         </form>
             </div>
