@@ -17,7 +17,7 @@
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);
             $desciption = $row['RecNom'];
-            $cantidad = $row['RecEst']; 
+            $estado = $row['RecEst']; 
            
         }
         
@@ -25,8 +25,8 @@
     if(isset($_POST['update'])){
         $id = $_GET['id'];
         $description = $_POST['description1'];
-        $cantidad = $_POST['cantidad1']; 
-        $query = "UPDATE `RECURSO` SET `RecNom`='$description' ,`RecEst`=$cantidad WHERE `RecID`= $id ";
+        $estado = $_POST['estado1']; 
+        $query = "UPDATE `RECURSO` SET `RecNom`='$description' ,`RecEst`=$estado WHERE `RecID`= $id ";
         $result = mysqli_query($conn,$query);
         header("Location: ../");
     }
@@ -50,9 +50,26 @@
             </div>
             
             <div class="form-row form-group ">
-                <div class="col-4"><label>Estado: </label></div>
-                <div class="col"><input class="form-control form-control-sm " type="text" value="<?php echo $cantidad;?>" name="cantidad1" required ></div>
-            </div>
+        <div class="col-4"><label>Estado:</label></div>
+        <div class="col">
+        <select name="estado1" class="form-control form-control-sm">
+        <?php
+            if($estado==1){
+        ?>
+            <option value="1" selected> Activo </option>   
+            <option value="0" > Inactivo </option>   
+        <?php
+            }else{
+        ?>
+            <option value="1" > Activo </option> 
+            <option value="0" selected> Inactivo </option>
+        <?php
+            }
+        ?>
+
+		</select>
+        </div>
+    </div>
             
             <button class="btn btn-success btn-block" name="update">
                 Actualizar
