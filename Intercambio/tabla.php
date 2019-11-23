@@ -1,16 +1,15 @@
 
 <?php
 include("../includes/navbar.php");
-$titulo_html="Producto";
+$titulo_html="Intercambios";
 include("../includes/header.php");
 include("../includes/data_base.php");
 ?>
-<div class="section2"><br><br>
-	<div class="container p-3">
-		<div class="card mb-4 p-3">
-		<div class="mb-1">
-			<caption>
-				<!--<br> <br><br><br>-->     
+<div class="section2">
+<div class="container pt-4">
+		<div class="card p-3">
+					<div class="mb-2">
+			<caption>   
 	            <?php
 	                include("crud_usuarioproducto/add.php")
 	            ?>
@@ -22,7 +21,7 @@ include("../includes/data_base.php");
 			<table class='table table-hover' >
 				<thead>
 					<th>Precio</th>
-					<th>Descripcion</th>
+					<th>Descripción</th>
 					<th>Imagen</th>
 					<th>Estado</th>
 					<th>Acciones</th>
@@ -38,7 +37,7 @@ include("../includes/data_base.php");
 					<tr>
 						<td><?php echo $row['UsuProPre']?></td>
 						<td><?php echo $row['UsuProDes']?></td>
-						<td> <img src="mostrar.php?id=<?php echo $row['UsuProProID']?>" width="100" alt="Img blob" /> </td>
+						<td> <img src="mostrar.php?id=<?php echo $row['UsuProProID']?>"  width="75" alt="Img blob" /> </td>
 						<td><?php echo $row['usuProEst']?></td>
 						<td><?php echo $row['created_at']?></td>						
 						<td>

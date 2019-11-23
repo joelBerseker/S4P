@@ -1,17 +1,17 @@
 <?php
 	include("../includes/navbar.php");
 	$login=true;
-	$titulo_html= "Recurso";
+	$titulo_html= "Recursos";
 	include("../includes/header.php");
 	include("../includes/data_base.php");
 	$recurso="/Recurso";
 	include("../includes/acl.php");
 ?>
 
-<div class="section2"><br><br>
-<div class="container p-3">
-	<div class="card mb-4 p-3">
-		<div class="mb-1">
+<div class="section2">
+<div class="container pt-4">
+		<div class="card p-3">
+					<div class="mb-2">
 			<caption>
 				<!--<br> <br><br><br>-->     
 	            <?php
@@ -24,9 +24,9 @@
 			<table class='table table-hover'>
 				<thead>
 					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>ESTADO</th>
-					<th>FECHA DE CREACION</th>
+					<th>Nombre</th>
+					<th>Estado</th>
+					<th>Fecha de Creación</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</thead>

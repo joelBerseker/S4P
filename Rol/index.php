@@ -10,12 +10,8 @@ include("../includes/acl.php");
 ?>
 
 <div class="section2">
-	<div class="container pt-4">
+<div class="container pt-4">
 		<div class="card p-3">
-
-			<div class="row">
-
-				<div class="col-sm-12">
 					<div class="mb-2">
 						<caption>
 							<?php
@@ -27,9 +23,9 @@ include("../includes/acl.php");
 						<table class='table table-hover'>
 							<thead>
 								<th>ID</th>
-								<th>NOMBRE</th>
-								<th>ESTADO</th>
-								<th>FECHA DE CREACION</th>
+								<th>Nombre</th>
+								<th>Estado</th>
+								<th>Fecha de Creación</th>
 								<th>Editar</th>
 								<th>Eliminar</th>
 							</thead>
@@ -62,8 +58,6 @@ include("../includes/acl.php");
 							</tbody>
 						</table>
 					</div>
-				</div>
-			</div>
 		</div>
 	</div><br><br><br>
 </div>

@@ -8,11 +8,8 @@ $recurso = "/Acceso";
 include("../includes/acl.php");
 ?>
 <div class="section2">
-	<div class="container pt-4">
+<div class="container pt-4">
 		<div class="card p-3">
-			<div class="row">
-
-				<div class="col-sm-12">
 					<div class="mb-2">
 						<caption>
 							<?php
@@ -28,7 +25,7 @@ include("../includes/acl.php");
 								<th>Id del rol</th>
 								<th>Id de recurso</th>
 								<th>Estado</th>
-								<th>Fecha de creacion</th>
+								<th>Fecha de creación</th>
 								<th>Editar</th>
 								<th>Eliminar</th>
 							</thead>
@@ -57,8 +54,7 @@ include("../includes/acl.php");
 								<?php } ?>
 							</tbody>
 						</table>
-					</div>
-				</div>
+			
 			</div>
 		</div>
 	</div><br><br><br>

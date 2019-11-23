@@ -8,9 +8,9 @@ $recurso = "/Categoria/tabla";
 
 ?>
 <div class="section2">
-	<div class="container p-3">
-		<div class="card mb-4 p-3">
-			<div class="mb-1">
+<div class="container pt-4">
+		<div class="card p-3">
+					<div class="mb-2">
 				<caption>
 					<?php
 					include("crud_tipo_producto/add.php")
@@ -21,7 +21,7 @@ $recurso = "/Categoria/tabla";
 				<table class='table table-hover'>
 					<thead>
 						<th>Nombre</th>
-						<th>Descripcion</th>
+						<th>Descripción</th>
 						<th>Estado</th>
 						<th>Fecha de Creación</th>
 						<th>Imagen</th>
@@ -40,7 +40,7 @@ $recurso = "/Categoria/tabla";
 								<td><?php echo $row['CatDes'] ?></td>
 								<td><?php echo estadosGenerales($row['CatEst']) ?></td>
 								<td><?php echo $row['created_at'] ?></td>
-								<td><img src="mostrar.php?id=<?php echo $row['CatID'] ?>" alt="Card image cap" class="card-img-top"></td>
+								<td><img src="mostrar.php?id=<?php echo $row['CatID'] ?>"  width="75" alt="Img blob"></td>
 								<td>
 									<?php
 										include("crud_tipo_producto/editImagen.php")

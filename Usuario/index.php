@@ -8,9 +8,9 @@
 	include("../includes/acl.php");
 ?>
 <div class="section2"><br><br>
-<div class="container p-3">
-		<div class="card mb-4 p-3">
-		<div class="mb-1">
+<div class="container pt-4">
+		<div class="card p-3">
+					<div class="mb-2">
 			<caption>
 				<?php
 				//Usuario\crud_usuario\add.php
@@ -22,13 +22,13 @@
 			<div class="table-responsive">
 			<table class='table table-hover' >
 					<thead>
-						<th>Id</th>
+						<th>ID</th>
 						<th>Nombre</th>
 						<th>Correo</th>
 						<th>Imagen</th>
 						<th>Id del rol</th>
 						<th>Estado</th>
-						<th>Fecha de creacion</th>
+						<th>Fecha de Creación</th>
 						<th>Editar</th>
 						<th>Eliminar</th>
 					</thead>
@@ -42,7 +42,7 @@
 							<td><?php echo $row['UsuID']?></td>
 							<td><?php echo $row['UsuNom']?></td>
 							<td><?php echo $row['UsuCor']?></td>
-							<td><img src="mostrar.php?id=<?php echo $row['UsuID']?>" width="100" alt="Img blob" /></td>
+							<td><img src="mostrar.php?id=<?php echo $row['UsuID']?>"  width="75" alt="Img blob" /></td>
 							<td><?php echo $row['UsuRolID']?></td>
 							<td><?php echo $row['UsuEst']?></td>
 							<td><?php echo $row['created_at']?></td>

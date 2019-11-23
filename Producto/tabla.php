@@ -6,11 +6,11 @@
 	include("../includes/data_base.php")
 ?>
 <div class="section2">
-	<div class="container p-3">
-		<div class="card mb-4 p-3">
-		<div class="mb-1">
+<div class="container pt-4">
+		<div class="card p-3">
+					<div class="mb-2">
 			<caption>
-				<!--<br> <br><br><br>-->     
+			 
 	            <?php
 	                include("crud_product/add.php")
 	            ?>
@@ -39,7 +39,7 @@
 					<tr>
 						<td><?php echo $row['ProNom']?></td>
 						<td><?php echo $row['ProPre']?></td>
-						<td> <img src="mostrar.php?id=<?php echo $row['ProID']?>" width="100" alt="Img blob" /> </td>
+						<td> <img src="mostrar.php?id=<?php echo $row['ProID']?>" width="75" alt="Img blob" /> </td>
 						<td><?php echo $row['ProCatID']?></td>
 						<td><?php echo estadosGenerales($row['ProEst'])?></td>
 						<td><?php echo $row['created_at']?></td>						
