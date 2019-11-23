@@ -1,7 +1,7 @@
 <?php
 	include("../includes/navbar.php");
 	$login=true;
-	$titulo_html="Usuario";
+	$titulo_html="Usuarios";
 	include("../includes/header.php");
 	include("../includes/data_base.php");
 	$recurso="/Usuario";

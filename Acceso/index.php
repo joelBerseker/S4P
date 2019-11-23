@@ -1,6 +1,6 @@
 <?php
 include("../includes/navbar.php");
-$titulo_html = "Acceso";
+$titulo_html = "Accesos";
 include("../includes/header.php");
 
 include("../includes/data_base.php");

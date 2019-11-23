@@ -1,7 +1,7 @@
 <?php
 	include("../includes/navbar.php");
 	$producto=true;
-	$titulo_html="Producto";
+	$titulo_html="Productos";
 	include("../includes/header.php");
 	include("../includes/data_base.php")
 ?>

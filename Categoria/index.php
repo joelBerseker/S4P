@@ -1,7 +1,7 @@
 <?php
 include("../includes/navbar.php");
 $categoria=true;
-$titulo_html="Categoria";
+$titulo_html="Categorias";
 include("../includes/header.php");
 include("../includes/data_base.php");
 ?>
