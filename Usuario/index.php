@@ -7,7 +7,7 @@
 	$recurso="/Usuario";
 	include("../includes/acl.php");
 ?>
-<div class="section2"><br><br>
+<div class="section2">
 <div class="container pt-4">
 		<div class="card p-3">
 					<div class="mb-2">
