@@ -1,8 +1,8 @@
 <?php
-include('../../includes/navbar.php');
-$categoria = true;
-$titulo_html = "Editar Producto";
+include('../../includes/sesion.php');
 include('../../includes/data_base.php');
+$recurso = "/Producto/edit";
+include("../../includes/acl.php");
 ?>
 <?php
 if (isset($_GET['id'])) {
@@ -73,15 +73,14 @@ if (isset($_POST['update'])) {
 }
 ?>
 <?php
-
+include('../../includes/navbar.php');
+$categoria = true;
+$titulo_html = "Editar Producto";
 include('../../includes/header.php');
-$recurso = "/Producto/edit";
-include('../../includes/data_base.php');
-include("../../includes/acl.php");
 include('../../includes/data_base.php');
 ?>
 <div class="section2">
-    <div class="container p-4"></div>
+    <div class="container pt-4"></div>
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
@@ -89,6 +88,11 @@ include('../../includes/data_base.php');
                     <div class="form-group">
                         <label><b>EDITAR PRODUCTO</b></label>
                     </div>
+                    <div class="form-row form-group ">
+              <div class="col" align="center" >
+              <img src="../mostrar.php?id=<?php echo $id ?>" class="img-fluid" id="imagenmuestra" alt="Img blob" />
+                            </div>
+            </div>
                     <div class="form-row form-group ">
                         <div class="col-4"><label>Nombre:</label></div>
                         <div class="col">
@@ -154,7 +158,7 @@ include('../../includes/data_base.php');
     </div>
 
                     <div class="form-row form-group ">
-                        <div class="col-5"><label>Imagen:</label></div>
+                        <div class="col-4"><label>Imagen:</label></div>
                         <div class="col">
                             <!--
                     
@@ -162,9 +166,7 @@ include('../../includes/data_base.php');
                 -->
                             <input type="file" accept="image/* " class="form-control-file" name="myFile" id="imagen" maxlength="256" placeholder="Imagen">
                             <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
-                            <img src="../mostrar.php?id=<?php echo $id ?>" width="200" id="imagenmuestra" alt="Img blob" />
-                            <br>
-                            <br>
+                           
                         </div>
                     </div>
 

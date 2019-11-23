@@ -1,9 +1,8 @@
 <?php
-include('../../includes/navbar.php');
-$categoria = true;
-$titulo_html = "Categoria";
+include("../../includes/sesion.php");
 include("../../includes/data_base.php");
 $recurso = "/Categoria/edit";
+include("../../includes/acl.php");
 //
 ?>
 
@@ -29,22 +28,29 @@ if(isset($_POST['update'])){
     $result = mysqli_query($conn, $query);
     header("Location: ../tabla.php");
 }?>
-<?php
-include('../../includes/header.php');
 
+
+<?php
+include('../../includes/navbar.php');
+$categoria = true;
+$titulo_html = "Categoria";
+include('../../includes/header.php');
 include("../../includes/data_base.php");
-include("../../includes/acl.php");
 ?>
-<div class="section2"><br><br>
-    <div class="container p-3"></div>
+<div class="section2">
+    <div class="container pt-4"></div>
     <div class="row">
-        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
-        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4">
+    <div class="col-md-4 mx-auto">
             <div class="card card-body">
                 <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
                     <div class="form-group">
-                        <label><b>EDITAR PRODUCTO</b></label>
+                        <label><b>EDITAR CATEGORIA</b></label>
                     </div>
+                    <div class="form-row form-group ">
+              <div class="col" align="center" >
+                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+              </div>
+      </div>
                     <div class="form-row form-group ">
                         <div class="col-4"><label>Nombre:</label></div>
                         <div class="col">
@@ -84,8 +90,8 @@ include("../../includes/acl.php");
                 </form>
             </div>
         </div>
-        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
-    </div> <br><br><br>
+       
+    
 </div>
 
 <?php

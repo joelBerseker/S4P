@@ -1,11 +1,12 @@
 <?php
-include("../includes/navbar.php");
-$titulo_html = "Accesos";
-include("../includes/header.php");
-
+include("../includes/sesion.php");
 include("../includes/data_base.php");
 $recurso = "/Acceso";
 include("../includes/acl.php");
+
+include("../includes/navbar.php");
+$titulo_html = "Accesos";
+include("../includes/header.php");
 ?>
 <div class="section2">
 <div class="container pt-4">

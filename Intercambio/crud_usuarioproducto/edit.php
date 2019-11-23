@@ -1,7 +1,5 @@
 <?php
-include('../../includes/navbar.php');
-$titulo_html="Producto";
-include('../../includes/header.php');
+include('../../includes/sesion.php');
 include("../../includes/data_base.php");
 $recurso="/Intercambio/edit";
 include("../../includes/acl.php");
@@ -59,11 +57,15 @@ include("../../includes/acl.php");
 
 
 
-
+<?php
+include('../../includes/navbar.php');
+$titulo_html="Producto";
+include('../../includes/header.php');
+?>
 <div class="section2">
-<div class="container p-4"></div>
+<div class="container pt-4"></div>
     <div class="row">
-        <div class="col-md-4 mx-auto">
+    <div class="col-md-4 mx-auto">
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">

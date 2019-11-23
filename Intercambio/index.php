@@ -1,7 +1,8 @@
 
 <?php
+include("../includes/sesion.php");
 include("../includes/navbar.php");
-$titulo_html="Producto";
+$titulo_html="Productos";
 include("../includes/header.php");
 include("../includes/data_base.php");
 ?>

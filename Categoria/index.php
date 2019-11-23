@@ -1,4 +1,5 @@
 <?php
+include("../includes/sesion.php");
 include("../includes/navbar.php");
 $categoria=true;
 $titulo_html="Categorias";

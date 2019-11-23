@@ -1,6 +1,4 @@
 <?php
-include('data_base_autenticacion.php');
-include('sesion.php');
 include('data_base.php');
 $dirEjec = "/S4P";
 function estadosGenerales($valor)
