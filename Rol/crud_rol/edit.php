@@ -1,8 +1,5 @@
 <?php
-	include('../../includes/navbar.php');
-    $login=true;
-    $titulo_html = "Editar Rol";
-    include('../../includes/header.php');
+	include('../../includes/sesion.php');
     include('../../includes/data_base.php');
     $recurso="/Rol/edit";
 	include("../../includes/acl.php");
@@ -26,6 +23,12 @@
         $result = mysqli_query($conn,$query);
         header("Location: ../");
     }
+?>
+<?php
+	include('../../includes/navbar.php');
+    $login=true;
+    $titulo_html = "Editar Rol";
+    include('../../includes/header.php');
 ?>
 <div class="section2"><br><br>
     <div class="container p-3"></div>

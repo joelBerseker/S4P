@@ -1,8 +1,5 @@
 <?php
-	include('../../includes/navbar.php');
-    $login=true;
-    $titulo_html = "Recurso";
-    include('../../includes/header.php');
+	include('../../includes/sesion.php');
     include('../../includes/data_base.php');
 	$recurso="/Recurso/edit";
 	include("../../includes/acl.php");
@@ -32,7 +29,12 @@
     }
 ?>
 
-
+<?php
+	include('../../includes/navbar.php');
+    $login=true;
+    $titulo_html = "Recurso";
+    include('../../includes/header.php');
+?>
 <div class="section2"><br><br>
     <div class="container p-3">
     <div class="row">

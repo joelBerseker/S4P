@@ -1,4 +1,9 @@
 <?php
+include("../../includes/sesion.php");
+include("../../includes/data_base.php");
+
+?>
+<?php
 function imprimirTiempo($time)
 {
     date_default_timezone_set('America/Lima');
@@ -56,17 +61,6 @@ function imprimirTiempo($time)
     }
 }
 
-?>
-
-<?php
-include('../../includes/navbar.php');
-$titulo_html = "Producto";
-
-include('../../includes/header.php');
-include("../../includes/data_base.php");
-
-?>
-<?php
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -115,10 +109,12 @@ if (isset($_POST['update_comentar'])) {
 }
 
 ?>
+
 <?php 
-
+include('../../includes/navbar.php');
+$titulo_html = "Producto";
+include('../../includes/header.php');
 include("../../includes/data_base.php");
-
 ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">

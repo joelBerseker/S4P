@@ -1,9 +1,8 @@
 <?php
-    include("../../includes/navbar.php");
-    $login=true;
-    $titulo_html = "Editar Usuario";
+    include('../../includes/sesion.php');
     include('../../includes/data_base.php');
     $recurso="/Usuario/edit";
+    include("../../includes/acl_usuario_edit.php");
 ?>
 <?php 
     if(isset($_GET['id'])){
@@ -59,9 +58,12 @@
     }
 ?>
 <?php
+    include("../../includes/navbar.php");
+    $login=true;
+    $titulo_html = "Editar Usuario";
     include('../../includes/header.php');
     include("../../includes/data_base.php");
-    include("../../includes/acl_usuario_edit.php");
+    
 
 ?>
 

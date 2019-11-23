@@ -1,9 +1,6 @@
 <?php
-include('../../includes/navbar.php');
-$titulo_html = "Acceso";
-include('../../includes/header.php');
+include("../../includes/sesion.php");
 include("../../includes/data_base.php");
-
 $recurso = "/Acceso/edit";
 include("../../includes/acl.php");
 ?>
@@ -38,6 +35,12 @@ if (isset($_POST['update'])) {
 }
 ?>
 
+
+<?php
+include('../../includes/navbar.php');
+$titulo_html = "Acceso";
+include('../../includes/header.php');
+?>
 <div class="section2">
     <div class="container p-4"></div>
     <div class="row">

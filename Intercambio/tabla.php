@@ -1,5 +1,6 @@
 
 <?php
+include("../includes/sesion.php");
 include("../includes/navbar.php");
 $titulo_html="Intercambios";
 include("../includes/header.php");

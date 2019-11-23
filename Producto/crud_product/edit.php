@@ -1,8 +1,8 @@
 <?php
-include('../../includes/navbar.php');
-$categoria = true;
-$titulo_html = "Editar Producto";
+include('../../includes/sesion.php');
 include('../../includes/data_base.php');
+$recurso = "/Producto/edit";
+include("../../includes/acl.php");
 ?>
 <?php
 if (isset($_GET['id'])) {
@@ -73,11 +73,10 @@ if (isset($_POST['update'])) {
 }
 ?>
 <?php
-
+include('../../includes/navbar.php');
+$categoria = true;
+$titulo_html = "Editar Producto";
 include('../../includes/header.php');
-$recurso = "/Producto/edit";
-include('../../includes/data_base.php');
-include("../../includes/acl.php");
 include('../../includes/data_base.php');
 ?>
 <div class="section2">

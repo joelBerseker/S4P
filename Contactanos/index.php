@@ -1,4 +1,5 @@
 <?php
+include("../includes/sesion.php");
 include("../includes/navbar.php");
 $titulo_html="Contactanos";
 include("../includes/header.php");

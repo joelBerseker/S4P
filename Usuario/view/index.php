@@ -1,7 +1,5 @@
 <?php
-include('../../includes/navbar.php');
-$titulo_html = "Ver Usuario";
-include('../../includes/header.php');
+include('../../includes/sesion.php');
 include("../../includes/data_base.php");
 ?>
 
@@ -54,6 +52,14 @@ if (isset($_POST['update'])) {
     }
     header("Location: ../");
 }
+
+?>
+
+<?php
+include('../../includes/navbar.php');
+$titulo_html = "Ver Usuario";
+include('../../includes/header.php');
+include("../../includes/data_base.php");
 ?>
 <div class="section2">
     <div class="container p-4"></div>
