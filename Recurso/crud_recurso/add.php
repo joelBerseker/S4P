@@ -18,9 +18,9 @@
     </div>
     
     <div class="form-row form-group ">
-        <div class="col-4"><label>Seleccione el estado:</label></div>
+        <div class="col-4"><label>Estado:</label></div>
         <div class="col">
-        <select name="estado" class="form-control">
+        <select name="estado" class="form-control form-control-sm">
 						<option value="1"> Activo </option>
 						<option value="0"> Inactivo </option>
 					</select>

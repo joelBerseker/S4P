@@ -13,19 +13,19 @@
           <form action="crud_product/save.php" method="POST" enctype="multipart/form-data">
             <div class="form-row form-group ">
               <div class="col" align="center" >
-                <img src="../mostrar.php?id=<?php echo $row['ProID'] ?>"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
               </div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Nombre:</label></div>
+              <div class="col-4"><label>Nombre:</label></div>
               <div class="col"><input class="form-control form-control-sm " type="text" name="nombre" required></div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Descripción:</label></div>
+              <div class="col-4"><label>Descripción:</label></div>
               <div class="col"><input class="form-control form-control-sm " value="" type="text" name="description" required></div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Categoría:</label></div>
+              <div class="col-4"><label>Categoría:</label></div>
               <div class="col">
                 <?php
                 $querytipo = mysqli_query($conn, "SELECT CatID, CatNom FROM categoria where CatEst = 1");
@@ -42,12 +42,12 @@
               </div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Precios:</label></div>
+              <div class="col-4"><label>Precios:</label></div>
               <div class="col"><input class="form-control form-control-sm " type="text" name="precio" required></div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Imagen:</label></div>
-              <div class="col-7">
+              <div class="col-4"><label>Imagen:</label></div>
+              <div class="col">
                 <input type="file" name="myFile" accept="image/* " class="form-control-file" id="imagen">
               </div>
               <div class="offset-5 col-7">
@@ -58,7 +58,7 @@
             
             
             <div class="form-row form-group ">
-              <div class="col-5"><label>Estado:</label></div>
+              <div class="col-4"><label>Estado:</label></div>
               <div class="col">
         <select name="estado" class="form-control form-control-sm">
 						<option value="1"> Activo </option>

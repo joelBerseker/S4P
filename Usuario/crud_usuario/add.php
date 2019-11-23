@@ -11,30 +11,43 @@
       </div>
       <div class="modal-body">
       <!--C:\xampp\htdocs\S4P\Categoria\crud_tipo_producto\save.php-->
-      <form action="crud_usuario/save.php" method="POST"  enctype="multipart/form-data">
-					<div class="form-group">
-						<input type="text" name="nombre" class="form-control" placeholder="nombre del usuario" autofocus>
+	  <form action="crud_usuario/save.php" method="POST"  enctype="multipart/form-data">
+	  
+	  <div class="form-row form-group ">
+              <div class="col" align="center" >
+                <img src="/S4P/image/usuario-sin-imagen.jpg"  style="width: 200px;" id="imagenmuestra" alt="Img blob" />
+              </div>
+            </div>
+					<div class="form-group form-row">
+						<div class="col-4"><label>Nombre:</label></div>
+						<div class="col"><input type="text" name="nombre" class="form-control form-control-sm" autofocus></div>
 					</div>
-					<div class="form-group">
-						<input type="text" name="correo" class="form-control" placeholder="correo del usuario" >
+					<div class="form-group form-row">
+						<div class="col-4"><label>Correo:</label></div>
+						<div class="col"><input type="text" name="correo" class="form-control form-control-sm"></div>
 					</div>
-					<div class="form-group">
-						<input type="password" name="contraseña" class="form-control" placeholder="contraseña del usuario" >
+					<div class="form-group form-row">
+						<div class="col-4"><label>Contraseña:</label></div>
+						<div class="col"><input type="password" name="contraseña" class="form-control form-control-sm"  ></div>
 					</div>
-					<p>Seleccione el estado</p>
-					<select name="estado" class="form-control">
+					<div class="form-group form-row">
+						<div class="col-4"><label>Nombre:</label></div>
+						<div class="col"><select name="estado" class="form-control form-control-sm">
 						<option value="1"> Activo </option>
 						<option value="0"> Inactivo </option>
-					</select><br>
-					<div class="form-row form-group ">
+					</select></div>
+					</div>
+					<div class="form-group form-row">
+						<div class="col-4"><label>Imagen:</label></div>
          				 <div class="col"><input type="file" name="myFile" accept="image/* "class="form-control-file"></div>
      				 </div>
-					<p>Seleccione el rol</p>
+					  <div class="form-group form-row">
+						<div class="col-4"><label>Nombre:</label></div>
 					
 					<?php
 					$querya=mysqli_query($conn,"SELECT RolID, RolNom FROM ROL");
 					?>
-					<select name="rol" class="form-control">
+					<div class="col"><select name="rol" class="form-control form-control-sm">
 						<?php
 						while($datosa = mysqli_fetch_array($querya)){ 
 						?>
@@ -42,8 +55,8 @@
 						<?php
 						}
 						?>
-					</select>
-					<hr>
+					</select></div></div>
+					
 					<input type="submit" class="btn btn-success btn-block" name="save_acceso" value="Enviar">
 				</form>
 

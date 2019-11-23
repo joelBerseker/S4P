@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Añadir Juego para intercambiar</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Añadir Juego para Intercambio</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -12,15 +12,15 @@
       <div class="ray">
       <form action="<?php echo $dirEjec?>/Intercambio/crud_usuarioproducto/save.php" method="POST" >
         <div class="form-row form-group ">
-            <div class="col-5"><label>Nombre:</label></div>
+            <div class="col-4"><label>Nombre:</label></div>
             <div class="col"><input class="form-control form-control-sm " type="text" name="nombre" required></div>
         </div>
     <div class="form-row form-group ">
-        <div class="col-5"><label>Descripción:</label></div>
+        <div class="col-4"><label>Descripción:</label></div>
         <div class="col"><input class="form-control form-control-sm " value=""type="text" name="descripcion" required></div>
     </div>
     <div class="form-row form-group ">
-        <div class="col-5"><label>Juego:</label></div>
+        <div class="col-4"><label>Juego:</label></div>
         <div class="col">
         <?php
 			$querytipo=mysqli_query($conn,"SELECT ProID, ProNom FROM producto where ProEst = 1");
@@ -37,11 +37,11 @@
         </div>  
     </div>
     <div class="form-row form-group ">
-        <div class="col-5"><label>Precio:</label></div>
+        <div class="col-4"><label>Precio:</label></div>
         <div class="col"><input class="form-control form-control-sm " type="text" name="precio" required ></div>
     </div>
     <div class="form-row form-group ">
-        <div class="col-5"><label>Estado:</label></div>
+        <div class="col-4"><label>Estado:</label></div>
         <div class="col">
         <select name="estado" class="form-control form-control-sm">
 						<option value="1"> Activo </option>

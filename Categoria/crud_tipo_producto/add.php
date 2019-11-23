@@ -12,6 +12,11 @@
       <div class="modal-body">
       <!--C:\xampp\htdocs\S4P\Categoria\crud_tipo_producto\save.php-->
       <form action="crud_tipo_producto/save.php" method="POST"  enctype="multipart/form-data">
+      <div class="form-row form-group ">
+              <div class="col" align="center" >
+                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+              </div>
+      </div>
     <div class="form-row form-group ">
         <div class="col-4"><label>Nombre:</label></div>
         <div class="col"><input class="form-control form-control-sm " value=""type="text" name="nombre" required></div>
@@ -21,7 +26,7 @@
         <div class="col"><input class="form-control form-control-sm " value=""type="text" name="descripcion" required></div>
     </div>
     <div class="form-row form-group ">
-          <div class="col-5"><label>Imagen:</label></div>
+          <div class="col-4"><label>Imagen:</label></div>
           <div class="col"><input type="file" name="myFile" accept="image/* "class="form-control-file"></div>
     </div>
     <div class="form-row form-group ">
