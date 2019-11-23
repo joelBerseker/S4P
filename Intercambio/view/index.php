@@ -209,9 +209,11 @@ include("../../includes/data_base.php");
                                     </div>
                                 </div>
                                 <div class="col-md-8">
+                                <?php if($idUser==$datosb['UsuID']){ ?>
                                     <div align="right">
                                         <a class="btn p-1" href="eliminar.php?idPag=<?php echo $id; ?>&idMen=<?php echo $row['UsuMenID']; ?>" style="background: white; color:#6D6D6D"><span class=" icon-cross"></span> </a>
                                     </div>
+                    <?php }?>
                                     <div class="card-body PT-0">
                                         <h5 class="card-title"><?php
 
