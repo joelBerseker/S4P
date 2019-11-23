@@ -15,7 +15,11 @@ if(isset($_POST['save_product'])){
     $archivo_nombre=$_FILES['myFile']['name'];
     $archivo_tipo = $_FILES['myFile']['type'];
     $archivo_temp = $_FILES['myFile']['tmp_name'];
-    $archivo_binario = (file_get_contents($archivo_temp));
+    if($archivo_temp==null){
+        $archivo_binario = (file_get_contents('../../image/objeto-sin-imagen.png'));
+    }else{
+        $archivo_binario = (file_get_contents($archivo_temp));
+    }
     $precio = $_POST['precio'];
     $nombre = $_POST['nombre'];
     $estado = $_POST['estado'];                                                                                                                                        

@@ -155,6 +155,9 @@ include("../../includes/data_base.php");
                                 <input readonly class="form-control form-control-sm " value="<?php echo $precio; ?>" type="text" name="precio" required>
                             </div>
                         </div>
+                        <button class="btn btn-secondary btn-block" name="update">
+                        Editar
+                    </button>
                     </div>
 
                 </div>
@@ -179,11 +182,14 @@ include("../../includes/data_base.php");
                 </form>
 
 
-
+                <?php
+                $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id ORDER by created_at DESC";
+                $resultmensaje = mysqli_query($conn, $querymensaje);
+                if (mysqli_num_rows($resultmensaje) >0) {
+                ?>
                 <div class="card card-body mt-3">
                     <?php
-                    $querymensaje = "SELECT * FROM usuario_mensaje WHERE UsuMenUsuProID=$id ORDER by created_at DESC";
-                    $resultmensaje = mysqli_query($conn, $querymensaje);
+                    
                     while ($row = mysqli_fetch_array($resultmensaje)) {
                         ?>
 
@@ -199,6 +205,7 @@ include("../../includes/data_base.php");
 
                         <div class="card mb-3 card2" style="max-width: 540px;">
                             <div class="row no-gutters">
+                                
                                 <div class="col-md-4">
 
                                     <div class="imageny3" style="background-image:url('mostrar.php?id=<?php echo $datosb['UsuID']; ?>');">
@@ -241,6 +248,7 @@ include("../../includes/data_base.php");
 
                     <!--  hasta aqui para los comentarios-->
                 </div>
+                    <?php } ?>
             </div>
 
 

@@ -20,9 +20,11 @@ include("../../includes/data_base_autenticacion.php");
 
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
+      $message_class ='success';
      
     } else {
       $message = 'Lo sentimos, debe haber habido un problema al crear su cuenta';
+      $message_class ='danger';
     }
   }
   
@@ -37,7 +39,7 @@ include("../../includes/data_base_autenticacion.php");
           <hr>
           <?php if(!empty($message)): ?>
            
-            <p class="text"> <?= $message ?></p>
+            <p class="text-<?=$message_class?>"> <?= $message ?></p>
             
           <?php endif; ?>
           <form action="index.php" method="POST">
