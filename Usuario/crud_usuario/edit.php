@@ -147,7 +147,7 @@
                 -->
                 <input type="file" accept="image/* "class="form-control-file" name="myFile" id="imagen" maxlength="256" placeholder="Imagen">
                 <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
-                <img src="../mostrar.php?id=<?php echo $row['UsuID']?>" width="200" id="imagenmuestra" alt="Img blob" />
+                <img src="../mostrar.php?id=<?php echo $_GET['id']?>" width="200" id="imagenmuestra" alt="Img blob" />
                 <br>
                 <br>
                 </div>
