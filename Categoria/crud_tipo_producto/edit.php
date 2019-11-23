@@ -79,7 +79,7 @@ include("../../includes/acl.php");
     </div>
                     
                     <button class="btn btn-success btn-block" name="update">
-                        Enviar
+                    Actualizar
                     </button>
                 </form>
             </div>
