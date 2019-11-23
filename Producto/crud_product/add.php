@@ -21,11 +21,11 @@
               <div class="col"><input class="form-control form-control-sm " type="text" name="nombre" required></div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Descripcion:</label></div>
+              <div class="col-5"><label>Descripción:</label></div>
               <div class="col"><input class="form-control form-control-sm " value="" type="text" name="description" required></div>
             </div>
             <div class="form-row form-group ">
-              <div class="col-5"><label>Categoria:</label></div>
+              <div class="col-5"><label>Categoría:</label></div>
               <div class="col">
                 <?php
                 $querytipo = mysqli_query($conn, "SELECT CatID, CatNom FROM categoria where CatEst = 1");

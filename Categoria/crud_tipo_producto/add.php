@@ -17,7 +17,7 @@
         <div class="col"><input class="form-control form-control-sm " value=""type="text" name="nombre" required></div>
     </div>
     <div class="form-row form-group ">
-        <div class="col-4"><label>Descripcion:</label></div>
+        <div class="col-4"><label>Descripción:</label></div>
         <div class="col"><input class="form-control form-control-sm " value=""type="text" name="descripcion" required></div>
     </div>
     <div class="form-row form-group ">

@@ -51,7 +51,7 @@ include("../../includes/acl.php");
                             <input value="<?php echo $nombre; ?>" class="form-control form-control-sm " vtype="text" name="nombre" required></div>
                     </div>
                     <div class="form-row form-group ">
-                        <div class="col-4"><label>Descripcion:</label></div>
+                        <div class="col-4"><label>Descripción:</label></div>
                         <div class="col">
                             <input value="<?php echo $description; ?>" class="form-control form-control-sm " vtype="text" name="description" required></div>
                     </div>

@@ -95,12 +95,12 @@ include('../../includes/data_base.php');
                             <input value="<?php echo $nombre; ?>" class="form-control form-control-sm " vtype="text" name="nombre" required></div>
                     </div>
                     <div class="form-row form-group ">
-                        <div class="col-4"><label>Descripcion:</label></div>
+                        <div class="col-4"><label>Descripción:</label></div>
                         <div class="col">
                             <input value="<?php echo $description; ?>" class="form-control form-control-sm " vtype="text" name="descripcion" required></div>
                     </div>
                     <div class="form-row form-group ">
-                        <div class="col-4"><label>Categoria:</label></div>
+                        <div class="col-4"><label>Categoría:</label></div>
                         <div class="col">
                             <?php
                             $querytipo = mysqli_query($conn, "SELECT CatID, CatNom FROM categoria");

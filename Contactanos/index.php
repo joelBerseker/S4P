@@ -51,7 +51,7 @@ include("../includes/header.php");
 					<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
 						<div class="container text-center">
 							<br>
-							<p class="h3">Informacion</p>
+							<p class="h3">Información</p>
 							<div class="row justify-content-center">
 								<hr class="style14" width="50%">
 							</div>

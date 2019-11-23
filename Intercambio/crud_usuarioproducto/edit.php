@@ -70,7 +70,7 @@ include("../../includes/acl.php");
                 <label><b>EDITAR INTERCAMBIO</b></label>
             </div>
             <div class="form-row form-group ">
-                <div class="col-4"><label>Descripcion:</label></div>
+                <div class="col-4"><label>Descripción:</label></div>
                 <div class="col">
                     <input value="<?php echo $description;?>" class="form-control form-control-sm " type="text" name="descripcion" required></div>
             </div>
