@@ -66,7 +66,7 @@ include("../includes/sesion.php");
 	</div>
 </div>
 </div>
-</div><br><br><br>
+</div>
 </div>
 
 <?php

@@ -36,7 +36,7 @@ function estadosGenerales($valor)
 	-->
 </head>
 
-<body style="background-color: #000;">
+<body style="background-color: #F5F5F5;">
 
 	<div class="social">
 		<ul>
