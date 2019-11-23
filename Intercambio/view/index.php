@@ -155,6 +155,9 @@ include("../../includes/data_base.php");
                                 <input readonly class="form-control form-control-sm " value="<?php echo $precio; ?>" type="text" name="precio" required>
                             </div>
                         </div>
+                        <button class="btn btn-secondary btn-block" name="update">
+                        Editar
+                    </button>
                     </div>
 
                 </div>
