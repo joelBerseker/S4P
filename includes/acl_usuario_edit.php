@@ -1,6 +1,7 @@
 <?php 
+$mensaje = "";
+$accederPag = false;
     if(!empty($user)){
-        $accederPag=false;
         $correo=$user['UsuCor'];
         $recurso="/Usuario/edit";
         $idUsuario=$user['UsuID'];
@@ -36,46 +37,39 @@
                                             if($AccEst==1){
                                                 $accederPag=true;
                                             }else{
-                                                header("Location: /S4P/Errores/index.php?m=El acceso no esta activo");
-                                                echo "el acceso no esta activo";
+                                                $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no esta activo";
                                             }
                                         }else {
-                                            header("Location: /S4P/Errores/index.php?m=El acceso no existe");
-                                            echo "el acceso no existe";
+                                            $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no existe";
                                         }
                                     }else{
-                                        header("Location: /S4P/Errores/index.php?m=El recurso no esta activo");
-                                        echo "el recurso no esta activo";
+                                        $mensaje ="Location: /S4P/Errores/index.php?m=El recurso no esta activo";
                                     }
                                 }else{
-                                    header("Location: /S4P/Errores/index.php?m=El recurso no existe");
-                                    echo "el recurso no existe";
+                                    $mensaje ="Location: /S4P/Errores/index.php?m=El recurso no existe";
                                 }
                             }else{
-                                header("Location: /S4P/Errores/index.php?m=El rol no esta activo");
-                                echo "el rol no esta activo";
+                                $mensaje ="Location: /S4P/Errores/index.php?m=El rol no esta activo";
                             }
                         }else{
-                            header("Location: /S4P/Errores/index.php?m=El rol no existe");
-                            echo "el rol no existe";
+                            $mensaje ="Location: /S4P/Errores/index.php?m=El rol no existe";
                         }
                     }else{
-                        header("Location: /S4P/Errores/index.php?m=El usuario no esta activo");
-                        echo "el usuario no esta activo";
+                        $mensaje ="Location: /S4P/Errores/index.php?m=El usuario no esta activo";
                     }
                 }else{
-                    header("Location: /S4P/Errores/index.php?m=Este no es tu usuario");
-                    echo "este no es tu usuario";
+                    $mensaje ="Location: /S4P/Errores/index.php?m=Este no es tu usuario";
                 }
             }else{
                 $accederPag=true;
             }
         }else{
-            header("Location: /S4P/Errores/index.php?m=El usuario no existe");
-            echo "el usuario no existe";
+            $mensaje ="Location: /S4P/Errores/index.php?m=El usuario no existe";
         }
     }else{
-        header("Location: /S4P/Errores/index.php?m=Inicia sesion por favor");
-        echo "inicia sesion por favor";
+        $mensaje ="Location: /S4P/Errores/index.php?m=Inicia sesion por favor";
+    }
+    if(!$accederPag){
+        exit(header($mensaje."->".mysqli_num_rows($respuesta_de_tabla_Recurso) ));
     }
 ?>

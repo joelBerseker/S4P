@@ -36,7 +36,7 @@ if (!empty($user)) {
                                     if ($AccEst == 1) {
                                         $accederPag = true;
                                     } else {
-                                        $mensaje ="Location: /S4P/Errores/index.php?m=Elaccesonoestaactivo";
+                                        $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no esta activo";
                                     }
                                 } else {
                                     $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no existe";
