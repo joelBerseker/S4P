@@ -69,7 +69,7 @@
 
 
 <div class="section2">
-<div class="container p-3"></div>
+<div class="container pt-4"></div>
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
@@ -77,6 +77,11 @@
             <div  class="form-group">
                 <label><b>EDITAR USUARIO</b></label>
             </div>
+            <div class="form-row form-group ">
+              <div class="col" align="center" >
+              <img src="../mostrar.php?id=<?php echo $_GET['id']?>" width="200px" id="imagenmuestra" alt="Img blob" />
+            </div>
+      </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Nombre:</label></div>
                 <div class="col">
@@ -141,7 +146,7 @@
 
 
             <div class="form-row form-group ">
-                <div class="col-5"><label>Imagen:</label></div>
+                <div class="col-4"><label>Imagen:</label></div>
                 <div class="col">
                 <!--
                     
@@ -149,9 +154,7 @@
                 -->
                 <input type="file" accept="image/* "class="form-control-file" name="myFile" id="imagen" maxlength="256" placeholder="Imagen">
                 <input type="hidden" class="form-control" name="imagenactual" id="imagenactual">
-                <img src="../mostrar.php?id=<?php echo $_GET['id']?>" width="200" id="imagenmuestra" alt="Img blob" />
-                <br>
-                <br>
+                
                 </div>
             </div> 
             <button class="btn btn-success btn-block" name="update">

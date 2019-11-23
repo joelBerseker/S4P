@@ -35,11 +35,11 @@
     $titulo_html = "Recurso";
     include('../../includes/header.php');
 ?>
-<div class="section2"><br><br>
-    <div class="container p-3">
+
+<div class="section2">
+    <div class="container pt-4"></div>
     <div class="row">
-        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
-        <div class="col-sm-8 col-md-6 col-lg-4 col-xl-4">
+        <div class="col-md-4 mx-auto">
             <div class="card card-body">
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST">
             <div  class="form-group">
@@ -79,8 +79,7 @@
         </form>
             </div>
         </div>
-        <div class="col-sm-2 col-md-3 col-lg-4 col-xl-4"></div>
-    </div><br><br><br>
+        
 </div>
 </div>
 
