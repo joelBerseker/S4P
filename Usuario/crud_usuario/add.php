@@ -31,7 +31,7 @@
 						<div class="col"><input type="password" name="contraseña" class="form-control form-control-sm"  ></div>
 					</div>
 					<div class="form-group form-row">
-						<div class="col-4"><label>Nombre:</label></div>
+						<div class="col-4"><label>Estado:</label></div>
 						<div class="col"><select name="estado" class="form-control form-control-sm">
 						<option value="1"> Activo </option>
 						<option value="0"> Inactivo </option>
