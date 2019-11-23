@@ -133,7 +133,7 @@ include("../../includes/acl.php");
 
             
             <button class="btn btn-success btn-block" name="update">
-                Enviar
+                Actualizar
             </button>
         </form>
             </div>
