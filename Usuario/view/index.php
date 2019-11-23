@@ -62,14 +62,14 @@ include('../../includes/header.php');
 include("../../includes/data_base.php");
 ?>
 <div class="section2">
-    <div class="container p-4"></div>
+    <div class="container pt-4"></div>
     <div class="row">
         <div class="col-4 mx-auto">
             <div class="card card-body">
                 <div class="form-row form-group ">
                    
                     <div class="col" align="center">
-                        <img src="../mostrar.php?id=<?php echo $row['UsuID'] ?>" width="250px" id="imagenmuestra" alt="Img blob" />
+                        <img src="../mostrar.php?id=<?php echo $row['UsuID'] ?>" width="200px" id="imagenmuestra" alt="Img blob" />
 
                     </div>
                 </div>
@@ -83,6 +83,7 @@ include("../../includes/data_base.php");
                     <div class="col">
                         <input readonly value="<?php echo $correo; ?>" class="form-control form-control-sm " type="text" name="correo" required></div>
                 </div>
+                <button class="btn btn-primary btn-block" name="update">Editar</button>
             </div>
         </div>
     </div>

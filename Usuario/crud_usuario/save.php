@@ -46,7 +46,11 @@ if(isset($_POST['save_acceso'])){
     $archivo_nombre=$_FILES['myFile']['name'];
     $archivo_tipo = $_FILES['myFile']['type'];
     $archivo_temp = $_FILES['myFile']['tmp_name'];
-    $archivo_binario = (file_get_contents($archivo_temp));
+    if($archivo_temp==null){
+        $archivo_binario = (file_get_contents('../../image/usuario-sin-imagen.jpg'));
+    }else{
+        $archivo_binario = (file_get_contents($archivo_temp));
+    }
     $password = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
     $id_rol = $_POST['rol'];
 
