@@ -3,6 +3,7 @@
     include('../../includes/data_base.php');
     $recurso="/Usuario/edit";
     include("../../includes/acl_usuario_edit.php");
+    
 ?>
 <?php 
     if(isset($_GET['id'])){
@@ -32,7 +33,7 @@
         $archivo_temp = $_FILES['myFile']['tmp_name'];
         $archivo_binario = (file_get_contents($archivo_temp));
         $password = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
-        $mysqli = new mysqli("localhost", "root", "", "s4p");
+        $mysqli = new mysqli($database_red,$database_nombre,$database_contraseña,$database_name);
         $stmt = $mysqli->prepare("UPDATE usuario SET `UsuNom`=?, `UsuCor`=?,`UsuCon`=?,`UsuImgNom`=?,`UsuImgTip`=? ,`UsuImgArc`=?,`UsuRolID`=?,`UsuEst`=? WHERE UsuID=?");
         /* BK: always check whether the prepare() succeeded */
         if ($stmt === false) {
