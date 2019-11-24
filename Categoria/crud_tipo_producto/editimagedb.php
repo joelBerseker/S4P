@@ -1,4 +1,5 @@
-<?php 
+<?php
+ include('../../includes/data_base.php');
 if(isset($_POST['save_edit_imagen'])){
     $id                 =   $_GET['id'];
     $archivo_nombre     =   $_FILES['myFile']['name'];

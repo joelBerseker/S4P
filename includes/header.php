@@ -31,8 +31,8 @@ function estadosGenerales($valor)
 	<link rel="stylesheet" type="text/css" href="<?php echo $dirEjec ?>/frontend/library/css/icons.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo $dirEjec ?>/frontend/library/css/style.css">
 	<link rel="icon" href="<?php echo $dirEjec ?>/image/page_icon.png">
-	<!--<script src="/S4P/frontend/library/jquery-3.4.1.min.js"></script>	
-	<script src="/S4P/frontend/library/bootstrap/js/bootstrap.js"></script>
+	<!--<script src="<?php echo $dirEjec ?>/frontend/library/jquery-3.4.1.min.js"></script>	
+	<script src="<?php echo $dirEjec ?>/frontend/library/bootstrap/js/bootstrap.js"></script>
 	-->
 </head>
 

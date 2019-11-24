@@ -1,5 +1,6 @@
 <?php
 include("../includes/sesion.php");
+include("../includes/global_variable.php");
 include("../includes/navbar.php");
 $nosotros=true;
 $titulo_html="Nosotros";
@@ -7,7 +8,7 @@ include("../includes/header.php");
 ?>
 <nav aria-label="breadcrumb" style="">
 	<ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-		<li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+		<li class="breadcrumb-item"><a href="<?=$dirEjec?>">Inicio</a></li>
 		<li class="breadcrumb-item active" aria-current="page">Nosotros</li>
 
 	</ol>

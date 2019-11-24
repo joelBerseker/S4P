@@ -2,6 +2,7 @@
 include("../../includes/sesion.php");
 include("../../includes/data_base.php");
 
+include("../../includes/global_variable.php");
 ?>
 <?php
 function imprimirTiempo($time)
@@ -104,7 +105,7 @@ if (isset($_POST['update_comentar'])) {
         mysqli_stmt_close($stmt);
         header("Location: ../view?id=$id");
     }else{
-        header("Location: /S4P/Errores/?m=jodete");
+        header("Location: $dirEjec/Errores/?m=jodete");
     }
 }
 
@@ -118,7 +119,7 @@ include("../../includes/data_base.php");
 ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-        <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo $dirEjec?>">Inicio</a></li>
         <li class="breadcrumb-item"><a href="#">Productos</a></li>
         <li class="breadcrumb-item active" aria-current="page">Vista de juego</li>
 
