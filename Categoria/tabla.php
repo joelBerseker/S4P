@@ -6,7 +6,7 @@ $titulo_html = "Categorias";
 include("../includes/header.php");
 include("../includes/data_base.php");
 $recurso = "/Categoria/tabla";
-
+include("../includes/acl.php");
 ?>
 <div class="section2">
 <div class="container pt-4">
