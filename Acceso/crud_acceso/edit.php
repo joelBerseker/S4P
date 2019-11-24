@@ -10,7 +10,7 @@ include("../../includes/acl.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM ACCESO WHERE AccID = $id";
+    $query = "SELECT * FROM acceso WHERE AccID = $id";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
     $estado = $_POST['estadox2'];
     $rol = $_POST['rolx2'];
     $recurso = $_POST['recursox2'];
-    $query = "UPDATE ACCESO SET AccDes = '$nombre', AccEst = '$estado', AccRolID = '$rol', AccRecID = '$recurso' WHERE AccID = $id";
+    $query = "UPDATE acceso SET AccDes = '$nombre', AccEst = '$estado', AccRolID = '$rol', AccRecID = '$recurso' WHERE AccID = $id";
     $result = mysqli_query($conn, $query);
 
     $_SESSION['message'] = 'Acceso Edited Succesfully';
@@ -89,7 +89,7 @@ include('../../includes/header.php');
                         <div class="col">
 
                     <?php
-                    $consulta_rol = "SELECT RolID, RolNom FROM ROL WHERE RolID = '$rol'";
+                    $consulta_rol = "SELECT RolID, RolNom FROM rol WHERE RolID = '$rol'";
 
 
                     $querya = mysqli_query($conn, $consulta_rol);
@@ -108,7 +108,7 @@ include('../../includes/header.php');
                         <div class="col-4"><label>Recurso:</label></div>
                         <div class="col">
                     <?php
-                    $consulta_recurso = "SELECT RecID, RecNom FROM RECURSO WHERE RecID = '$recurso'";
+                    $consulta_recurso = "SELECT RecID, RecNom FROM recurso WHERE RecID = '$recurso'";
 
                     $queryb = mysqli_query($conn, $consulta_recurso);
                     ?>

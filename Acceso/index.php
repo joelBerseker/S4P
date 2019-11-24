@@ -32,7 +32,7 @@ include("../includes/header.php");
 							</thead>
 							<tbody>
 								<?php
-								$query = "SELECT * FROM ACCESO";
+								$query = "SELECT * FROM acceso";
 								$resultAcceso = mysqli_query($conn, $query);
 								while ($row = mysqli_fetch_array($resultAcceso)) {
 									?>

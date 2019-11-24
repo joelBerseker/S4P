@@ -18,7 +18,7 @@
                     <div class="form-group form-row">
                         <div class="col-4"><label>Rol:</label></div>
                     <?php
-                    $querya = mysqli_query($conn, "SELECT RolID, RolNom FROM ROL");
+                    $querya = mysqli_query($conn, "SELECT RolID, RolNom FROM rol");
                     ?>
                     <div class="col"><select name="rol" class="form-control form-control-sm">
                         <?php
@@ -32,7 +32,7 @@
                     <div class="form-group form-row">
                         <div class="col-4"><label>Recurso:</label></div>
                     <?php
-                    $queryb = mysqli_query($conn, "SELECT RecID, RecNom FROM RECURSO");
+                    $queryb = mysqli_query($conn, "SELECT RecID, RecNom FROM recurso");
                     ?>
                     <div class="col"><select name="recurso" class="form-control form-control-sm">
                         <?php

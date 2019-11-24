@@ -7,7 +7,7 @@ include("../../includes/acl.php");
 <?php
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $query = "DELETE FROM ACCESO WHERE AccID = $id";
+    $query = "DELETE FROM acceso WHERE AccID = $id";
     $result = mysqli_query($conn,$query);
     if(!$result){
         die("Query Fallo");
