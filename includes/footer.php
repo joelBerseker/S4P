@@ -1,5 +1,5 @@
 <?php 
-    $dirEjec ="/S4P";
+     include('global_variable.php');
 ?>
 <footer class="footer-area footer" style="background-color:black" id="sticky-footer" >
     <div class="container">
@@ -20,8 +20,8 @@
         <div class="col-4" style="padding-top:15px ;" align="center">
         <ul style="color:black">
                 <li><b><a href="<?php echo $dirEjec?>/Contactanos" style="color:#CACACA">Contactanos</a></b></li>
-                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/ingresar" style="color:#CACACA">Ingresar</a></b></li>
-                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/registrarse" style="color:#CACACA">Registrarse</a></b></li>       
+                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/Login" style="color:#CACACA">Ingresar</a></b></li>
+                <li><b><a href="<?php echo $dirEjec?>/Autenticacion/Singup" style="color:#CACACA">Registrarse</a></b></li>       
         </ul>
         </div>
     </div>

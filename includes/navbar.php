@@ -1,5 +1,4 @@
 <?php
-	$dirEjec		=	"/S4P";
   	$inicio			=	false;
 	$producto		=	false;
 	$categoria		=	false;

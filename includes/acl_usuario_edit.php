@@ -70,6 +70,6 @@ $accederPag = false;
         $mensaje ="Location: /S4P/Errores/index.php?m=Inicia sesion por favor";
     }
     if(!$accederPag){
-        exit(header($mensaje."->".mysqli_num_rows($respuesta_de_tabla_Recurso) ));
+        exit(header($mensaje));
     }
 ?>

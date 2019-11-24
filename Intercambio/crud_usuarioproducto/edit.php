@@ -26,7 +26,7 @@ include("../../includes/acl.php");
         $description = $_POST['descripcion'];
         $estado      = $_POST['estado'];
         $precio      = $_POST['precio'];
-        $mysqli = new mysqli("localhost", "root", "", "s4p");
+        $mysqli = new mysqli($database_red, $database_nombre, $database_contraseña, $database_name);
         $stmt = $mysqli->prepare("UPDATE usuario_producto SET `UsuProProID`=?, `UsuProPre`=?,`UsuProEst`=?,`UsuProDes`=? WHERE UsuProID=?");
         /* BK: always check whether the prepare() succeeded */
         if ($stmt === false) {

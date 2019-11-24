@@ -52,8 +52,6 @@ include("../includes/data_base.php");
 							</a>
 						</td>
 					</tr>
-
-
 				<?php } ?>
 				</tbody>
 			</table
@@ -62,8 +60,6 @@ include("../includes/data_base.php");
 	</div>
 	</div><br><br><br>
 </div>
-
-
 <?php
 	include("../includes/footer.php")
 ?>
