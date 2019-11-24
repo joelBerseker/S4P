@@ -33,7 +33,7 @@ include("../includes/sesion.php");
 				</thead>
 				<tbody>
 				<?php
-				$query = "SELECT * FROM RECURSO ";
+				$query = "SELECT * FROM recurso ";
 				$resultProduct= mysqli_query($conn, $query);
 				while($row= mysqli_fetch_array($resultProduct)){
 				?>

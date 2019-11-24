@@ -8,10 +8,10 @@ include("../../includes/acl.php");
 <?php
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $query = "DELETE FROM RECURSO WHERE RecID = $id";
+        $query = "DELETE FROM recurso WHERE RecID = $id";
         $result = mysqli_query($conn,$query);
         if(!$result){
-            echo  "DELETE FROM RECURSO WHERE RecID = $id ";
+            echo  "DELETE FROM recurso WHERE RecID = $id ";
             die("Query Fallo");
         }
         header("Location: ../");

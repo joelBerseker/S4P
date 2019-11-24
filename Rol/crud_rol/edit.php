@@ -7,7 +7,7 @@
 <?php 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $query = "SELECT * FROM ROL WHERE RolID = $id";
+        $query = "SELECT * FROM rol WHERE RolID = $id";
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);

@@ -48,7 +48,7 @@
 						<div class="col-4"><label>Nombre:</label></div>
 					
 					<?php
-					$querya=mysqli_query($conn,"SELECT RolID, RolNom FROM ROL");
+					$querya=mysqli_query($conn,"SELECT RolID, RolNom FROM rol");
 					?>
 					<div class="col"><select name="rol" class="form-control form-control-sm">
 						<?php

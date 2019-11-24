@@ -35,7 +35,7 @@ include("../includes/sesion.php");
 					</thead>
 					<tbody>
 					<?php
-					$query = "SELECT * FROM USUARIO";
+					$query = "SELECT * FROM usuario";
 					$resultAcceso= mysqli_query($conn, $query);
 					while($row= mysqli_fetch_array($resultAcceso)){
 					?>

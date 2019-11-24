@@ -13,7 +13,7 @@ include("../../includes/acl.php");
         $query = "DELETE FROM producto WHERE ProID = $id";
         $result = mysqli_query($conn,$query);
         if(!$result){
-            echo  "DELETE FROM tb_product WHERE ID_PRODUCTO = $id ";
+            echo  "DELETE FROM producto WHERE ProID = $id";
             die("Query Fallo");
         }
         $_SESSION['message'] = 'Product Removed Succesfully';
