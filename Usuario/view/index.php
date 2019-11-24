@@ -83,7 +83,7 @@ include("../../includes/data_base.php");
                     <div class="col">
                         <input readonly value="<?php echo $correo; ?>" class="form-control form-control-sm " type="text" name="correo" required></div>
                 </div>
-                <button class="btn btn-primary btn-block" name="update">Editar</button>
+                <a class="btn btn-primary btn-block" href="../crud_usuario/edit.php?id=<?php echo $row['UsuID'] ?>" name="update">Editar</a>
             </div>
         </div>
     </div>
