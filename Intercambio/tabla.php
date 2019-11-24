@@ -5,6 +5,8 @@ include("../includes/navbar.php");
 $titulo_html="Intercambios";
 include("../includes/header.php");
 include("../includes/data_base.php");
+$recurso="/Intercambio/tabla";
+include("../includes/acl.php");
 ?>
 <div class="section2">
 <div class="container pt-4">
