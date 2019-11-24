@@ -1,6 +1,7 @@
 <?php
 
 include('../../includes/sesion.php');
+include('../../includes/global_variable.php');
 
 include('../../includes/data_base.php');
 $recurso = "/Intercambio/save";
@@ -33,7 +34,7 @@ if (!empty($user)) {
             mysqli_close($conn);
             header("Location: ../");
         } else {
-            header("Location: /S4P/Errores/?m=jodete1");
+            header("Location: $dirEjec/Errores/?m=jodete1");
         }
     } else {
         echo "No envio";
