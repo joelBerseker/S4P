@@ -1,3 +1,6 @@
+<?php 
+  include("../includes/global_variable.php");
+?>
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Agregar nuevo <span class="icon-plus"></span></button>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -13,7 +16,7 @@
           <form action="crud_product/save.php" method="POST" enctype="multipart/form-data">
             <div class="form-row form-group ">
               <div class="col" align="center" >
-                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+                <img src="<?php echo $dirEjec?>/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
               </div>
             </div>
             <div class="form-row form-group ">
