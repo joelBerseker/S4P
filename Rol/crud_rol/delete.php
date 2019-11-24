@@ -9,10 +9,10 @@ include("../../includes/acl.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     if ($id > 2) {
-        $query = "DELETE FROM ROL WHERE RolID = $id";
+        $query = "DELETE FROM rol WHERE RolID = $id";
         $result = mysqli_query($conn, $query);
         if (!$result) {
-            echo  "DELETE FROM ROL WHERE RolID = $id";
+            echo  "DELETE FROM rol WHERE RolID = $id";
             die("Query Fallo");
         }
     }

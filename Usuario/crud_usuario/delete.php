@@ -9,7 +9,7 @@ include ('../../includes/acl.php');
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
-        $query = "DELETE FROM USUARIO WHERE UsuID = $id";
+        $query = "DELETE FROM usuario WHERE UsuID = $id";
         $result = mysqli_query($conn,$query);
         if(!$result){
             die("Query Fallo");

@@ -32,7 +32,7 @@ include("../includes/acl.php");
 							</thead>
 							<tbody>
 								<?php
-								$query = "SELECT * FROM ROL ";
+								$query = "SELECT * FROM rol ";
 								$resultProduct = mysqli_query($conn, $query);
 								while ($row = mysqli_fetch_array($resultProduct)) {
 									?>
