@@ -14,7 +14,7 @@
       <form action="crud_tipo_producto/save.php" method="POST"  enctype="multipart/form-data">
       <div class="form-row form-group ">
               <div class="col" align="center" >
-                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+                <img src="../image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
               </div>
       </div>
     <div class="form-row form-group ">

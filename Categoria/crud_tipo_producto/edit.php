@@ -1,4 +1,5 @@
 <?php
+include("../../includes/global_variable.php");
 include("../../includes/sesion.php");
 include("../../includes/data_base.php");
 $recurso = "/Categoria/edit";
@@ -48,7 +49,7 @@ include("../../includes/data_base.php");
                     </div>
                     <div class="form-row form-group ">
               <div class="col" align="center" >
-                <img src="/S4P/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
+                <img src="<?=$dirEjec?>/image/objeto-sin-imagen.png"  class="img-fluid"id="imagenmuestra" alt="Img blob" />
               </div>
       </div>
                     <div class="form-row form-group ">
