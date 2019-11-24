@@ -1,15 +1,12 @@
 <?php
+include("../../includes/global_variable.php");
 include("../../includes/sesion.php");
-include("../../includes/navbar.php");
-$login=true;
-	
-$titulo_html="Ingresar";
-include("../../includes/header.php");
+
 include("../../includes/data_base_autenticacion.php");
   
 
   if (isset($_SESSION['user_id'])) {
-    header('Location: /S4P');
+    header('Location:'.$dirEjec.'/');
   }
 
     
@@ -25,7 +22,7 @@ include("../../includes/data_base_autenticacion.php");
 
     if (count($results) > 0 && password_verify($_POST['password'], $results['UsuCon'])) {
       $_SESSION['user_id'] = $results['UsuID'];
-      header("Location: /S4P");
+      header('Location:'.$dirEjec.'/');
     } else {
       $message = 'Usuario no encontrado o contraseña incorrecta';
     }
@@ -33,6 +30,14 @@ include("../../includes/data_base_autenticacion.php");
 
 ?>
 
+
+<?php
+include("../../includes/navbar.php");
+$login=true;
+	
+$titulo_html="Ingresar";
+include("../../includes/header.php");
+?>
 
     <div style="background-color:white;">
       <div class="col-md-5 mx-auto" style="padding-top:60px;padding-bottom:148px">	

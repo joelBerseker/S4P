@@ -1,4 +1,5 @@
 <?php
+include("../../includes/global_variable.php");
 include("../../includes/navbar.php");
 $categoria=true;
 $titulo_html="Producto";
@@ -17,8 +18,8 @@ $row2= mysqli_fetch_array($resultProduct2);
 ?>
 <nav aria-label="breadcrumb" style="">
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-  <li class="breadcrumb-item"><a href="/S4P">Inicio</a></li>
-    <li class="breadcrumb-item"><a href="/S4P/Categoria">Categorias</a></li>
+  <li class="breadcrumb-item"><a href="<?=$dirEjec?>/">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="<?=$dirEjec?>/Categoria">Categorias</a></li>
 	<li class="breadcrumb-item active" aria-current="page"><?php echo $row2['CatNom']?></li>
   </ol>
 </nav>
