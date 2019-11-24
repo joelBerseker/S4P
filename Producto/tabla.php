@@ -6,7 +6,9 @@ include("../includes/navbar.php");
 $producto=true;
 $titulo_html="Productos";
 include("../includes/header.php");
-include("../includes/data_base.php")
+include("../includes/data_base.php");
+$recurso="/Producto/tabla";
+include("../includes/acl.php");
 ?>
 <div class="section2">
 <div class="container pt-4">
