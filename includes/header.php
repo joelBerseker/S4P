@@ -1,6 +1,6 @@
 <?php
+include('global_variable.php');
 include('data_base.php');
-$dirEjec = "/S4P";
 function estadosGenerales($valor)
 {
 	if ($valor == 1) {
