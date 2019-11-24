@@ -1,10 +1,10 @@
-
 <?php
 include("../includes/sesion.php");
-include("../includes/global_variable.php");
-include("../includes/navbar.php");
 $titulo_html="Productos";
 include("../includes/header.php");
+include("../includes/global_variable.php");
+include("../includes/navbar.php");
+
 include("../includes/data_base.php");
 ?>
 <nav aria-label="breadcrumb" >

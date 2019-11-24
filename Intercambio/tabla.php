@@ -1,11 +1,13 @@
-
 <?php
 include("../includes/sesion.php");
+
+
 include("../includes/navbar.php");
-$titulo_html="Intercambios";
+$producto=true;
+$titulo_html="Productos";
 include("../includes/header.php");
 include("../includes/data_base.php");
-$recurso="/Intercambio/tabla";
+$recurso="/Producto/tabla";
 include("../includes/acl.php");
 ?>
 <div class="section2">
@@ -33,7 +35,7 @@ include("../includes/acl.php");
 				</thead>
 				<tbody id="myList">
 				<?php
-				$query = "SELECT * FROM usuario_producto ";
+				$query = "SELECT * FROM usuario_producto";
 				$resultProduct= mysqli_query($conn, $query);
 				while($row= mysqli_fetch_array($resultProduct)){
 				?>
