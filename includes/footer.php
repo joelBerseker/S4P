@@ -1,4 +1,4 @@
-<php 
+<?php 
     $dirEjec ="/S4P";
 ?>
 <footer class="footer-area footer" style="background-color:black" id="sticky-footer" >
