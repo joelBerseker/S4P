@@ -1,4 +1,5 @@
 <?php 
+include('global_variable.php');
 $mensaje = "";
 $accederPag = false;
     if(!empty($user)){
@@ -37,37 +38,37 @@ $accederPag = false;
                                             if($AccEst==1){
                                                 $accederPag=true;
                                             }else{
-                                                $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no esta activo";
+                                                $mensaje ="Location: $dirEjec/Errores/index.php?m=El acceso no esta activo";
                                             }
                                         }else {
-                                            $mensaje ="Location: /S4P/Errores/index.php?m=El acceso no existe";
+                                            $mensaje ="Location: $dirEjec/Errores/index.php?m=El acceso no existe";
                                         }
                                     }else{
-                                        $mensaje ="Location: /S4P/Errores/index.php?m=El recurso no esta activo";
+                                        $mensaje ="Location: $dirEjec/Errores/index.php?m=El recurso no esta activo";
                                     }
                                 }else{
-                                    $mensaje ="Location: /S4P/Errores/index.php?m=El recurso no existe";
+                                    $mensaje ="Location: $dirEjec/Errores/index.php?m=El recurso no existe";
                                 }
                             }else{
-                                $mensaje ="Location: /S4P/Errores/index.php?m=El rol no esta activo";
+                                $mensaje ="Location: $dirEjec/Errores/index.php?m=El rol no esta activo";
                             }
                         }else{
-                            $mensaje ="Location: /S4P/Errores/index.php?m=El rol no existe";
+                            $mensaje ="Location: $dirEjec/Errores/index.php?m=El rol no existe";
                         }
                     }else{
-                        $mensaje ="Location: /S4P/Errores/index.php?m=El usuario no esta activo";
+                        $mensaje ="Location: $dirEjec/Errores/index.php?m=El usuario no esta activo";
                     }
                 }else{
-                    $mensaje ="Location: /S4P/Errores/index.php?m=Este no es tu usuario";
+                    $mensaje ="Location: $dirEjec/Errores/index.php?m=Este no es tu usuario";
                 }
             }else{
                 $accederPag=true;
             }
         }else{
-            $mensaje ="Location: /S4P/Errores/index.php?m=El usuario no existe";
+            $mensaje ="Location: $dirEjec/Errores/index.php?m=El usuario no existe";
         }
     }else{
-        $mensaje ="Location: /S4P/Errores/index.php?m=Inicia sesion por favor";
+        $mensaje ="Location: $dirEjec/Errores/index.php?m=Inicia sesion por favor";
     }
     if(!$accederPag){
         exit(header($mensaje));

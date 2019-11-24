@@ -15,7 +15,7 @@
 	  
 	  <div class="form-row form-group ">
               <div class="col" align="center" >
-                <img src="/S4P/image/usuario-sin-imagen.jpg"  style="width: 200px;" id="imagenmuestra" alt="Img blob" />
+                <img src="$dirEjec/image/usuario-sin-imagen.jpg"  style="width: 200px;" id="imagenmuestra" alt="Img blob" />
               </div>
             </div>
 					<div class="form-group form-row">
