@@ -18,7 +18,7 @@ if(isset($_POST['save_acceso'])){
     }else{
         $archivo_binario = (file_get_contents($archivo_temp));
     }
-    $password = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
+    $password = password_hash($_POST['contraseña'],PASSWORD_BCRYPT);
     $id_rol = $_POST['rol'];
 
     $query = "INSERT INTO usuario (`UsuNom`, `UsuCor`, `UsuCon`, `UsuImgNom`, `UsuImgTip`, `UsuImgArc`, `UsuRolID`, `UsuEst`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

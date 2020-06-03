@@ -5,8 +5,7 @@ $login=true;
     
 $titulo_html="Registrarse";
 include("../../includes/header.php");
-include("../../includes/data_base_autenticacion.php");
-include("../../includes/data_base.php");
+require("../../includes/data_base.php");
 ?>
 
 <?php
@@ -21,6 +20,7 @@ include("../../includes/data_base.php");
   }else{
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $nombre = $_POST['nombre'];
+    $correo = $_POST['email'];
     //$sql = "INSERT INTO usuario (UsuCor, UsuCon, UsuRolID,UsuEst,UsuNom) VALUES (:email, :password,2,1,'$nombre' )";
     //$stmt = $conn->prepare($sql);
     //$stmt->bindParam(':email', $_POST['email']);

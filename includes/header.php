@@ -15,14 +15,17 @@ function estadosGenerales($valor)
 
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153099513-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153099513-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-153099513-1');
-</script>
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-153099513-1');
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><?php echo $titulo_html; ?> - S4P</title>
@@ -36,7 +39,7 @@ function estadosGenerales($valor)
 	-->
 </head>
 
-<body style="background-color: #000;">
+<body style="background-color: #000;" id="men" >
 
 	<div class="social">
 		<ul>
@@ -85,7 +88,7 @@ function estadosGenerales($valor)
 						<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
 							<?php
 								$correo 	= 	$user['UsuCor'];
-								$conn1 = mysqli_connect($database_red,$database_nombre,$database_contraseña,$database_name) or die("Error al conectar al servidor");
+								$conn1 = mysqli_connect($database_red, $database_nombre, $database_contraseña, $database_name) or die("Error al conectar al servidor");
 								$queryUser = "SELECT UsuID FROM usuario WHERE UsuCor = '$correo'";
 								$resultUser = mysqli_query($conn1, $queryUser);
 								if (mysqli_num_rows($resultUser) == 1) {
@@ -111,13 +114,13 @@ function estadosGenerales($valor)
 								<span class=" icon-cog"></span>
 							</a>
 							<div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">ACCESOS</a>
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Acceso">accesible</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Categoria/tabla.php">CATEGORIAS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Intercambio/tabla.php">INTERCAMBIO</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Producto/tabla.php">PRODUCTOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Recurso">RECURSOS</a>
 								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Rol">ROLES</a>
-								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>					
+								<a class="dropdown-item" href="<?php echo $dirEjec ?>/Usuario">USUARIOS</a>
 							</div>
 						</li>
 					<?php } ?>
@@ -130,3 +133,11 @@ function estadosGenerales($valor)
 				</ul>
 		</div>
 	</nav>
+	<INPUT TYPE="button" VALUE="Rosso" onClick="design()"> 
+	<script type="text/javascript">
+function design(men)
+{ 
+      document.getElementById(men).style.backgroundColor="#e9e9e9"; 
+      document.getElementById(men).style.color="#d32e12";
+}
+</script> 

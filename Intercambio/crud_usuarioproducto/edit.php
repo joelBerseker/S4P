@@ -13,6 +13,7 @@ include("../../includes/acl.php");
         $result = mysqli_query($conn,$query);
         if(mysqli_num_rows($result)== 1 ){
             $row = mysqli_fetch_array($result);
+            $nombre              = $row['UsuProNom'];
             $producto         = $row['UsuProProID'];
             $description    = $row['UsuProDes'];
             $precio         = $row['UsuProPre'];
@@ -22,12 +23,13 @@ include("../../includes/acl.php");
     }
     if(isset($_POST['update'])){
         $id          = $_GET['id'];
+        $nombre     = $_POST['nombre'];
         $producto      = $_POST['producto'];
         $description = $_POST['descripcion'];
         $estado      = $_POST['estado'];
         $precio      = $_POST['precio'];
         $mysqli = new mysqli($database_red, $database_nombre, $database_contraseña, $database_name);
-        $stmt = $mysqli->prepare("UPDATE usuario_producto SET `UsuProProID`=?, `UsuProPre`=?,`UsuProEst`=?,`UsuProDes`=? WHERE UsuProID=?");
+        $stmt = $mysqli->prepare("UPDATE usuario_producto SET `UsuProProID`=?,`UsuProNom`=?, `UsuProPre`=?,`UsuProEst`=?,`UsuProDes`=? WHERE UsuProID=?");
         /* BK: always check whether the prepare() succeeded */
         if ($stmt === false) {
         trigger_error($this->mysqli->error, E_USER_ERROR);
@@ -37,7 +39,7 @@ include("../../includes/acl.php");
         /* Bind our params */
         /* BK: variables must be bound in the same order as the params in your SQL.
         * Some people prefer PDO because it supports named parameter. */
-        $stmt->bind_param('idisi',$producto,$precio,$estado,$description, $id);
+        $stmt->bind_param('isdisi',$producto,$nombre,$precio,$estado,$description, $id);
         /* Set our params */
         /* BK: No need to use escaping when using parameters, in fact, you must not, 
         * because you'll get literal '\' characters in your content. */
@@ -70,6 +72,11 @@ include('../../includes/header.php');
             <form action="edit.php?id=<?php echo $_GET['id']?>" method="POST"  enctype="multipart/form-data" >
             <div  class="form-group">
                 <label><b>EDITAR INTERCAMBIO</b></label>
+            </div>
+            <div class="form-row form-group ">
+                <div class="col-4"><label>Nombre:</label></div>
+                <div class="col">
+                    <input value="<?php echo $nombre;?>" class="form-control form-control-sm " type="text" name="nombre" required></div>
             </div>
             <div class="form-row form-group ">
                 <div class="col-4"><label>Descripción:</label></div>
