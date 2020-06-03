@@ -9,7 +9,7 @@ include("../includes/data_base.php");
 ?>
 <nav aria-label="breadcrumb" >
   <ol class="breadcrumb" style="border-radius: 0px; margin-bottom: 0px!important; padding-left: 48px;">
-  	<li class="breadcrumb-item"><a href="<?=$dirEjec?>/">Inicio</a></li>
+  	<li class="breadcrumb-item"><a href="<?=$dirEjec?>/">Inicios</a></li>
   	<li class="breadcrumb-item active" aria-current="page">Categorias</li>
   </ol>
 </nav>
